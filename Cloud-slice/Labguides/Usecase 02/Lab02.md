@@ -1,0 +1,1131 @@
+# Lab 2: Building Real-Time Operational Dashboards with Microsoft Fabric RTI
+
+**Introduction**
+
+In this lab, you will learn how to build a **real-time operational
+dashboard** using **Microsoft Fabric Real-Time Intelligence (RTI)**.
+Real-time dashboards enable organizations to visualize streaming data,
+monitor key metrics, and respond instantly to anomalies or operational
+changes. By leveraging Fabric RTI components such as **Eventstream**,
+**Real-Time Hub**, and **KQL queries**, you will create interactive
+dashboards that provide actionable insights for manufacturing,
+logistics, or any time-sensitive business process.
+
+------------------------------------------------------------------------
+
+**Objectives**
+
+- **Connect Real-Time Data Sources**  
+  Integrate streaming data from sensors, IoT devices, or operational
+  systems into Fabric RTI using Eventstream.
+
+- **Design and Configure Dashboards**  
+  Build dynamic dashboards in Power BI or Fabric that display live
+  metrics, alerts, and KPIs with minimal latency.
+
+- **Implement Real-Time Analytics**  
+  Use KQL queries and transformations to process incoming data streams
+  and derive meaningful insights.
+
+- **Enable Alerts and Monitoring**  
+  Configure real-time alerts for anomalies or threshold breaches to
+  support proactive decision-making.
+
+- **Validate Dashboard Performance**  
+  Test the dashboard under simulated real-time conditions to ensure
+  responsiveness and accuracy.
+
+## Task 1: Get Latest Shipping details
+
+1.  In
+    the [**RealTimeWorkspaceXXX**](mailto:Warehouse_Fabric@lab.LabInstance.Id) view,
+    select the **L400_Eventhouse** KQL Database.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image1.png)
+
+1.  Navigate to the Database tab and select **KQL Queryset** to begin
+    creating your queries
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image2.png)
+
+2.  In the **New KQL Queryset** dialog
+    box, enter +++**L400_KQL_Queryset**+++, then click on
+    the **Create** button.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image3.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image4.png)
+
+3.  In the query editor, paste the provided code to create the Shipping
+    Silver table, then click **Run** to execute the query. Once
+    completed, the results will be displayed.
+
+> .create table shipping_silver (
+>
+> Provider: string,
+>
+> OrderNumber: string,
+>
+> EventTime: datetime,
+>
+> Status: string,
+>
+> SourceCity: string,
+>
+> SourceCountry: string,
+>
+> SourceLatitude: real,
+>
+> SourceLongitude: real,
+>
+> DestinationName: string,
+>
+> DestinationStreet: string,
+>
+> DestinationCity: string,
+>
+> DestinationZip: string,
+>
+> DestinationCountry: string,
+>
+> DestinationLatitude: real,
+>
+> DestinationLongitude: real,
+>
+> WeightKg: real,
+>
+> ProductSize: string,
+>
+> ProductQuantity: int,
+>
+> ProductId: string
+>
+> )
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image5.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image6.png)
+
+4.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+5.  In the query editor, paste the provided code to expand the XML and
+    project only the required fields, then click **Run** to execute the
+    query. After execution, the results will be displayed
+
+> //Let\`s expand the whole xml and project only the fields needed
+>
+> shipping
+>
+> | extend parsed = parse_xml(data)
+>
+> | extend ShippingEvent = parsed.ShippingEvent
+>
+> | extend Products = ShippingEvent.ShippingContents.Product
+>
+> | extend
+>
+> Provider = tostring(ShippingEvent.Provider),
+>
+> OrderNumber = tostring(ShippingEvent.OrderNumber),
+>
+> EventTime = todatetime(ShippingEvent.EventTime),
+>
+> Status = tostring(ShippingEvent.Status),
+>
+> SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
+>
+> SourceCountry =
+> tostring(ShippingEvent.SourceDistributionCenter.Country),
+>
+> SourceLatitude =
+> todouble(ShippingEvent.SourceDistributionCenter.Latitude),
+>
+> SourceLongitude =
+> todouble(ShippingEvent.SourceDistributionCenter.Longitude),
+>
+> DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
+>
+> DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
+>
+> DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
+>
+> DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
+>
+> DestinationCountry =
+> tostring(ShippingEvent.DestinationAddress.Country),
+>
+> DestinationLatitude =
+> todouble(ShippingEvent.DestinationAddress.Latitude),
+>
+> DestinationLongitude =
+> todouble(ShippingEvent.DestinationAddress.Longitude),
+>
+> Weight = todouble(ShippingEvent.WeightKg),
+>
+> ProductSize = tostring(Products.Size),
+>
+> ProductQuantity = toint(Products.Quantity),
+>
+> ProductId = tostring(Products.ProductId)
+>
+> | project
+>
+> Provider,
+>
+> OrderNumber,
+>
+> EventTime,
+>
+> Status,
+>
+> SourceCity,
+>
+> SourceCountry,
+>
+> SourceLatitude,
+>
+> SourceLongitude,
+>
+> DestinationName,
+>
+> DestinationStreet,
+>
+> DestinationCity,
+>
+> DestinationZip,
+>
+> DestinationCountry,
+>
+> DestinationLatitude,
+>
+> DestinationLongitude,
+>
+> Weight,
+>
+> ProductSize,
+>
+> ProductQuantity,
+>
+> ProductId
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image7.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image8.png)
+
+6.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+7.  In the query editor, paste the provided code to copy data from the
+    Shipping table to the Shipping Silver table, then click **Run** to
+    execute the query. After execution, the results will be displayed.
+
+.set-or-append shipping_silver \<|
+
+Shipping
+
+| extend parsed = parse_xml(data)
+
+| extend ShippingEvent = parsed.ShippingEvent
+
+| extend Products = ShippingEvent.ShippingContents.Product
+
+| project
+
+Provider = tostring(ShippingEvent.Provider),
+
+OrderNumber = tostring(ShippingEvent.OrderNumber),
+
+EventTime = todatetime(ShippingEvent.EventTime),
+
+Status = tostring(ShippingEvent.Status),
+
+SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
+
+SourceCountry =
+tostring(ShippingEvent.SourceDistributionCenter.Country),
+
+SourceLatitude =
+todouble(ShippingEvent.SourceDistributionCenter.Latitude),
+
+SourceLongitude =
+todouble(ShippingEvent.SourceDistributionCenter.Longitude),
+
+DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
+
+DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
+
+DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
+
+DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
+
+DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
+
+DestinationLatitude =
+todouble(ShippingEvent.DestinationAddress.Latitude),
+
+DestinationLongitude =
+todouble(ShippingEvent.DestinationAddress.Longitude),
+
+Weight = todouble(ShippingEvent.WeightKg),
+
+ProductSize = tostring(Products.Size),
+
+ProductQuantity = toint(Products.Quantity),
+
+ProductId = tostring(Products.ProductId)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image9.png)
+
+8.  In the query editor, copy and paste the following code. Click on
+    the **Run** button to execute the query. After the query is
+    executed, you will see the results.
+
+> shipping_silver
+>
+> | take 100
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image10.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image11.png)
+
+9.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+10. In the query editor, copy and paste the following code. Click on
+    the **Run** button to execute the query. After the query is
+    executed, you will see the results.
+
+//another way to do it is through a function
+
+.create-or-alter function with (folder = "UpdatePolicyFunctions",
+skipvalidation = "true") ParseShippingXML()
+
+{
+
+shipping_raw
+
+| extend parsed = parse_xml(data)
+
+| extend ShippingEvent = parsed.ShippingEvent
+
+| extend Products = ShippingEvent.ShippingContents.Product
+
+| project
+
+Provider = tostring(ShippingEvent.Provider),
+
+OrderNumber = tostring(ShippingEvent.OrderNumber),
+
+EventTime = todatetime(ShippingEvent.EventTime),
+
+Status = tostring(ShippingEvent.Status),
+
+SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
+
+SourceCountry =
+tostring(ShippingEvent.SourceDistributionCenter.Country),
+
+SourceLatitude =
+todouble(ShippingEvent.SourceDistributionCenter.Latitude),
+
+SourceLongitude =
+todouble(ShippingEvent.SourceDistributionCenter.Longitude),
+
+DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
+
+DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
+
+DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
+
+DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
+
+DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
+
+DestinationLatitude =
+todouble(ShippingEvent.DestinationAddress.Latitude),
+
+DestinationLongitude =
+todouble(ShippingEvent.DestinationAddress.Longitude),
+
+Weight = todouble(ShippingEvent.WeightKg),
+
+ProductSize = tostring(Products.Size),
+
+ProductQuantity = toint(Products.Quantity),
+
+ProductId = tostring(Products.ProductId)
+
+}
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image12.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image13.png)
+
+11. Create a new tab within the queryset by clicking on the ***+* icon**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image14.png)
+
+12. In the query editor, copy and paste the following code. Click on
+    the **Run** button to execute the query. After the query is
+    executed, you will see the results.
+
+.alter table shipping_silver policy update
+
+@'\[{  "IsEnabled": true, "Source": "shipping", "Query":
+"ParseShippingXML()",  "IsTransactional": false,
+"PropagateIngestionProperties": false }\]'
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image15.png)
+
+13. Create a new tab within the queryset by clicking on the ***+* icon**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image16.png)
+
+14. In the query editor, paste the provided code to **verify that your
+    function is working**, then click **Run** to execute the query.
+    After execution, the results will be displayed.
+
+> //Verify your function is working
+>
+> ParseShippingXML()
+>
+> | take 1000
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image17.png)
+
+15. Create a new tab within the queryset by clicking on the ***+* icon**
+
+16. In the query editor, paste the provided code to **verify policy
+    exists**, then click **Run** to execute the query. After execution,
+    the results will be displayed.
+
+> //Verify policy exists
+>
+> .show table shipping_silver policy update
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image18.png)
+
+17. Create a new tab within the queryset by clicking on the ***+* icon**
+
+18. In the query editor, paste the provided code to verify that data is
+    available. If no data is found, rerun the notebook and redo the
+    continuous ingestion for Blob. Then click **Run** to execute the
+    query. After execution, the results will be displayed
+
+//Verify you have data, if not rerun the notebok, and redo the continuos
+ingestion for Blob
+
+shipping_silver
+
+| take 10000
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image19.png)
+
+19. Create a new tab within the queryset by clicking on the ***+* icon**
+
+20. In the query editor, paste the provided code to **get latest
+    shipping details**, then click **Run** to execute the query. After
+    execution, the results will be displayed.
+
+> //get latest shipping details
+>
+>  .create materialized-view with (backfill=true) LatestOrderStatus on
+> table shipping_silver
+>
+> {
+>
+>     shipping_silver
+>
+>     | summarize arg_max(EventTime, \*) by OrderNumber
+>
+> }
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image20.png)
+
+## Task 2: Stop the shipping providers and production line that is carrying the highest defect probability product for every 1 hour
+
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+2.  In the query editor, copy and paste the following code. Click on
+    the **Run** button to execute the query. After the query is
+    executed, you will see the results.
+
+//clik on jPath instead of inline when on payload, click on ProdId \*
+copy path
+
+products
+
+| extend Operator = payload.op
+
+| where  Operator == ("c")
+
+| extend ProductId = \['payload'\]\['after'\]\['ProductId'\]
+
+| extend ProductName = payload.after.ProductName
+
+| extend SKU = payload.after.SKU
+
+| extend Brand = payload.after.Brand
+
+| extend Category = payload.after.Category
+
+| extend UnitCost = payload.after.UnitCost
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image21.png)
+
+3.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+4.  In the query editor, paste the provided code to create **products
+    silver** table, then click **Run** to execute the query. After
+    execution, the results will be displayed
+
+.create table products_silver (
+
+ProductId: string,
+
+ProductName: string,
+
+SKU: string,
+
+Brand: string,
+
+Category: string,
+
+UnitCost: int
+
+)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image22.png)
+
+5.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+6.  In the query editor, copy and paste the following code. Click on
+    the **Run** button to execute the query. After the query is
+    executed, you will see the results.
+
+.set-or-append products_silver \<|
+
+products_raw
+
+| extend Operator = payload.op
+
+| where Operator == ("c")
+
+| extend ProductId = tostring(\['payload'\]\['after'\]\['ProductId'\])
+
+| extend ProductName = tostring(payload.after.ProductName)
+
+| extend SKU = tostring(payload.after.SKU)
+
+| extend Brand = tostring(payload.after.Brand)
+
+| extend Category = tostring(payload.after.Category)
+
+| extend UnitCost = toint(payload.after.UnitCost)
+
+| project ProductId, ProductName, SKU, Brand, Category, UnitCost
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image23.png)
+
+7.  Click on the icon **RealTimeWorkspaceXXX** in the left toolbar and
+    select **L400_Eventhouse**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image24.png)
+
+8.  Select L400_Eventhouse KQL Database
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image25.png)
+
+9.  Click on the button **Get data** in the menu bar at the top.
+    Choose **Local file** from the dropdown menu.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image26.png)
+
+10. Select the **+ New table**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image27.png)
+
+11. Enter the new table name as +++**shipping_provider+++ and click on
+    Browse for file**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image28.png)
+
+12. Navigate and select **Shipping \_Provider_Details** notebooks
+    from **C:\LabFiles**and click on the **Open** button.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image29.png)
+
+13. Select **Next**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image30.png)
+
+14. Click on **Finish** button
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image31.png)
+
+15. Click on **Close** button
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image32.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image33.png)
+
+16. Click on the icon **RealTimeWorkspaceXXX** in the left toolbar and
+    select **L400_KQL_Queryset**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image34.png)
+
+17. Create a new tab within the queryset by clicking on the ***+* icon**
+
+18. In the query editor, paste the provided code to stop shipping from
+    production when a defect is detected, then click **Run** to execute
+    the query. After execution, the results will be displayed.
+
+//stop shipping from production with a defect
+
+manufacturing
+
+| where ingestion_time()\> ago(24h)
+
+| top 1 by DefectProbability desc
+
+| join kind=inner external_table('operators') on OperatorId
+
+| join (shipping_silver | where Status == "Dispatched") on ProductId
+
+| join (shipping_provider | project Provider = trim(" ", Provider),
+contact, HQAddress) on Provider
+
+| join products_silver on ProductId
+
+| project OrderNumber, ProductName, ShippingProvider = Provider1 ,
+ProviderNUmber =contact , HQAddress
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image35.png)
+
+19. Create a new tab within the queryset by clicking on the ***+* icon**
+
+20. In the query editor, paste the provided code to stop operator from
+    production with a defect, then click **Run** to execute the query.
+    After execution, the results will be displayed
+
+//stop operator from production with a defect
+
+manufacturing
+
+| where ingestion_time()\> ago(1h)
+
+| top 1 by DefectProbability desc
+
+| join kind=inner external_table('operators') on OperatorId
+
+| join (shipping_silver | where Status == "Dispatched") on ProductId
+
+| join (shipping_provider | project Provider = trim(" ", Provider)) on
+Provider
+
+| join products_silver on ProductId
+
+| extend OperatorDetails = strcat(OperatorId, "-" ,OperatorName)
+
+| extend ProductDetails = strcat(ProductId, "-" ,ProductName)
+
+| project OperatorDetails, ProductDetails, Phone, AssetId, BatchId
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image36.png)
+
+Task 4: Create an Alert to Stop the Production Line with Detailed
+Product and Operator Information
+
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+2.  In the query editor, paste the provided code to show all operators
+    details, then click **Run** to execute the query. After execution,
+    the results will be displayed.
+
+> //Show all operators details
+>
+> external_table('operators')
+>
+> | project Name, Phone, Email, Role, Shift
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image37.png)
+
+3.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+4.  In the query editor, paste the provided code to Current Defective
+    Item Detail, then click **Run** to execute the query. After
+    execution, the results will be displayed.
+
+// Current Defective Item Detail
+
+manufacturing
+
+| where ingestion_time()\> ago(24h)
+
+| top 1 by DefectProbability desc
+
+| join kind=inner external_table('operators') on OperatorId
+
+| join (shipping_silver | where Status == "Dispatched") on ProductId
+
+| join (shipping_provider | project Provider = trim(" ", Provider),
+contact, HQAddress) on Provider
+
+| join products_silver on ProductId
+
+| project OrderNumber, ProductName, ShippingProvider = Provider1 ,
+ProviderNUmber =contact , HQAddress, OperatorName, DefectProbability
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image38.png)
+
+5.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+6.  In the query editor, paste the provided code to correlation between
+    defective and non-defective products in 1 hour bins, then click
+    **Run** to execute the query. After execution, the results will be
+    displayed.
+
+> // Correlation between defective and non-defective products in 1 hour
+> bins
+>
+> manufacturing
+>
+> | summarize count() by bin(todatetime(timestamp), 1h),
+> DefectProbability
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image39.png)
+
+7.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+8.  In the query editor, paste the provided code to Current shipment
+    status (count of orders by status), then click **Run** to execute
+    the query. After execution, the results will be displayed.
+
+> // Current shipment status (count of orders by status).
+>
+> shipping_silver
+>
+> | summarize countOfOrders=count() by Status
+>
+> | project Status, NumberofOrders = countOfOrders
+>
+> | order by NumberofOrders
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image40.png)
+
+9.  Create a new tab within the queryset by clicking on the ***+* icon**
+
+10. In the query editor, paste the provided code to shipment count by
+    destination, then click **Run** to execute the query. After
+    execution, the results will be displayed.
+
+// shipment count by destination
+
+shipping_silver
+
+| summarize shipmentCount=count() by DestinationCountry,
+DestinationCity, DestinationLatitude, DestinationLongitude
+
+| project DestinationCountry, DestinationCity, DestinationLatitude,
+DestinationLongitude, shipmentCount
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image41.png)
+
+## Task 3: Create an operational dashboard for Fabrikam management
+
+1.  Click on the icon **RealTimeWorkspaceXXX** in the left toolbar.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image42.png)
+
+2.  In the Workspaces pane, select **+ New item**. In the **Filter by
+    item type** search box, enter +++**Real-Time-Dashboard+++** and
+    select the **Real-Time-Dashboard** item.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image43.png)
+
+3.  Enter **+++L400-RTDashboard+++** as the eventstream name and
+    select **Create**. 
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image44.png)
+
+4.  Select **L400-Eventhousae** KQL Database
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image45.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image46.png)
+
+5.  In the Query editor, select **Copilot** from the top menu and use it
+    to generate KQL query ![A screenshot of a computer AI-generated
+    content may be incorrect.](./media/image47.png)
+
+6.  Enter the following text and click on the **Submit icon** as shown
+    in the below image.
+
+> **Create a real-time dashboard table that shows all operators handling
+> shipments in the last 24 hour.  
+> Include operator name, phone number, provider, total shipments
+> handled, defective shipment count, and average defect probability.  
+> Sort by total shipments in descending order and refresh
+> automatically.**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image48.png)
+
+7.  Select the **Replace** option to update the existing content as
+    required.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image49.png)
+
+8.  Click **Run** to execute the query.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image50.png)
+
+// This KQL query was generated by AI:
+
+// Create a real-time dashboard table that shows all operators handling
+shipments in the last 24 hour.
+
+//Include operator name, phone number, provider, total shipments
+handled, defective shipment count, and average defect probability.
+
+//Sort by total shipments in descending order and refresh automatically.
+
+//
+
+manufacturing
+
+| where ingestion_time() \> ago(24h)
+
+| join kind=inner (shipping_silver | where Status == "Dispatched") on
+ProductId
+
+| join kind=inner (shipping_provider | project Provider = trim(" ",
+Provider), contact) on Provider
+
+| summarize
+
+    TotalShipments=count() ,
+
+    DefectiveShipments=countif(DefectProbability \> 0),
+
+    AvgDefectProbability=avg(DefectProbability)
+
+    by OperatorName, contact, Provider
+
+| sort by TotalShipments desc
+
+| project OperatorName, PhoneNumber=contact, Provider, TotalShipments,
+DefectiveShipments, AvgDefectProbability
+
+9.  Click on the **+Add visual**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image51.png)
+
+10. In the **Visual formatting** tab, set Tile name to +++**shipments in
+    the last 24 hour**+++, set Visual type to **Area chart.** Click on
+    the **Apply changes**.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image52.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image53.png)
+
+11. While editing the dashboard, click on the tab **Manage** on the top
+    left then click on the button **Parameters**.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image54.png)
+
+12. To edit the parameter **Time range** click on the pencil icon. This
+    will enter the edit mode for this parameter.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image55.png)
+
+13. Select **Last 7 Days** in the combo box **Default value**. Then
+    click on **Done**.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image56.png)
+
+14. In the parameter pane click on the button **Close**.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image57.png)
+
+15. Click on the tab **Home** and then click on the button **New
+    tile** again to proceed with the next visuals.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image58.png)
+
+16. In the query editor, **paste** the following code, then click
+    on **Run** to execute the query.
+
+shipping_silver
+
+| where Status  in ("Dispatched", "PickedUp", "Routing")
+
+| where EventTime \> ago(1h)
+
+| summarize countByStatus=count() by Status
+
+17. Select **+Add visual**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image59.png)
+
+18. In the **Visual formatting** tab, set Tile name to +++**Last One
+    Hour Shippment status**+++, set Visual type to **Multi stat.** Click
+    on the **Apply changes**.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image60.png)
+>
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image61.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image62.png)
+
+19. While editing the dashboard, click **Home** on the top left, and
+    select **New title** to proceed with the next visuals.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image63.png)
+
+20. In the query editor, **paste** the following code, then click
+    on **Run** to execute the query.
+
+21. Select **+Add visual**
+
+// This KQL query was generated by AI:
+
+// manufacturing
+
+//| where DefectProbability \>= 0.2
+
+//| summarize arg_max(EventProcessedUtcTime, \*)
+
+//| project
+
+//    Provider,
+
+//    ProductName,
+
+//    OrderNumber,
+
+//    OperatorName,
+
+//    Phone,
+
+//    max_DefectProbability = DefectProbability
+
+//
+
+manufacturing
+
+| where DefectProbability \>= 0.2
+
+| summarize arg_max(EventProcessedUtcTime, \*)
+
+| join kind=leftouter (operators | project OperatorId,
+OperatorName=Name, Phone) on OperatorId
+
+| join kind=leftouter (products | project ProductId, ProductName) on
+ProductId
+
+| project
+
+    Provider = "",
+
+    ProductName,
+
+    OrderNumber = "",
+
+    OperatorName,
+
+    Phone,
+
+    max_DefectProbability = DefectProbability
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image64.png)
+
+19. In the **Visual formatting** tab, set Tile name to +++**Current
+    defective item details**+++, set Visual type to **Table.** Click on
+    the **Apply changes**.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image65.png)
+
+20. While editing the dashboard, click **Home** on the top left, and
+    select **New title** to proceed with the next visuals.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image66.png)
+
+21. In the query editor, **paste** the following code, then click
+    on **Run** to execute the query.
+
+shipping
+
+| extend xmlData = parse_xml(data)
+
+| project
+
+    country =
+tostring(\['xmlData'\]\['ShippingEvent'\]\['DestinationAddress'\]\['Country'\]),
+
+    city =
+tostring(\['xmlData'\]\['ShippingEvent'\]\['DestinationAddress'\]\['City'\])
+
+| summarize countCountry=count() by country, city
+
+| lookup sites on $left.country == $right.Country and $left.city ==
+$right.City
+
+| project country, city, Longitude, Latitude, countCountry
+
+| where isnotnull(Longitude) and isnotnull(Latitude)
+
+| render scatterchart with (kind = map, xcolumn = Longitude, ycolumns =
+Latitude, series = country, title = "Delivery Country by Destination")
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image67.png)
+
+22. Select **+Add visual**
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image68.png)
+
+23. In the **Visual formatting** tab, set Tile name to +++**Delivery
+    Country by Destination**+++, set Visual type to **Map.** Click on
+    the **Apply changes**.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image69.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image70.png)
+
+23. While editing the dashboard, click **Home** on the top left, and
+    select **New title** to proceed with the next visuals.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image71.png)
+
+24. In the query editor, **paste** the following code, then click
+    on **Run** to execute the query. Select **+Add visual**
+
+// Correlation between defective and non-defective products in 1 hour
+bins
+
+//Hint: Use the anomaly flag column you defined in the SQL Code Operator
+before, to see the defection & non-defective products and use that in a
+line chart
+
+manufacturing
+
+| extend Defective = iff(Anamoly == "1", 1, 0), NonDefective =
+iff(Anamoly == "0", 1, 0)
+
+| summarize DefectiveCount=sum(Defective),
+NonDefectiveCount=sum(NonDefective) by bin(EventProcessedUtcTime, 1h)
+
+| project EventProcessedUtcTime, DefectiveCount, NonDefectiveCount
+
+| render linechart
+
+    with (
+
+        title="Defective vs Non-Defective Products (1h bins)",
+
+        xtitle="Time (1h bins)",
+
+        ytitle="Count"
+
+    )
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image72.png)
+
+25. In the **Visual formatting** tab, set Tile name to +++**Defective
+    and Proper production**+++, set Visual type to **Line chart.** Click
+    on the **Apply changes**.
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image73.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image74.png)
+
+26. While editing the dashboard, click on the tab **Manage** and then
+    click on the button **Auto refresh**. This will open a pane on the
+    right side of the browser.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image75.png)
+
+27. In the pane **Auto refresh** set it to **Enabled** and set **Default
+    refresh rate** to **Continous**. Then click on the button **Apply**
+
+> ![A screenshot of a computer AI-generated content may be
+> incorrect.](./media/image76.png)
+
+28. Click on the tab **Home** and then click on the button **Save**.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image77.png)
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image78.png)
