@@ -474,30 +474,30 @@ incorrect.](./media/image44.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image45.png)
 
-1.  In the Workspaces pane, select **+ New item** and select the
+2.  In the Workspaces pane, select **+ New item** and select the
     **Dataflow Gen2**.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image46.png)
 
-2.  Enter **+++RTI_Dataflow+++** as the new Dataflow Gen2 name and
+3.  Enter **+++RTI_Dataflow+++** as the new Dataflow Gen2 name and
     select **Create**. 
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image47.png)
 
-3.  From the **Home** tab, select **Get data** and then
+4.  From the **Home** tab, select **Get data** and then
     the **More...** option to upload the tables into Dataflow Gen2
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image48.png)
 
-4.  Select clickstream table
+5.  Select clickstream table
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image49.png)
 
-5.  On the Home window, select **Save & run** and click on **Save &
+6.  On the Home window, select **Save & run** and click on **Save &
     run** button
 
 > ![A screenshot of a computer AI-generated content may be
@@ -506,51 +506,51 @@ incorrect.](./media/image46.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image51.png)
 
-6.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
+7.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
     pane.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image52.png)
 
-7.  Select **OneLake catalog** and select the existing KQL
+8.  Select **OneLake catalog** and select the existing KQL
     Databse, **L400_Eventhouse**, on the data destination configuration
     page that appears.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image53.png)
 
-8.  Select **RealTimeworkspace** in the left-sided navigation menu to
+9.  Select **RealTimeworkspace** in the left-sided navigation menu to
     return to the workspace item list.
 
-9.  Select the **New item** option on the workspace page.
+10.  Select the **New item** option on the workspace page.
     Select **Pipeline** from the new item flyout menu.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image54.png)
 
-10.  Provide a Pipeline Name as **+++datafactory_pipeline+++** and then
+11.  Provide a Pipeline Name as **+++datafactory_pipeline+++** and then
     select **Create**.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image55.png)
 
-11.  Select Dataflow
+12.  Select Dataflow
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image56.png)
 
-12.  Select workspace and dataflow
+13.  Select workspace and dataflow
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image57.png)
 
-13. On the **Home** tab of the pipeline editor window, select
+14. On the **Home** tab of the pipeline editor window, select
     the **Run** button to manually trigger the run of the pipeline.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image58.png)
 
-14. On the **Save and run?** dialog box, select **Save and run** to
+15. On the **Save and run?** dialog box, select **Save and run** to
     execute these activities. This activity will take around 1-2 min.
 
 > ![A screenshot of a computer AI-generated content may be
@@ -559,19 +559,19 @@ incorrect.](./media/image57.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image60.png)
 
-15. On the **Home** tab of the pipeline editor window,
+16. On the **Home** tab of the pipeline editor window,
     select **Schedule**.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image61.png)
 
-16. Select **+ Add schedule** and configure the schedule as required
+17. Select **+ Add schedule** and configure the schedule as required
     then select **Save** and close the **Schedule** panel.
 
 ![A screenshot of a schedule AI-generated content may be
 incorrect.](./media/image62.png)
 
-17. Select the Daily as schedule and click on Save button
+18. Select the Daily as schedule and click on Save button
 
 ![A screenshot of a schedule AI-generated content may be
 incorrect.](./media/image63.png)
@@ -774,6 +774,7 @@ incorrect.](./media/image95.png)
 This lab builds upon Fabrikam’s real-time operational intelligence foundation by adding customer clickstream analytics to the solution. Using Microsoft Fabric, real-time user interactions from the e-commerce platform are streamed, analyzed, and correlated with product data to reveal demand patterns and revenue opportunities as they emerge.
 Participants implement end-to-end streaming ingestion, perform advanced KQL analytics, automate daily updates, and create interactive Power BI reports that highlight top products, traffic sources, and engagement trends. The lab concludes by enabling AI-powered data exploration, allowing business users to ask natural language questions against live data.
 Together, these capabilities help Fabrikam move from reactive reporting to real-time, customer-driven decision-making, ensuring faster responses to market demand and sustained competitive advantage.
+
 
 
 
