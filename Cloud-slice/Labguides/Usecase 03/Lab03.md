@@ -7,8 +7,9 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 >
 **Objectives**
 >
-•	By completing this lab, you will be able to:
+
 •	Ingest real-time clickstream events using Eventstream and custom endpoints.
+
 •	Stream clickstream data into Eventhouse for low-latency analytics.
 •	Analyze customer behavior and product demand using Kusto Query Language (KQL).
 •	Identify top-demand products and evaluate pricing and cost impact in real time.
@@ -761,6 +762,7 @@ incorrect.](./media/image94.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image95.png)
+
 
 
 
