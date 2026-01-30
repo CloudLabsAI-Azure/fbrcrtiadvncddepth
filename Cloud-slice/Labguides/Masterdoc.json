@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "Microsoft Fabric: Real-Time Intelligence",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/fbrcrtiadvncddepth/refs/heads/main/Cloud-slice/Labguides/Usecase%2001/Lab01.md",
+        "Order": 1
+      },
+    {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/fbrcrtiadvncddepth/refs/heads/main/Cloud-slice/Labguides/Usecase%2002/Lab02.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/fbrcrtiadvncddepth/refs/heads/main/Cloud-slice/Labguides/Usecase%2003/Lab03.md",
+        "Order": 3
+      }
+    ]
+  }
+]
