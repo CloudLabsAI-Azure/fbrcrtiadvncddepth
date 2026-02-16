@@ -50,108 +50,105 @@ shifting conditions.
 
 1.  In the Azure portal, search box, type **Storage accounts** and then click on the **Storage accounts**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image4.png)
+    ![](./media/tf1.png)
 
 1.  On the **Storage account** page, click **+Create**.
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf1.png)
-
 1.  On **Create a storage account** page, under the **Basics** tab, enter the following details to create a storage account and then click on **Next**
 
-|  |   |
-|----|----|
-|Subscription|	Select your Azure OpenAI subscription|
-|Resource group|	Select **FabricRG** |
-|Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />**|
-|Region	|**<inject key="Region" enableCopy="false" />**|
-|Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)|
-|Redundancy	|Locally-redundant storage (LRS)|
+    |  |   |
+    |----|----|
+    |Subscription|	Select your Azure OpenAI subscription|
+    |Resource group|	Select **FabricRG** |
+    |Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />**|
+    |Region	|**<inject key="Region" enableCopy="false" />**|
+    |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)|
+    |Redundancy	|Locally-redundant storage (LRS)|
 
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf2.png)
+     ![](./media/tf2.png)
 
-8.  Under the **Advanced** tab, select **"Enable hierarchical namespace"** and click on **Review+create.**
+1.  Under the **Advanced** tab, select **"Enable hierarchical namespace"** and click on **Review+create.**
 
-![A screenshot of a computer AI-generated content may be incorrect.](./media/tf3.png)
+     ![](./media/tf3.png)
 
-9.  On the **Review + Create** page, click **Create**.
+1.  On the **Review + Create** page, click **Create**.
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf4.png)
+     ![](./media/tf4.png)
 
-10. The Azure Storage account is now set up to host data for Azure Data Lake. Click **Go to resource**.
+1. The Azure Storage account is now set up to host data for Azure Data Lake. Click **Go to resource**.
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf5.png)
+     ![](./media/tf5.png)
 
-11. On the left-side navigation pane of your Storage Account, select **Data storage** section and then select **Containers**.
+1. On the left-side navigation pane of your Storage Account, select **Data storage** section and then select **Containers**.
 
-> ![](./media/tf6.png)
+     ![](./media/tf6.png)
 
-12. Click **Add Container.**
+1. Click **Add Container.**
 
-> ![A screenshot of a computer AI-generated content may beincorrect.](./media/tf7.png)
+    ![](./media/tf7.png)
 
-7.  On the New container pane that appears on the right side, enter the container Name as **shipping-events** and click on **Create** button.
+1.  On the New container pane that appears on the right side, enter the container Name as **shipping-events** and click on **Create** button.
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf8.png)
+    ![](./media/tf8.png)
 
-13. Go back to your Storage Account. From the left navigation, select **Access keys** under **Security + networking** group,copy **Connection string** and **Storage account name**, paste them
+1. Go back to your Storage Account. From the left navigation, select **Access keys** under **Security + networking** group,copy **Connection string** and **Storage account name**, paste them
     in a notepad, and then **Save** the notepad to use the information in the upcoming task.
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf9.png)
+    ![](./media/tf9.png)
 
 ## Task 2: Create a single database - Azure SQL Database
 
 1.  From the Azure portal home page, click on **Azure portal menu** represented by three horizontal bars on the left side of the Microsoft Azure command bar. Select  **Azure SQL database**
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg1.png)
+    ![](./media/tg1.png)
 
 1.  Click on **+ Create** and select **SQL Database**
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg2.png)
+   ![](./media/tg2.png)
 
 1.  In this pane, under the **Basics** tab, enter the below details to create an Azure SQL Database and then click
     on **Next: Networking**
 
-  | Setting                | Value / Action |
-  |------------------------|----------------|
-  | Subscription           | Leave the subscription group as default |
-  | Resource group         | Select **FabricRG** |
+    | Setting                | Value / Action |
+    |------------------------|----------------|
+    | Subscription           | Leave the subscription group as default |
+    | Resource group         | Select **FabricRG** |
   
-  > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg3.png)
+     ![](./media/tg3.png)
   
-  | Setting                | Value / Action |
-  |------------------------|----------------|
-  | Server                  | Select **Create new** |
-  | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />**|
-  | Location                | **<inject key="Region" enableCopy="false" />** |
-  | Authentication Method   | Use SQL authentication |
-  | Server admin login      | sqladmin |
-  | Password                | password321!|
-  | Confirm password        | password321!|
-  | Action                  | Click **OK** |
+    | Setting                | Value / Action |
+    |------------------------|----------------|
+    | Server                  | Select **Create new** |
+    | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />**|
+    | Location                | **<inject key="Region" enableCopy="false" />** |
+    | Authentication Method   | Use SQL authentication |
+    | Server admin login      | sqladmin |
+    | Password                | password321!|
+    | Confirm password        | password321!|
+    | Action                  | Click **OK** |
   
-  > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg4.png)
+     ![](./media/tg4.png)
   
-  > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg5.png)
+     ![](./media/tg5.png)
 
 1.  On the **Networking** tab, select **Public endpoint**, set **Allow Azure services and resources** to **Yes**, enable **Add current client IP address**, and then click **Review + create**.
    
-   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg6.png)
+     ![](./media/tg6.png)
 
 1.  On the **Review + create** page, after reviewing, select **Create**
 
-   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg7.png)
+     ![](./media/tg7.png)
 
 1.  On **Microsoft.SQLDatabase** window, after the deployment is completed, click on the **Go to resource** button
 
 1.  In SQL database page select **Query editor**.
 
-   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg8.png)
+     ![](./media/tg8.png)
 
 1.  In the **Query editor (preview)**, enter the SQL server **login** as **sqladmin** and **password** as **password321!**, then click **OK** to connect to the database.
 
-   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg9.png)
+    ![](./media/tg9.png)
 
 1. To create the **Product** table, paste the following code into the **Query editor** and run it to create the stored procedure.
     ```
@@ -166,18 +163,18 @@ incorrect.](./media/image4.png)
     );
     ```
 
-     ![A screenshot of a computer AI-generated content may bincorrect.](./media/tg10.png)
+    ![](./media/tg10.png)
 
-11. To enable database for **CDC,** click on **+New Query** and  paste the following code into the **Query editor** and run it to create the stored procedure.
+1. To enable database for **CDC,** click on **+New Query** and  paste the following code into the **Query editor** and run it to create the stored procedure.
 
     ```
     -- Enable Database for CDC
     EXEC sys.sp_cdc_enable_db;
     ```
 
-    > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg11.png)
+     ![](./media/tg11.png)
 
-12. To enable CDC for a table using a gating role option, click on +New Query and paste the following code into the **Query editor** and run it to create the
+1. To enable CDC for a table using a gating role option, click on +New Query and paste the following code into the **Query editor** and run it to create the
     stored procedure.
     
       ```
@@ -189,42 +186,38 @@ incorrect.](./media/image4.png)
       GO
       ```
 
-   ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg12.png)
+      ![](./media/tg12.png)
 
-13. Go back to your SQL Database. Copy **Server name** and **SQL Database name**, paste them in a notepad, and then **Save** the
+1. Go back to your SQL Database. Copy **Server name** and **SQL Database name**, paste them in a notepad, and then **Save** the
     notepad to use the information in the upcoming task.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg13.png)
+      ![](./media/tg13.png)
 
 ## Task 3: Create a Fabric workspace
 
-In this task, you create a Fabric workspace. The workspace contains all
-the items needed for this lakehouse tutorial, which includes lakehouse,
-dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and
+In this task, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse,dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and
 reports.
 
-1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL:**+++https://app.fabric.microsoft.com/+++** press
-    the **Enter** button and sign in with your credentials
+1.  Open your browser, navigate to the address bar, and type or paste the following URL:**https://app.fabric.microsoft.com/** press the **Enter** button and sign in with your credentials and click on **Submit**
 
     |   |    |
     |-----|----|
-    |Username|	+++@lab.CloudPortalCredential(User1).Username+++|
-    |Password	|+++@lab.CloudPortalCredential(User1).Password+++|
+    |Username| <inject key="AzureAdUserEmail"></inject>|
+    |Password	|<inject key="AzureAdUserPassword"></inject>|
+
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/th1.png)
 
 2.  In the Workspaces pane, click on **+New workspace** tile
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image30.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/th2.png)
 
-3.  In the **Create a workspace** pane that appears on the right side,
-    enter the following details, and click on the **Apply** button.
+3.  In the **Create a workspace** pane that appears on the right side,enter the following details, and click on the **Apply** button.
 
-|  |    |
-|-----|-----|
-|Name	|**+++RealTimeWorkspace400@lab.LabInstance.Id+++** (can be a unique number)|
-|Advanced	|Under License mode, select **Fabric capacity**|
-|Default|	storage format Small dataset storage format|
+    |  |    |
+    |-----|-----|
+    |Name	|**RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** |
+    |Advanced	|Under License mode, select **Fabric capacity**|
+    |Default|	storage format Small dataset storage format|
 
 
 ![A screenshot of a computer AI-generated content may be
@@ -1114,6 +1107,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
