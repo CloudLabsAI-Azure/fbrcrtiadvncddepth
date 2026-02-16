@@ -69,8 +69,7 @@ shifting conditions.
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image3.png)
 
-5.  In Azure portal, search box, type +++**Storage accounts**+++ and
-    then click on the **Storage accounts**.
+5.  In Azure portal, search box, type **Storage accounts** and then click on the **Storage accounts**.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image4.png)
@@ -87,9 +86,9 @@ incorrect.](./media/image4.png)
 |  |   |
 |----|----|
 |Subscription|	Select your Azure OpenAI subscription|
-|Resource group|	Select your Resource group|
-|Storage account name	|**+++l400storagefabricXXXX+++**( XXXX can be last 4 digits of Lab instant ID)|
-|Region	|Select the appropriate region for your storage account . In this lab East US is take|
+|Resource group|	Select **FabricRG** |
+|Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />**( XXXX can be last 4 digits of Lab instant ID)|
+|Region	|**<inject key="Region" enableCopy="false" />**|
 |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)|
 |Redundancy	|Locally-redundant storage (LRS)|
 
@@ -1189,6 +1188,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
