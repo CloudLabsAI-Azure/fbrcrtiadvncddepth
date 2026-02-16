@@ -177,8 +177,7 @@ incorrect.](./media/image4.png)
 
     > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg11.png)
 
-12. To enable CDC for a table using a gating role option**,** paste the
-    following code into the **Query editor** and run it to create the
+12. To enable CDC for a table using a gating role option, click on +New Query and paste the following code into the **Query editor** and run it to create the
     stored procedure.
     
       ```
@@ -190,14 +189,12 @@ incorrect.](./media/image4.png)
       GO
       ```
 
-   ![A screenshot of a computer AI-generated content may be incorrect.](./media/image28.png)
+   ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg12.png)
 
-13. Go back to your SQL Database. Copy **Server name** and **SQL
-    Database name**, paste them in a notepad, and then **Save** the
+13. Go back to your SQL Database. Copy **Server name** and **SQL Database name**, paste them in a notepad, and then **Save** the
     notepad to use the information in the upcoming task.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image29.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg13.png)
 
 ## Task 3: Create a Fabric workspace
 
@@ -1117,6 +1114,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
