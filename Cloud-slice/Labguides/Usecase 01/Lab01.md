@@ -48,180 +48,112 @@ shifting conditions.
 
 ## Task 1: Configure Azure Storage Account with Product data
 
-1.  Open your browser, navigate to the address bar, type or paste the
-    following
-    URL:+++[**https://portal.azure.com/**](https://portal.azure.com/)+++ then
-    press the Enter button.
-
-2.  In the **Sign in** window, enter the **Username** and click on
-    the **Next** button.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image1.png)
-
-3.  Then, enter the password and click on the **Sign in** button.
-
-> ![A screenshot of a login box AI-generated content may be
-> incorrect.](./media/image2.png)
-
-4.  In **Stay signed in?** window, click on the **Yes** button.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image3.png)
-
-5.  In Azure portal, search box, type **Storage accounts** and then click on the **Storage accounts**.
+1.  In the Azure portal, search box, type **Storage accounts** and then click on the **Storage accounts**.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image4.png)
 
-6.  On the **Storage account** page, click **+Create**.
+1.  On the **Storage account** page, click **+Create**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image5.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf1.png)
 
-7.  On **Create a storage account** page, under the **Basics** tab,
-    enter the following details to create a storage account and then
-    click on **Next**
+1.  On **Create a storage account** page, under the **Basics** tab, enter the following details to create a storage account and then click on **Next**
 
 |  |   |
 |----|----|
 |Subscription|	Select your Azure OpenAI subscription|
 |Resource group|	Select **FabricRG** |
-|Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />**( XXXX can be last 4 digits of Lab instant ID)|
+|Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />**|
 |Region	|**<inject key="Region" enableCopy="false" />**|
 |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)|
 |Redundancy	|Locally-redundant storage (LRS)|
 
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image6.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf2.png)
 
-8.  Under the **Advanced** tab, select **"Enable hierarchical
-    namespace"** and click on **Review+create.**
+8.  Under the **Advanced** tab, select **"Enable hierarchical namespace"** and click on **Review+create.**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image7.png)
+![A screenshot of a computer AI-generated content may be incorrect.](./media/tf3.png)
 
 9.  On the **Review + Create** page, click **Create**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image8.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf4.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image9.png)
+10. The Azure Storage account is now set up to host data for Azure Data Lake. Click **Go to resource**.
 
-10. The Azure Storage account is now set up to host data for Azure Data
-    Lake. Click **Go to resource**.
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf5.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image10.png)
+11. On the left-side navigation pane of your Storage Account, select **Data storage** section and then select **Containers**.
 
-11. On the left-side navigation pane of your Storage Account, select
-    **Data storage** section and then select **Containers**.
-
-> ![](./media/image11.png)
+> ![](./media/tf6.png)
 
 12. Click **Add Container.**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image12.png)
+> ![A screenshot of a computer AI-generated content may beincorrect.](./media/tf7.png)
 
-7.  On the New container pane that appears on the right side, enter the
-    container Name as +++**shipping-events**+++ and click on **Create**
-    button.
+7.  On the New container pane that appears on the right side, enter the container Name as **shipping-events** and click on **Create** button.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image12.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf8.png)
 
-13. Go back to your Storage Account. From the left navigation, select
-    **Access keys** under **Security + networking** group,
-    copy **Connection string** and **Storage account name**, paste them
-    in a notepad, and then **Save** the notepad to use the information
-    in the upcoming task.
+13. Go back to your Storage Account. From the left navigation, select **Access keys** under **Security + networking** group,copy **Connection string** and **Storage account name**, paste them
+    in a notepad, and then **Save** the notepad to use the information in the upcoming task.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image13.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tf9.png)
 
 ## Task 2: Create a single database - Azure SQL Database
 
-1.  From the Azure portal home page, click on **Azure portal
-    menu** represented by three horizontal bars on the left side of the
-    Microsoft Azure command bar. Select SQL database
+1.  From the Azure portal home page, click on **Azure portal menu** represented by three horizontal bars on the left side of the Microsoft Azure command bar. Select  **Azure SQL database**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image14.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg1.png)
 
-2.  Click on **+ Create**
+1.  Click on **+ Create** and select **SQL Database**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image15.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg2.png)
 
-3.  On **Create a storage account** window, under the **Basics** tab,
-    enter the below details to create a storage account and then click
-    on **Next:Networking**
+1.  In this pane, under the **Basics** tab, enter the below details to create an Azure SQL Database and then click
+    on **Next: Networking**
 
-| Setting                | Value / Action |
-|------------------------|----------------|
-| Subscription           | Select your subscription |
-| Resource group         | Select your Resource group |
-| Database name           | +++sqldatabaseXXXX+++ (XXXX = last 4 digits of Lab Instance ID) |
-| Server                  | Select **Create new** |
-| Server name             | +++sqlserverXXXX+++ |
-| Location                | Southeast Asia |
-| Server admin login      | +++sqladmin+++ |
-| Password                | +++password321!+++ |
-| Confirm password        | +++password321!+++ |
-| Action                  | Click **OK** |
+  | Setting                | Value / Action |
+  |------------------------|----------------|
+  | Subscription           | Leave the subscription group as default |
+  | Resource group         | Select **FabricRG** |
+  
+  > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg3.png)
+  
+  | Setting                | Value / Action |
+  |------------------------|----------------|
+  | Server                  | Select **Create new** |
+  | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />**|
+  | Location                | **<inject key="Region" enableCopy="false" />** |
+  | Authentication Method   | Use SQL authentication |
+  | Server admin login      | sqladmin |
+  | Password                | password321!|
+  | Confirm password        | password321!|
+  | Action                  | Click **OK** |
+  
+  > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg4.png)
+  
+  > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg5.png)
 
+1.  On the **Networking** tab, select **Public endpoint**, set **Allow Azure services and resources** to **Yes**, enable **Add current client IP address**, and then click **Review + create**.
+   
+   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg6.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image16.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image17.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image18.png)
+1.  On the **Review + create** page, after reviewing, select **Create**
 
-4.  On the **Networking** tab, select **Public endpoint**, set **Allow
-    Azure services and resources** to **Yes**, enable **Add current
-    client IP address**, and then click **Review + create**.
-   > ![A screenshot of a computer AI-generated content may be
-    incorrect.](./media/image19.png)
+   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg7.png)
 
-5.  On the **Review + create** page, after reviewing, select **Create**
+1.  On **Microsoft.SQLDatabase** window, after the deployment is completed, click on the **Go to resource** button
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image20.png)
+1.  In SQL database page select **Query editor**.
 
-6.  On **Microsoft.SQLDatabase** window, after the deployment is
-    completed, click on the **Go to resource** button
+   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg8.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image21.png)
+1.  In the **Query editor (preview)**, enter the SQL server **login** as **sqladmin** and **password** as **password321!**, then click **OK** to connect to the database.
 
-7.  Select **SQL database**
+   > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg9.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image22.png)
-
-8.  In SQL database page select **Query editor**.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image23.png)
-
-9.  In the **Query editor (preview)**, enter the SQL server **login** as
-    +++**sqladmin**+++ and **password** as **+++password321!+++**, then
-    click **OK** to connect to the database.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image24.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image25.png)
-
-10. To create the **Product** table, paste the following code into the
-    **Query editor** and run it to create the stored procedure.
+1. To create the **Product** table, paste the following code into the **Query editor** and run it to create the stored procedure.
     ```
     -- Step 1: Create the Products table
     CREATE TABLE Products (
@@ -234,34 +166,31 @@ incorrect.](./media/image9.png)
     );
     ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image26.png)
+     ![A screenshot of a computer AI-generated content may bincorrect.](./media/tg10.png)
 
-11. To enable database for **CDC,** paste the following code into the
-    **Query editor** and run it to create the stored procedure.
+11. To enable database for **CDC,** click on **+New Query** and  paste the following code into the **Query editor** and run it to create the stored procedure.
 
     ```
     -- Enable Database for CDC
     EXEC sys.sp_cdc_enable_db;
     ```
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image27.png)
+> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg11.png)
 
 12. To enable CDC for a table using a gating role option**,** paste the
     following code into the **Query editor** and run it to create the
     stored procedure.
-```
--- Enable CDC for a table using a gating role option
-EXEC sys.sp_cdc_enable_table
-    @source_schema = N'dbo',
-    @source_name   = N'Products',
-    @role_name     = NULL
-GO
-```
+      ```
+      -- Enable CDC for a table using a gating role option
+      EXEC sys.sp_cdc_enable_table
+          @source_schema = N'dbo',
+          @source_name   = N'Products',
+          @role_name     = NULL
+      GO
+      ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image28.png)
+   ![A screenshot of a computer AI-generated content may be
+   incorrect.](./media/image28.png)
 
 13. Go back to your SQL Database. Copy **Server name** and **SQL
     Database name**, paste them in a notepad, and then **Save** the
@@ -1188,6 +1117,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
