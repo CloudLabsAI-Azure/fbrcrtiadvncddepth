@@ -175,11 +175,12 @@ incorrect.](./media/image4.png)
     EXEC sys.sp_cdc_enable_db;
     ```
 
-> ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg11.png)
+    > ![A screenshot of a computer AI-generated content may be incorrect.](./media/tg11.png)
 
 12. To enable CDC for a table using a gating role option**,** paste the
     following code into the **Query editor** and run it to create the
     stored procedure.
+    
       ```
       -- Enable CDC for a table using a gating role option
       EXEC sys.sp_cdc_enable_table
@@ -189,8 +190,7 @@ incorrect.](./media/image4.png)
       GO
       ```
 
-   ![A screenshot of a computer AI-generated content may be
-   incorrect.](./media/image28.png)
+   ![A screenshot of a computer AI-generated content may be incorrect.](./media/image28.png)
 
 13. Go back to your SQL Database. Copy **Server name** and **SQL
     Database name**, paste them in a notepad, and then **Save** the
@@ -1117,6 +1117,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
