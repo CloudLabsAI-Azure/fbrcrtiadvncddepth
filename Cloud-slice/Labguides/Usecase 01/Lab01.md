@@ -216,74 +216,55 @@ reports.
     |  |    |
     |-----|-----|
     |Name	|**RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** |
-    |Advanced	|Under License mode, select **Fabric capacity**|
+    |Advanced	|Under Workspace Type, select **Fabric**|
     |Default|	storage format Small dataset storage format|
 
 
 ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image31.png)
+incorrect.](./media/th3.png)
 
 ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image32.png)
-
-   ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image33.png)
+incorrect.](./media/th4.png)
 
 ## Task 4: Create a lakehouse
 
 1.  In the Workspaces pane, select **+ New item**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image34.png)
+![.](./media/th5.png)
 
-2.  In the **Filter by item type** search box,
-    enter +++**Lakehouse+++** and select the lakehouse item.
+1.  In the **Filter by item type** search box,enter **Lakehouse** and select the lakehouse item.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image35.png)
+    ![.](./media/th6.png)
 
-3.  Enter +++**L400_Lakehouse**+++as the lakehouse name and unselect the
-    lakehouses schemas. Select **Create**.
+1.  Enter +++**Lakehouse<inject key="DeploymentID" enableCopy="false" />** as the lakehouse name and unselect the lakehouses schemas. Select **Create**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image36.png)
+    ![](./media/th7.png)
 
-4.  When provisioning is complete, the lakehouse explorer page is shown.
+1.  When provisioning is complete, the lakehouse explorer page is shown.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image37.png)
+    ![](./media/th8.png)
 
 ## Task 5: Create an Eventhouse
 
-1.  From the **Tutorial**  page, select **Digital twin builder** in the
-    left-sided navigation menu to return to the workspace item list.
+1.  From the left-sided navigation menu select the workspace to return to the workspace item list.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image38.png)
+    ![.](./media/th9.png)
 
 2.  In the Workspaces pane, select **+ New item**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image39.png)
+    ![](./media/th10.png)
 
-3.  In the **Filter by item type** search box,
-    enter +++**Eventhouse+++** and select the Eventhouse item.
+3.  In the **Filter by item type** search box, enter **Eventhouse** and select the Eventhouse item.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image40.png)
+    ![](./media/th11.png)
 
-4.  Enter **+++L400-Eventhouse+++** as the eventhouse name. A KQL
-    database is created simultaneously with the same name and
-    select **Create**. 
+4.  Enter **Eventhouse<inject key="DeploymentID" enableCopy="false" />** as the eventhouse name. A KQL database is created simultaneously with the same name and select **Create**. 
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image41.png)
+    ![](./media/th13.png)
 
-5.  When provisioning is complete, the eventhouse **System
-    overview** page is shown.
+5.  When provisioning is complete, the eventhouse **System overview** page is shown.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image42.png)
+    ![](./media/th14.png)
 
 # Exercise 2: Ingest Manufacturing data into Eventhouse using Eventstream
 
@@ -292,59 +273,42 @@ incorrect.](./media/image42.png)
 In this task, you will create an Event Stream and add the Manufacturing
 data as the source.
 
-1.  From the **KQL databases** pane in the eventhouse, select
-    the **RealTimeWorkspace** .
+1.  From the left navigation pane in the eventhouse, select
+    the **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** .
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image43.png)
+    ![](./media/ti1.png)
 
-2.  In the Workspaces pane, select **+ New item**. In the **Filter by
-    item type** search box, enter +++**Eventstream+++** and select the
+1.  In the Workspaces pane, select **+ New item**. In the **Filter by
+    item type** search box, enter **Eventstream** and select the
     **Eventstream** item
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image44.png)
+    ![](./media/ti3.png)
 
-3.  Enter **+++L400-Eventstream+++** as the eventstream name and
-    select **Create**. 
+1.  Enter **Eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image45.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image46.png)
+   ![](./media/ti2.png)
 
-4.  On the Screen **Design a flow to ingest, transform, and route
-    streaming events** click on **Use custom Endpoint**. This will
+1.  On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will
     create an event hub connected to the Eventstream.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image47.png)
+    ![.](./media/ti4.png)
 
-5.  Insert +++**CustomEndpoint-L400**+++ as the source name and the
-    click on **Add**.
+1.  Insert **CustomEndpoint-L400** as the source name and the  click on **Add**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image48.png)
+    ![](./media/ti5.png)
 
-6.  Click on the **Publish** button.
+1.  Click on the **Publish** button.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image49.png)
+    ![](./media/ti6.png)
 
-7.  On the **Eventstream** pane, select the **keys** under
-    the **Details**, select **SAS key Authentication ,** copy
-    the **Event hub name**, **connection strings-primarykey** and paste
-    them on a notepad, as you need them in the upcoming task
+1.  On the **Eventstream** pane, select the **keys** under the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste them on a notepad, as you need them in the upcoming task
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image50.png)
+    ![.](./media/ti7.png)
 
-8.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
+8.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image51.png)
+    ![](./media/ti8.png)
 
 ## Task 2: Import Manufacturing data Notebook
 
@@ -1107,6 +1071,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
