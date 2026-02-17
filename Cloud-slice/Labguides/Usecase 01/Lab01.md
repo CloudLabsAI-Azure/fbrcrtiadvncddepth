@@ -660,16 +660,16 @@ notebook.
   ('PROD4017', 'Cyberpunk Hat', 'SKU4017', 'AirRun', 'Colours', 99.79),
   ('PROD4018', 'CloudShell Jacket', 'SKU4018', 'ClassicWear', 'Colours', 191.26),
   ('PROD4019', 'ClassicWear Hoodie', 'SKU4019', 'ClassicWear', 'GenZ Pros', 206.99);
-  ```
- ![](./media/image134.png)
 
-1.  Return to the **sql_eventstream**, click **Refresh**, and verify
-    that the data has been updated successfully.
+```
+   ![](./media/image134.png)
 
-![A screenshot of a computer AI-generated content may be
+1.  Return to the **sql_eventstream**, click **Refresh**, and verify that the data has been updated successfully.
+
+  ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image135.png)
 
-![A screenshot of a computer AI-generated content may be
+  ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image136.png)
 
 2.  Click on the icon **L400_Eventhouse** in the top toolbar.
@@ -936,6 +936,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
