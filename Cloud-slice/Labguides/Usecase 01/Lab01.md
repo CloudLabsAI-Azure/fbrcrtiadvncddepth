@@ -1,4 +1,4 @@
-<img width="557" height="427" alt="image" src="https://github.com/user-attachments/assets/881d1608-5750-4d70-a97d-29a9a68a2003" />## Usecase 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
+## Usecase 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
 
 **Scenario: The Fabrikam Frenzy – Real-Time Intelligence Under
 Pressure**
@@ -947,6 +947,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
