@@ -1,4 +1,4 @@
-## Usecase 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
+<img width="557" height="427" alt="image" src="https://github.com/user-attachments/assets/881d1608-5750-4d70-a97d-29a9a68a2003" />## Usecase 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
 
 **Scenario: The Fabrikam Frenzy – Real-Time Intelligence Under
 Pressure**
@@ -312,170 +312,127 @@ data as the source.
 
 ## Task 2: Import Manufacturing data Notebook
 
-1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and
-    click on **-\>|Import** button, then select **Notebook** and
+1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and
     select **From this computer** as shown in the below image.
+    
+     ![.](./media/ti9.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image52.png)
+3.  Select **Upload** from the **Import status** pane that appears on the right side of the screen.
 
-2.  Select **Upload** from the **Import status** pane that appears on
-    the right side of the screen.
+     ![.](./media/ti10.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image53.png)
+3.  Navigate and select **Manufacturing Simulator** notebooks from **C:\LabFiles**and click on the **Open** button.
 
-3.  Navigate and select **Manufacturing Simulator** notebooks
-    from **C:\LabFiles**and click on the **Open** button.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image54.png)
+     ![](./media/ti11.png)
 
 4.  You will see a notification stating **Imported successfully.**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image55.png)
-
 5.  Then, select the **Manufacturing Simulator**  notebook.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image56.png)
+     ![.](./media/ti12.png)
 
-6.  In the **Explorer** pane, click **Add data items**, and then select
-    **Existing data sources** to connect to an existing data source.
+6.  In the **Explorer** pane, click **Add data items**, and then select **From OneLake Catalog** to connect to an existing data source.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image57.png)
+     ![](./media/ti13.png)
 
-7.  In the **OneLake catalog**, select **L400_Lakehouse** and click
+7.  In the **OneLake catalog**, select **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click
     **Connect** to link it as a data source.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image58.png)
+     ![.](./media/ti14.png)
 
-8.  To start the notebook, run the 1^(st) cell.
+8.  To start the notebook, run the **0th** cell.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image59.png)
+     ![.](./media/ti15.png)
 
-9.  In the **2^(nd)** cell paste the **connection string of your custom
-    app source and EventHubName** (the value that you have saved in your
-    notepad in the (Exercise 2\>**Task 1\>Step 7)**, select
-    the **Run** icon that appears on the left side of the cell
+9.  In the **first** cell paste the **connection string of your custom app source and EventHubName** (the value that you have saved in your notepad in the (Exercise 2\>**Task 1\>Step 7)**, select the **Run** icon that appears on the left side of the cell
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image60.png)
+     ![](./media/ti16.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image61.png)
+     ![](./media/ti17.png)
 
-10. Select the **third** cell to **generate the site location**, and
-    then **run** the cell.
+10. Select the **second** cell to **generate the site location**, and then **run** the cell.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image62.png)
+    ![](./media/ti18.png)
 
-11. Select the 4^(th) cell to generate the assets, and then run the
+11. Select the third cell to generate the assets, and then run the cell.
+
+    ![](./media/ti19.png)
+
+12. Select the fourth cell to generate the Operators, and then run the
     cell.
 
-> ![A screen shot of a computer code AI-generated content may be
-> incorrect.](./media/image63.png)
+    ![](./media/ti20.png)
 
-12. Select the 5^(th) cell to generate the Operators, and then run the
+13. Select the fifth cell to generate the products, and then run the
     cell.
 
-![A screenshot of a computer program AI-generated content may be
-incorrect.](./media/image64.png)
+    ![.](./media/ti21.png)
 
-13. Select the 6^(th) cell to generate the products, and then run the
-    cell.
-
-![A screenshot of a computer program AI-generated content may be
-incorrect.](./media/image64.png)
-
-14. Select the 7^(th) cell to generate the event functions, and then run
+14. Select the sixth cell to generate the event functions, and then run
     the cell.
 
-![A screenshot of a computer program AI-generated content may be
-incorrect.](./media/image65.png)
+    ![](./media/ti22.png)
 
-15. Select the 8^(th) cell and then run the cell.
+15. Select the seventh cell and then run the cell.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image66.png)
+   ![](./media/ti23.png)
 
-16. Select the **9^(th)** cell to Streaming simulations, and then run
+16. Select the eighth cell to Streaming simulations, and then run
     the cell.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image66.png)
+   ![](./media/ti24.png)
 
-17. Select the 10^(th) cell and then run the cell.
+17. Select the ninth cell and then run the cell.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image67.png)
+   ![](./media/ti25.png)
 
-**Note**: Skip running the 11th cell, which is the final cell in the
+**Note**: Skip running the tenth cell, which is the final cell in the
 notebook.
 
-18. Now, click on **L400_Eventstream** on the left navigation pane.
+18. Now, click on **Eventstream<inject key="DeploymentID" enableCopy="false" />** on the left navigation pane.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image68.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image69.png)
+    ![](./media/ti26.png)
 
 19. In the event stream authoring canvas, select the **Edit**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image70.png)
+    ![](./media/ti27.png)
 
 20. Click on the node **Transform events or add Destination** and
     select **SQL Code** from the menu.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image71.png)
+    ![](./media/ti28.png)
 
 21. Select **SqlCode** node and click on **Action**
 
-> ![A screenshot of a chat AI-generated content may be
-> incorrect.](./media/image72.png)
+    ![](./media/ti29.png)
 
 22. Click on **Edit query**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image73.png)
+    ![](./media/ti30.png)
 
 23. Use the following SQL transformation on the DefectProbability column
     to mark values greater than 0.1 as *Anomaly*. Copy the code and
     select **Test query**.
 
---Init Query
-```
-SELECT * ,CASE WHEN DefectProbability>0.1 THEN'1' ELSE '0' END AS Anamoly FROM [L400Eventstream-stream]
-```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image74.png)
+    ```
+    SELECT * ,CASE WHEN DefectProbability>0.1 THEN'1' ELSE '0' END AS Anamoly FROM [Eventstream<inject key="DeploymentID" enableCopy="false" />-stream]
+    ```
+   ![](./media/t31.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image75.png)
+   ![](./media/ti32.png)
 
 24. Click **Save** to apply the changes.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image76.png)
+   ![](./media/ti33.png)
 
 25. Click **Save** to apply the changes.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image77.png)
+   ![](./media/ti34.png)
 
 26. To add a destination, open the **Add destination** dropdown and
     select **Eventhouse** from the context menu.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image78.png)
+   ![](./media/ti35.png)
 
 27. Provide the following values in the pane **Eventhouse**. Click the
     button **Save** after you entered all the values.
@@ -483,178 +440,119 @@ incorrect.](./media/image78.png)
 | Field                          | Value |
 |--------------------------------|-------|
 | Event processing before ingestion | Ensure that this option is selected. |
-| Workspace                      | Select **RealTimeWorkspaceXXX**. If you attend the Precon at dataMinds Connectrope, select the Workspace name that was provided to you. |
-| Eventhouse                     | Select the Eventhouse **L400_Eventhouse** |
-| KQL Database                   | Select the KQL Database **L400_Eventhouse** |
-| Destination table              | Click **Create new**, enter **+++manufacturing+++** as the table name, and click **Done** |
+| Destination name | Eventhouse |
+| Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />**. |
+| Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
+| KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
+| Destination table              | Click **Create new**, enter **manufacturing** as the table name, and click **Done** |
 | Input data format              | Ensure that the **JSON** option is selected |
 
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image79.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image80.png)
+  ![](./media/ti36.png)
 
 15. Connect the output of the node **SqlCode** to the input of the
     node **Eventhouse**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image81.png)
+    ![](./media/ti37.png)
 
 28. Click on the button **Publish** that is located in the toolbar at
     the top of the screen.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image82.png)
+     ![](./media/ti38.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image83.png)
+     ![](./media/ti39.png)
 
 29. Click on the icon **Manufacturing Simulator notebook** in the top
     toolbar
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image84.png)
+    ![](./media/ti40.png)
 
-30. Right-click **L400_Lakehouse** and click **Set as default
+30. Right-click **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Set as default
     lakehouse** from the menu
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image85.png)
+    ![](./media/ti41.png)
 
 31. Click the **Run all** button to execute all the cells
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image86.png)
+    ![](./media/ti42.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image87.png)
+    ![](./media/ti43.png)
 
-## Task 3: creating delta tables in the lakehouse 
+## Task 3: Creating delta tables in the lakehouse 
 
 1.  Select on the icon **RealTimeWorkspaceXX** in the left toolbar and
     click on **L400_Lakehouse**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image88.png)
+    ![](./media/ti44.png)
 
 2.  To verify that the files have been successfully loaded, click the
     **Files** folder in the **Explorer** pane. You should see the files
     listed in the right-hand pane of the window.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image89.png)
+    ![.](./media/ti45.png)
 
 3.  Next we have to create delta tables in our Lakehouse from the files
     we uploaded. To do this access the context menu by clicking on the
     three dots (**...**). Select **Load to tables** from the context
     menu.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image90.png)
+    ![](./media/ti46.png)
 
 4.  Retain all default values and click on the button **Load**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image91.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image92.png)
+    ![.](./media/ti47.png)
 
-5.  These steps must be executed for the **assets.csv** file as well as
-    for the **operators.csv, product.csv**, and **sites.csv** files.![A
-    screenshot of a computer AI-generated content may be
-    incorrect.](./media/image93.png)
+    ![](./media/ti48.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image94.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image95.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image96.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image97.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image98.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image99.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image100.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image101.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image102.png)
+5.  These steps executed for the **assets.csv** file must be executed for the **operators.csv, product.csv**, and **sites.csv** files in the same manner as mentioned in the above step.
 
-6.  To verify the data in the Eventhouse, select the
-    **L400_Eventstream** icon from the top toolbar.![A screenshot of a
-    computer AI-generated content may be
-    incorrect.](./media/image103.png)
+6.  To verify the data in the Eventhouse, select the **Eventstream<inject key="DeploymentID" enableCopy="false" />** icon from the top toolbar.
 
-7.  Select the **Eventhouse** and verify the data.
+    ![.](./media/ti49.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image104.png)
+8.  Select the **Eventhouse** and verify the data.
+
+    ![](./media/ti50.png)
 
 ## Task 4: Accessing Eventhouse data from the lakehouse 
 
-1.  Click on the icon **RealTimeWorkspaceXXX** in the left toolbar.
+1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image105.png)
+    ![](./media/ti51.png)
 
-2.  Select the **L400_Eventhouse**
+2.  Select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image106.png)
+    ![](./media/ti52.png)
 
-3.  From the **KQL databases** section, select **L400_Eventhouse**![A
-    screenshot of a computer AI-generated content may be
-    incorrect.](./media/image107.png)
+3.  From the **KQL databases** section, select **Eventhouse**
 
-4.  Click on the button **+New** in the menu bar at the top.
-    Choose **OneLake shortcut** from the dropdown menu.
+    ![](./media/ti53.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image108.png)
+5.  Click on the button **+New** in the menu bar at the top.Choose **OneLake shortcut** from the dropdown menu.
 
-5.  Select **Microsoft OneLake.**
+    ![.](./media/ti54.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image109.png)
+5.  Select **Microsoft OneLake**
 
-6.  Select the **L400_Lakehouse** in the Window **Select a data source
+    ![](./media/ti55.png)
+
+6.  Select the **Lakehouse<inject key="DeploymentID" enableCopy="false" />** in the Window **Select a data source
     type** and click on the button **Next**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image110.png)
+    ![](./media/ti56.png)
 
-7.  Expand the folder **Tables** under **L400_Lakehouse** in the
-    window **New shortcut** and check all tables. Click on **Next**.
+7.  Expand the folder **Tables** under **Lakehouse<inject key="DeploymentID" enableCopy="false" />** in the window **New shortcut** and check all tables. Click on **Next**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image111.png)
+     ![](./media/ti57.png)
 
 8.  Click on the button **Create**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image112.png)
+     ![](./media/ti58.png)
 
 9.  Click the **Close** button
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image113.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image114.png)
+    ![](./media/ti59.png)
+
+    ![](./media/ti60.png)
 
 # Exercise 3: Ingest Product Data from SQL Database into Eventhouse
 
@@ -662,100 +560,78 @@ incorrect.](./media/image105.png)
 
 1.  Click on the icon **Real-Time** in the left toolbar.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image115.png)
+     ![](./media/tj1.png)
 
-2.  Select **Data sources** from the left navigation pane, choose the
-    **Database CDC** tab, and then click **Connect** on **Azure SQL DB
-    (CDC)**.
+2.  Select **Data sources** from the left navigation pane, choose the **Database CDC** tab, and then click **Connect** on **Azure SQL DB (CDC)**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image116.png)
+     ![](./media/tj2.png)
 
 3.  Click on **New connection**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image117.png)
+     ![](./media/tj3.png)
 
 4.  In Connection settings tab enter the below detail and click on
     Connect button
 
-| Field    | Value |
-|----------|-------|
-| Server   | SQL server URL saved in **Exercise 1 → Task 2 → Step 13** |
-| Database | Enter your SQL database |
-| Username | sqladmin |
-| Password | Password321! |
+    | Field    | Value |
+    |----------|-------|
+    | Server   | SQL server URL saved in **Exercise 1 → Task 2 → Step 13** |
+    | Database | Enter your SQL database |
+    | Username | sqladmin |
+    | Password | Password321! |
+  
+    ![](./media/tj4.png)
 
+    ![](./media/tj5.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image118.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image119.png)
+5.  Enter the **Eventstream** name as **sql_eventstream+++**.
 
-5.  Enter the **Eventstream** name as +++**sql_eventstream+++**.
+    ![](./media/tj6.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image120.png)
+6.  In the **Connect data source** tab, open the **Tables** dropdown and select **Enter table name**.
 
-6.  In the **Connect data source** tab, open the **Tables** dropdown and
-    select **Enter table name**.![A screenshot of a computer
-    AI-generated content may be incorrect.](./media/image121.png)
+    ![](./media/tj7.png)
 
-7.  Enter the table name as +++**dbo.Products**+++
+8.  Enter the table name as **dbo.Products**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image122.png)
+    ![](./media/tj8.png)
 
 8.  Click on **Connect** button
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image123.png)
+    ![](./media/tj9.png)
 
 9.  Click on **Finish** button
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image124.png)
+    ![](./media/tj10.png)
 
-10. Select **RealTimeWorkspaceXXX** in the left-sided navigation menu
-    and click on **sql_eventstream**
+10. Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left-sided navigation menu and click on **sql_eventstream**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image125.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image126.png)
+    ![](./media/tj11.png)
+
+    ![](./media/tj12.png)
 
 11. In the event stream authoring canvas, select the **Edit**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image127.png)
+    ![](./media/tj13.png)
 
 12. Click on the node **Transform events or add Destination** and
     select **Eventhouse** from the menu.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image128.png)
+    ![](./media/tj14.png)
 
 13. Provide the following values in the pane **Eventhouse**. Click the
     button **Save** after you entered all the values.
 
-| Field                          | Value |
-|--------------------------------|-------|
-| Event processing before ingestion | Ensure that this option is selected. |
-| Workspace                      | Select **RealTimeWorkspaceXXX**. If you attend the Precon at dataMinds Connectrope, select the workspace name that was provided to you. |
-| Eventhouse                     | Select the Eventhouse **L400_Eventhouse** |
-| KQL Database                   | Select the KQL Database **L400_Eventhouse** |
-| Destination table              | Click **Create new**, enter **+++products+++** as the table name, and click **Done** |
-| Input data format              | Ensure that the **JSON** option is selected |
+    | Field                          | Value |
+    |--------------------------------|-------|
+    | Event processing before ingestion | Ensure that this option is selected. |
+    | Workspace                      | Select **RealTimeWorkspaceXXX**. If you attend the Precon at dataMinds Connectrope, select the workspace name that was provided to you. |
+    | Eventhouse                     | Select the Eventhouse **L400_Eventhouse** |
+    | KQL Database                   | Select the KQL Database **L400_Eventhouse** |
+    | Destination table              | Click **Create new**, enter **+++products+++** as the table name, and click **Done** |
+    | Input data format              | Ensure that the **JSON** option is selected |
 
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image129.png)
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image130.png)
+    ![](./media/tj15.png)
 
 14. From the menu ribbon, select **Publish**.
 
@@ -1071,6 +947,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
