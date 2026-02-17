@@ -663,135 +663,98 @@ notebook.
   ('PROD4019', 'ClassicWear Hoodie', 'SKU4019', 'ClassicWear', 'GenZ Pros', 206.99);
 
   ```
-   ![](./media/image134.png)
+   ![](./media/tj17.png)
    
 1. Return to the **sql_eventstream**, click **Refresh**, and verify that the data has been updated successfully.
 
-    ![A screenshot of a computer AI-generated content may be
-  incorrect.](./media/image135.png)
+    ![](./media/tj18.png)
 
-  ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image136.png)
+    ![](./media/tj19.png)
 
-2.  Click on the icon **L400_Eventhouse** in the top toolbar.
+3.  Click on the icon **Eventhouse** in the top toolbar.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image137.png)
+     ![](./media/tj20.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image138.png)
+     ![](./media/tj21.png)
 
 # Exercise 4: Ingest Shipping Data from Azure Storage Container into Eventhouse
 
 ## Task 1: Create a Workspace Identity 
 
-1.  Click on the icon **RealTimeWorkspaceXXX** in the left toolbar.
+1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image139.png)
+    ![](./media/tk1.png)
 
 2.  From the menu ribbon, select **Workspace settings**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image140.png)
+    ![](./media/tk2.png)
 
 3.  In the **Workspace identity** settings pane and select **+ Workspace
     identity**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image141.png)
+    ![](./media/tk3.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image142.png)
+    ![](./media/tk4.png)
 
 ## Task 2: Assign Storage Blob Data Contributor Role to Fabric Workspace
 
-1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL:+++<https://portal.azure.com/+++>, then press
+1.  Open your browser, navigate to the address bar, and type or paste the following URL<https://portal.azure.com>, then press
     the **Enter** button.
 
-2.  Select ResourceGroup1.
+2.  Select **FabricRG**.
 
-3.  In the **Resource Group Overview**, select the storage account named
-    **l400storageXXX**.
-    ![A screenshot of a computer AI-generated content
-    may be incorrect.](./media/image143.png)
+3.  In the **Resource Group Overview**, select the storage account named **storage<inject key="DeploymentID" enableCopy="false" />**.
 
-5.  From the left menu, click on the **Access control(IAM**). On the
-    Access control(IAM) page, Click **+Add** and select **Add role
+    ![](./media/tk5.png)
+
+5.  From the left menu, click on the **Access control(IAM**). On the access control(IAM) page, Click **+Add** and select **Add role
     assignments**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image144.png)
+    ![](./media/tk6.png)
 
-5.  Type the **+++Storage Blob Data Contributor+++** in the search box and
-    select it. Click **Next**
+5.  Type the **Storage Blob Data Contributor** in the search box and select it. Click **Next**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image145.png)
+    ![](./media/tk7.png)
 
-6.  In the **Add role assignment** tab, select Assign access to User
-    group or service principal. Under Members, click **+Select members**
+6.  In the **Add role assignment** tab, select Assign access to User group or service principal. Under Members, click **+Select members**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image146.png)
+    ![](./media/tk8.png)
 
-7.  On the Select members tab , search your Fabric workspace and
-    click **Select.**
+7.  On the Select members tab , search your Fabric workspace and click **Select.**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image147.png)
+    ![](./media/tk9.png)
 
-8.  In the **Add role assignment** page, Click **Review + Assign**, you
-    will get a notification once the role assignment is complete.
+8.  In the **Add role assignment** page, Click **Review + Assign**, you will get a notification once the role assignment is complete.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image148.png)
+    ![](./media/tk10.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image149.png)
-
-9.  You will see a notification – added as **Stronge Blob Data
-    Contributor**  for Azure Pass-Sponsorship.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image150.png)
+9.  You will see a notification – added as **Stronge Blob Data Contributor** for the storage account.
 
 ## Task 3: Import Shipping Data Notebook
 
 1.  Return to the Fabric workspace .
 
-2.  On the **RealTimeWorkspace** page, from the menu bar, navigate and
-    click on **-\>|Import** button, then select **Notebook** and
+2.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and
     select **From this computer** as shown in the below image.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image151.png)
+    ![](./media/tk11.png)
 
-3.  Select **Upload** from the **Import status** pane that appears on
-    the right side of the screen.
+3.  Select **Upload** from the **Import status** pane that appears on the right side of the screen.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image152.png)
+    ![](./media/tk12.png)
 
-4.  Navigate and select **Shipping Simulator** notebooks
-    from **C:\LabFiles**and click on the **Open** button.
+4.  Navigate and select **Shipping Simulator** notebooks from **C:\LabFiles**and click on the **Open** button.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image153.png)
+    ![](./media/tk13.png)
 
 5.  Then, select the **Shipping Simulator**  notebook.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image154.png)
+    ![](./media/tk14.png)
 
-6.  Select the cell ,paste the **BLOB_CONNECTION_STRING and
-    CONTAINER_NAME** (the value that you have saved in your notepad in
-    the Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that
-    appears on the left side of the cell.
+6.  Select the cell ,paste the **BLOB_CONNECTION_STRING and CONTAINER_NAME** (the value that you have saved in your notepad in
+    the Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that ppears on the left side of the cell.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image155.png)
+    ![](./media/image155.png)
 
 7.  The last code cell its still running continue the next steps.
 
@@ -937,6 +900,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
