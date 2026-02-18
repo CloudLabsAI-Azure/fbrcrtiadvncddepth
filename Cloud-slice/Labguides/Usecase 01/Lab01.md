@@ -751,71 +751,59 @@ notebook.
 
     ![](./media/tk14.png)
 
-6.  Select the cell ,paste the **BLOB_CONNECTION_STRING and CONTAINER_NAME** (the value that you have saved in your notepad in
-    the Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that ppears on the left side of the cell.
+6.  Select the cell ,paste the **BLOB_CONNECTION_STRING** (the value that you have saved in your notepad in
+    the Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that appears on the left side of the cell.
 
-    ![](./media/image155.png)
+    ![](./media/tk15.png)
 
 7.  The last code cell its still running continue the next steps.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image156.png)
+    ![](./media/tk16.png)
 
-8.  Now, click on **L400_Eventhouse** on the top navigation pane.
+8.  Now, click on **Eventhouse<inject key="DeploymentID" enableCopy="false" />** on the top navigation pane.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image157.png)
+    ![](./media/tk17.png)
 
-9.  Click on the button **Get data** in the menu bar at the top.
-    Choose **Azure Storage** from the dropdown menu.
+9.  Click on the button **Get data** in the menu bar at the top.Choose **Azure Storage** from the dropdown menu.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image158.png)
+    ![](./media/tk18.png)
 
 10. Select the **+ New table**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image159.png)
+    ![](./media/tk19.png)
 
-11. Enter the new table name as +++**shipping+++**
+11. Enter the new table name as **shipping** and click on the check mark.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image160.png)
+    ![](./media/tk20.png)
 
-12. Configure the Azure Blob Storage source by selecting **Connect to a
-    storage account**, choosing the appropriate **Subscription**, **Blob
-    storage account**, and **Container (shipping-events)**, then create
-    a **New connection** to complete the setup.
+12. Configure the Azure Blob Storage source by selecting **Connect to a storage account** (1), choose the default **Subscription**, **Blob storage account**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image161.png)
+    ![](./media/tk21.png)
 
-13. Click on **Save** button
+1. Now create a **New connection** to complete the setup.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image162.png)
+   ![](./media/tk22.png)
 
-14. Select **Next**
+1. Click on **Save** button twice and click close
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image163.png)
+   ![](./media/tk23.png)
+
+1. Select the default container from the dropdown.
+
+1. Select **Next**
+
+   ![](./media/tk24.png)
 
 15. Click on **Finish** button
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image164.png)
-
 16. The **Get data** process will take approximately **10–13 minutes**
-    to complete.![A screenshot of a computer AI-generated content may be
-    incorrect.](./media/image165.png)
+    to complete.
 
-17. Click on **Close** button
+    ![](./media/tk25.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image166.png)
+18. Click on **Close** button
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image167.png)
+    ![](./media/tk26.png)
 
 # Exercise 5: Share Weather Data with Fabrikam Distributors and Configure Hourly Alerts for the US Region
 
@@ -823,83 +811,68 @@ incorrect.](./media/image167.png)
 
 1.  Click on the icon **Real-Time** in the left toolbar.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image168.png)
+    ![](./media/tl1.png)
 
-2.  In the **Data sources** pane, search for **+++Real-time weather+++**, and
-    then select **Connect** to start ingesting live weather data into
-    the Eventstream.
+2.  In the **Data sources** pane, search for **Real-time weather**, and then select **Connect** to start ingesting live weather data into  the Eventstream.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image169.png)
+    ![](./media/tl2.png)
 
-3.  Select **United States (US)** as the location for ingesting
-    real-time weather data, verify the **Eventstream name** as
-    **+++weather_eventstream+++**, and then click **Next** to continue.
+3.  Select **United States (US)** as the location for ingesting Real-time weather data, verify the **Eventstream name** as
+    **weather_eventstream**, and then click **Next** to continue.
 
-> ![A screenshot of a computer screen AI-generated content may be
-> incorrect.](./media/image170.png)
+    ![](./media/tl3.png)
 
 4.  Click on **Connect** button
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image171.png)
+    ![](./media/tl4.png)
 
 5.  Click on **Finish** button
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image172.png)
+    ![](./media/tl5.png)
 
-6.  Click on the node **Transform events or add Destination** and
-    select **Activator** from the menu.
+6.  From the left navigation pane, click on your  workspace and select  **weather_eventstream**. 
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image173.png)
+    ![](./media/tl6.png)
 
-7.  Select the **RealTimeWorkspace400L** workspace, create a new
-    **Activator** by entering +++**temperature+++** as the activator
+1.  Click on the node **Transform events or add Destination** and select **Activator** from the menu.
+
+    ![](./media/tl7.png)
+
+8.  Select the your wworkspace, create a new **Activator** by entering **temperature** as the activator
     name, keep the input data format as **JSON**, and then click
     **Done** to save the configuration.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image174.png)
+     ![](./media/tl8.png)
 
 8.  Click on **Save**
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image175.png)
 
 9.  Click on the button **Publish** that is located in the toolbar at
     the top of the screen.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image176.png)
+    ![](./media/tl9.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image177.png)
+   ![](./media/tl20.png)
 
 10. Click on the icon **RealTimeWorkspaceXXX** in the left toolbar and
     select **temperature**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image178.png)
+   ![](./media/tl21.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image179.png)
 
 11. Under the **Events** tab, select **New rule** to create a new event
-    rule.![A screenshot of a computer AI-generated content may be
-    incorrect.](./media/image180.png)
+    rule.
 
-12. Enter the valid email and click on Start button
+    ![](./media/tl22.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image181.png)
+13. Leave everything as default and click on Start button
+
+    ![](./media/tl23.png)
 
 Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
