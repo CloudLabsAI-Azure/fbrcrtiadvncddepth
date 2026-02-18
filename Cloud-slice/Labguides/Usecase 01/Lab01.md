@@ -58,13 +58,12 @@ shifting conditions.
 
     |  |   |
     |----|----|
-    |Subscription|	Select your Azure OpenAI subscription|
-    |Resource group|	Select **FabricRG** |
-    |Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />**|
-    |Region	|**<inject key="Region" enableCopy="false" />**|
-    |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)|
-    |Redundancy	|Locally-redundant storage (LRS)|
-
+    |Subscription|	Select your Azure OpenAI subscription (1)|
+    |Resource group|	Select **FabricRG** (2) |
+    |Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />** (3)|
+    |Region	|**<inject key="Region" enableCopy="false" />** (4)|
+    |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)(5)|
+    |Redundancy	|Locally-redundant storage (LRS (6)|
 
      ![](./media/tf2.png)
 
@@ -80,17 +79,13 @@ shifting conditions.
 
      ![](./media/tf5.png)
 
-1. On the left-side navigation pane of your Storage Account, select **Data storage** section and then select **Containers**.
+1. On the left-side navigation pane of your Storage Account, under **Data storage** section and then select **Containers**.
 
      ![](./media/tf6.png)
 
-1. Click **Add Container.**
+1. Click **+Add Container** (1).On the New container pane that appears on the right side, enter the container Name as **shipping-events** (2) and click on **Create**(3) button.
 
     ![](./media/tf7.png)
-
-1.  On the New container pane that appears on the right side, enter the container Name as **shipping-events** and click on **Create** button.
-
-    ![](./media/tf8.png)
 
 1. Go back to your Storage Account. From the left navigation, select **Access keys** under **Security + networking** group,copy **Connection string** and **Storage account name**, paste them
     in a notepad, and then **Save** the notepad to use the information in the upcoming task.
@@ -112,27 +107,38 @@ shifting conditions.
 
     | Setting                | Value / Action |
     |------------------------|----------------|
-    | Subscription           | Leave the subscription group as default |
-    | Resource group         | Select **FabricRG** |
+    | Subscription           | Leave the subscription group as default (1) |
+    | Resource group         | Select **FabricRG** (2) |
+    | Database name          | **sqldatabase<inject key="DeploymentID" enableCopy="false" />** (3) |
   
      ![](./media/tg3.png)
   
     | Setting                | Value / Action |
     |------------------------|----------------|
     | Server                  | Select **Create new** |
-    | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />**|
-    | Location                | **<inject key="Region" enableCopy="false" />** |
-    | Authentication Method   | Use SQL authentication |
-    | Server admin login      | sqladmin |
-    | Password                | password321!|
-    | Confirm password        | password321!|
-    | Action                  | Click **OK** |
+    | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />** (1)|
+    | Location                | **<inject key="Region" enableCopy="false" />** (2) |
+    | Authentication Method   | Use SQL authentication (3) |
+    | Server admin login      | sqladmin (4) |
+    | Password                | password321! (5)|
+    | Confirm password        | password321! (6)|
+    | Action                  | Click **OK** (7) |
   
      ![](./media/tg4.png)
-  
-     ![](./media/tg5.png)
 
-1.  On the **Networking** tab, select **Public endpoint**, set **Allow Azure services and resources** to **Yes**, enable **Add current client IP address**, and then click **Review + create**.
+1.  In the Compute + Storage section, click on **Configure database**.
+
+    ![](./media/tgx1.png)
+
+1.  For Service tier from the dropdown select **Standard(Budget Friendly)**
+
+    ![](./media/tgx2.png)
+
+1.  For DTU enter **100** and click **Apply**
+
+     ![](./media/tgx3.png)
+
+1.  Click **Next: Networking** on the **Networking** tab, select **Public endpoint** (1), set **Allow Azure services and resources** to **Yes**, enable **Add current client IP address** (2), and then click **Review + create** (3).
    
      ![](./media/tg6.png)
 
@@ -174,7 +180,7 @@ shifting conditions.
 
      ![](./media/tg11.png)
 
-1. To enable CDC for a table using a gating role option, click on +New Query and paste the following code into the **Query editor** and run it to create the
+1. To enable CDC for a table using a gating role option, click on **+New Query** and paste the following code into the **Query editor** and run it to create the
     stored procedure.
     
       ```
@@ -188,7 +194,7 @@ shifting conditions.
 
       ![](./media/tg12.png)
 
-1. Go back to your SQL Database. Copy **Server name** and **SQL Database name**, paste them in a notepad, and then **Save** the
+1. Go back to your SQL Database. Copy **Server name** (1) and **SQL Database name** (2), paste them in a notepad, and then **Save** the
     notepad to use the information in the upcoming task.
 
       ![](./media/tg13.png)
@@ -205,13 +211,13 @@ reports.
     |Username| <inject key="AzureAdUserEmail"></inject>|
     |Password	|<inject key="AzureAdUserPassword"></inject>|
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/th1.png)
+    ![](./media/th1.png)
 
-2.  In the Workspaces pane, click on **+New workspace** tile
+1.  In the Workspaces pane, click on **+New workspace** tile
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/th2.png)
+    ![](./media/th2.png)
 
-3.  In the **Create a workspace** pane that appears on the right side,enter the following details, and click on the **Apply** button.
+1.  In the **Create a workspace** pane that appears on the right side,enter the following details, and click on the **Apply** button.
 
     |  |    |
     |-----|-----|
@@ -219,24 +225,21 @@ reports.
     |Advanced	|Under Workspace Type, select **Fabric**|
     |Default|	storage format Small dataset storage format|
 
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/th3.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/th4.png)
+    ![](./media/th3.png)
+    
+    ![](./media/th4.png)
 
 ## Task 4: Create a lakehouse
 
 1.  In the Workspaces pane, select **+ New item**.
 
-![.](./media/th5.png)
+    ![.](./media/th5.png)
 
 1.  In the **Filter by item type** search box,enter **Lakehouse** and select the lakehouse item.
 
     ![.](./media/th6.png)
 
-1.  Enter +++**Lakehouse<inject key="DeploymentID" enableCopy="false" />** as the lakehouse name and unselect the lakehouses schemas. Select **Create**.
+1.  Enter **Lakehouse<inject key="DeploymentID" enableCopy="false" />**(1) as the lakehouse name and unselect the lakehouses schemas (2). Select **Create** (3).
 
     ![](./media/th7.png)
 
@@ -254,15 +257,15 @@ incorrect.](./media/th4.png)
 
     ![](./media/th10.png)
 
-3.  In the **Filter by item type** search box, enter **Eventhouse** and select the Eventhouse item.
+1.  In the **Filter by item type** search box, enter **Eventhouse** and select the Eventhouse item.
 
     ![](./media/th11.png)
 
-4.  Enter **Eventhouse<inject key="DeploymentID" enableCopy="false" />** as the eventhouse name. A KQL database is created simultaneously with the same name and select **Create**. 
+1.  Enter **Eventhouse<inject key="DeploymentID" enableCopy="false" />** as the eventhouse name. A KQL database is created simultaneously with the same name and select **Create**. 
 
     ![](./media/th13.png)
 
-5.  When provisioning is complete, the eventhouse **System overview** page is shown.
+1.  When provisioning is complete, the eventhouse **System overview** page is shown.
 
     ![](./media/th14.png)
 
@@ -872,6 +875,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
