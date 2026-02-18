@@ -273,26 +273,22 @@ reports.
 
 ## Task 1: Set Up an Eventstream and Create Custom Endpoints
 
-In this task, you will create an Event Stream and add the Manufacturing
-data as the source.
+In this task, you will create an Event Stream and add the Manufacturing data as the source.
 
-1.  From the left navigation pane in the eventhouse, select
-    the **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** .
+1.  From the left navigation pane in the eventhouse, select the **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** .
 
     ![](./media/ti1.png)
 
-1.  In the Workspaces pane, select **+ New item**. In the **Filter by
-    item type** search box, enter **Eventstream** and select the
+1.  In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Eventstream** and select the
     **Eventstream** item
 
     ![](./media/ti3.png)
 
 1.  Enter **Eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
-   ![](./media/ti2.png)
+    ![](./media/ti2.png)
 
-1.  On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will
-    create an event hub connected to the Eventstream.
+1.  On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will create an event hub connected to the Eventstream.
 
     ![.](./media/ti4.png)
 
@@ -308,114 +304,108 @@ data as the source.
 
     ![.](./media/ti7.png)
 
-8.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
     ![](./media/ti8.png)
 
 ## Task 2: Import Manufacturing data Notebook
 
-1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and
-    select **From this computer** as shown in the below image.
+1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and select **From this computer** as shown in the below image.
     
      ![.](./media/ti9.png)
 
-3.  Select **Upload** from the **Import status** pane that appears on the right side of the screen.
+1.  Select **Upload** from the **Import status** pane that appears on the right side of the screen.
 
      ![.](./media/ti10.png)
 
-3.  Navigate and select **Manufacturing Simulator** notebooks from **C:\LabFiles**and click on the **Open** button.
+1.  Navigate and select **Manufacturing Simulator** notebooks from **C:\LabFiles**and click on the **Open** button.
 
      ![](./media/ti11.png)
 
-4.  You will see a notification stating **Imported successfully.**
+1.  You will see a notification stating **Imported successfully.**
 
-5.  Then, select the **Manufacturing Simulator**  notebook.
+1.  Then, select the **Manufacturing Simulator**  notebook.
 
      ![.](./media/ti12.png)
 
-6.  In the **Explorer** pane, click **Add data items**, and then select **From OneLake Catalog** to connect to an existing data source.
+1.  In the **Explorer** pane, click **Add data items**, and then select **From OneLake Catalog** to connect to an existing data source.
 
      ![](./media/ti13.png)
 
-7.  In the **OneLake catalog**, select **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click
-    **Connect** to link it as a data source.
+1.  In the **OneLake catalog**, select **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Connect** to link it as a data source.
 
      ![.](./media/ti14.png)
 
-8.  To start the notebook, run the **0th** cell.
+1.  To start the notebook, run the **0th** cell.
 
      ![.](./media/ti15.png)
 
-9.  In the **first** cell paste the **connection string of your custom app source and EventHubName** (the value that you have saved in your notepad in the (Exercise 2\>**Task 1\>Step 7)**, select the **Run** icon that appears on the left side of the cell
+1.  In the **first** cell paste the **connection string of your custom app source and EventHubName** (the value that you have saved in your notepad in the (Exercise 2\>**Task 1\>Step 7)**, select the **Run** icon that appears on the left side of the cell
 
      ![](./media/ti16.png)
 
      ![](./media/ti17.png)
 
-10. Select the **second** cell to **generate the site location**, and then **run** the cell.
+1. Select the **second** cell to **generate the site location**, and then **run** the cell.
 
     ![](./media/ti18.png)
 
-11. Select the third cell to generate the assets, and then run the cell.
+1. Select the third cell to generate the assets, and then run the cell.
 
     ![](./media/ti19.png)
 
-12. Select the fourth cell to generate the Operators, and then run the
+1. Select the fourth cell to generate the Operators, and then run the
     cell.
 
     ![](./media/ti20.png)
 
-13. Select the fifth cell to generate the products, and then run the
+1. Select the fifth cell to generate the products, and then run the
     cell.
 
     ![.](./media/ti21.png)
 
-14. Select the sixth cell to generate the event functions, and then run
+1. Select the sixth cell to generate the event functions, and then run
     the cell.
 
     ![](./media/ti22.png)
 
-15. Select the seventh cell and then run the cell.
+1. Select the seventh cell and then run the cell.
 
    ![](./media/ti23.png)
 
-16. Select the eighth cell to Streaming simulations, and then run
+1. Select the eighth cell to Streaming simulations, and then run
     the cell.
 
    ![](./media/ti24.png)
 
-17. Select the ninth cell and then run the cell.
+1. Select the ninth cell and then run the cell.
 
    ![](./media/ti25.png)
 
-**Note**: Skip running the tenth cell, which is the final cell in the
-notebook.
+  >**Note**: Skip running the tenth cell, which is the final cell in the notebook.
 
-18. Now, click on **Eventstream<inject key="DeploymentID" enableCopy="false" />** on the left navigation pane.
+1. Now, click on **Eventstream<inject key="DeploymentID" enableCopy="false" />** on the left navigation pane.
 
     ![](./media/ti26.png)
 
-19. In the event stream authoring canvas, select the **Edit**
+1. In the event stream authoring canvas, select the **Edit**
 
-    ![](./media/ti27.png)
+    ![](./media/t27.png)
 
-20. Click on the node **Transform events or add Destination** and
-    select **SQL Code** from the menu.
+1. Click on the node **Transform events or add Destination** and select **SQL Code** from the menu.
 
     ![](./media/ti28.png)
 
-21. Select **SqlCode** node and click on **Action**
+1. Select **SqlCode** node and click on **Action**
 
     ![](./media/ti29.png)
 
-22. Click on **Edit query**
+1. Click on **Edit query**
 
     ![](./media/ti30.png)
 
-23. Use the following SQL transformation on the DefectProbability column
-    to mark values greater than 0.1 as *Anomaly*. Copy the code and
-    select **Test query**.
+1. Use the following SQL transformation on the DefectProbability column to mark values greater than 0.1 as *Anomaly*. Copy the code andselect **Test query**.
 
     ```
     SELECT * ,CASE WHEN DefectProbability>0.1 THEN'1' ELSE '0' END AS Anamoly FROM [Eventstream<inject key="DeploymentID" enableCopy="false" />-stream]
@@ -424,57 +414,52 @@ notebook.
 
    ![](./media/ti32.png)
 
-24. Click **Save** to apply the changes.
+1. Click **Save** to apply the changes.
 
    ![](./media/ti33.png)
 
-25. Click **Save** to apply the changes.
+1. Click **Save** to apply the changes.
 
    ![](./media/ti34.png)
 
-26. To add a destination, open the **Add destination** dropdown and
-    select **Eventhouse** from the context menu.
+1. To add a destination, open the **Add destination** dropdown and select **Eventhouse** from the context menu.
 
    ![](./media/ti35.png)
 
-27. Provide the following values in the pane **Eventhouse**. Click the
-    button **Save** after you entered all the values.
+1. Provide the following values in the pane **Eventhouse**. Click the button **Save** after you entered all the values.
 
-| Field                          | Value |
-|--------------------------------|-------|
-| Event processing before ingestion | Ensure that this option is selected. |
-| Destination name | Eventhouse |
-| Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />**. |
-| Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
-| KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
-| Destination table              | Click **Create new**, enter **manufacturing** as the table name, and click **Done** |
-| Input data format              | Ensure that the **JSON** option is selected |
+    | Field                          | Value |
+    |--------------------------------|-------|
+    | Event processing before ingestion | Ensure that this option is selected. (1) |
+    | Destination name | Eventhouse (2) |
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** (3) |
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (4) |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (5) |
+    | Destination table              | Click **Create new**, enter **manufacturing** as the table name, and click **Done** (6) |
+    | Input data format              | Ensure that the **JSON** option is selected |
 
-  ![](./media/ti36.png)
+    ![](./media/ti36.png)
 
-15. Connect the output of the node **SqlCode** to the input of the
-    node **Eventhouse**.
+1. Connect the output of the node **SqlCode** to the input of the node **Eventhouse**.
 
     ![](./media/ti37.png)
 
-28. Click on the button **Publish** that is located in the toolbar at
+1. Click on the button **Publish** that is located in the toolbar at
     the top of the screen.
 
      ![](./media/ti38.png)
 
      ![](./media/ti39.png)
 
-29. Click on the icon **Manufacturing Simulator notebook** in the top
-    toolbar
+1. Click on the icon **Manufacturing Simulator notebook** in the top toolbar
 
     ![](./media/ti40.png)
 
-30. Right-click **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Set as default
-    lakehouse** from the menu
+1. Right-click **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Set as default lakehouse** from the menu
 
     ![](./media/ti41.png)
 
-31. Click the **Run all** button to execute all the cells
+1. Click the **Run all** button to execute all the cells
 
     ![](./media/ti42.png)
 
@@ -482,37 +467,34 @@ notebook.
 
 ## Task 3: Creating delta tables in the lakehouse 
 
-1.  Select on the icon **RealTimeWorkspaceXX** in the left toolbar and
-    click on **L400_Lakehouse**
+1.  Select on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and click on **Lakehouse<inject key="DeploymentID" enableCopy="false" />**
 
     ![](./media/ti44.png)
 
-2.  To verify that the files have been successfully loaded, click the
-    **Files** folder in the **Explorer** pane. You should see the files
-    listed in the right-hand pane of the window.
+1.  To verify that the files have been successfully loaded, click the **Files** folder in the **Explorer** pane. You should see the files listed in the right-hand pane of the window.
 
     ![.](./media/ti45.png)
 
-3.  Next we have to create delta tables in our Lakehouse from the files
-    we uploaded. To do this access the context menu by clicking on the
-    three dots (**...**). Select **Load to tables** from the context
+    >**Note:** If you don't see the tables.kindly refresh
+
+1.  Next we have to create delta tables in our Lakehouse from the files we uploaded. To do this access the context menu by clicking on the three dots (**...**). Select **Load to tables** from the context
     menu.
 
     ![](./media/ti46.png)
 
-4.  Retain all default values and click on the button **Load**.
+1.  Retain all default values and click on the button **Load**.
 
     ![.](./media/ti47.png)
 
     ![](./media/ti48.png)
 
-5.  These steps executed for the **assets.csv** file must be executed for the **operators.csv, product.csv**, and **sites.csv** files in the same manner as mentioned in the above step.
+1.  These steps executed for the **assets.csv** file must be executed for the **operators.csv, product.csv**, and **sites.csv** files in the same manner as mentioned in the above step.
 
-6.  To verify the data in the Eventhouse, select the **Eventstream<inject key="DeploymentID" enableCopy="false" />** icon from the top toolbar.
+1.  To verify the data in the Eventhouse, select the **Eventstream<inject key="DeploymentID" enableCopy="false" />** icon from the top toolbar.
 
     ![.](./media/ti49.png)
 
-8.  Select the **Eventhouse** and verify the data.
+1.  Select the **Eventhouse** and verify the data.
 
     ![](./media/ti50.png)
 
@@ -522,36 +504,35 @@ notebook.
 
     ![](./media/ti51.png)
 
-2.  Select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
+1.  Select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
     ![](./media/ti52.png)
 
-3.  From the **KQL databases** section, select **Eventhouse**
+1.  From the **KQL databases** section, select **Eventhouse**
 
     ![](./media/ti53.png)
 
-5.  Click on the button **+New** in the menu bar at the top.Choose **OneLake shortcut** from the dropdown menu.
+1.  Click on the button **+New** in the menu bar at the top.Choose **OneLake shortcut** from the dropdown menu.
 
     ![.](./media/ti54.png)
 
-5.  Select **Microsoft OneLake**
+1.  Select **Microsoft OneLake**
 
     ![](./media/ti55.png)
 
-6.  Select the **Lakehouse<inject key="DeploymentID" enableCopy="false" />** in the Window **Select a data source
-    type** and click on the button **Next**.
+1.  Select the **Lakehouse<inject key="DeploymentID" enableCopy="false" />** in the Window **Select a data source type** and click on the button **Next**.
 
     ![](./media/ti56.png)
 
-7.  Expand the folder **Tables** under **Lakehouse<inject key="DeploymentID" enableCopy="false" />** in the window **New shortcut** and check all tables. Click on **Next**.
+1.  Expand the folder **Tables** under **Lakehouse<inject key="DeploymentID" enableCopy="false" />** in the window **New shortcut** and check all tables. Click on **Next**.
 
      ![](./media/ti57.png)
 
-8.  Click on the button **Create**.
+1.  Click on the button **Create**.
 
      ![](./media/ti58.png)
 
-9.  Click the **Close** button
+1.  Click the **Close** button
 
     ![](./media/ti59.png)
 
@@ -565,15 +546,15 @@ notebook.
 
      ![](./media/tj1.png)
 
-2.  Select **Data sources** from the left navigation pane, choose the **Database CDC** tab, and then click **Connect** on **Azure SQL DB (CDC)**.
+1.  Select **Data sources** from the left navigation pane, choose the **Database CDC** tab, and then click **Connect** on **Azure SQL DB (CDC)**.
 
      ![](./media/tj2.png)
 
-3.  Click on **New connection**
+1.  Click on **New connection**
 
      ![](./media/tj3.png)
 
-4.  In Connection settings tab enter the below detail and click on
+1.  In Connection settings tab enter the below detail and click on
     Connect button
 
     | Field    | Value |
@@ -581,57 +562,57 @@ notebook.
     | Server   | SQL server URL saved in **Exercise 1 → Task 2 → Step 13** |
     | Database | Enter your SQL database |
     | Username | sqladmin |
-    | Password | Password321! |
+    | Password | password321! |
   
     ![](./media/tj4.png)
 
     ![](./media/tj5.png)
 
-5.  Enter the **Eventstream** name as **sql_eventstream+++**.
+1.  Enter the **Eventstream** name as **sql_eventstream+++**.
 
     ![](./media/tj6.png)
 
-6.  In the **Connect data source** tab, open the **Tables** dropdown and select **Enter table name**.
+1.  In the **Configure data source** tab, open the **Tables** dropdown and select **Enter table name**.
 
     ![](./media/tj7.png)
 
-8.  Enter the table name as **dbo.Products**
+1.  Enter the table name as **dbo.Products** and click **Next**
 
     ![](./media/tj8.png)
 
-8.  Click on **Connect** button
+1.  Click on **Connect** button
 
     ![](./media/tj9.png)
 
-9.  Click on **Finish** button
+1.  Click on **Finish** button
 
     ![](./media/tj10.png)
 
-10. Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left-sided navigation menu and click on **sql_eventstream**
+1. Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left-sided navigation menu and click on **sql_eventstream**
 
     ![](./media/tj11.png)
 
     ![](./media/tj12.png)
 
-11. In the event stream authoring canvas, select the **Edit**
+1. In the event stream authoring canvas, select the **Edit**
 
     ![](./media/tj13.png)
 
-12. Click on the node **Transform events or add Destination** and
-    select **Eventhouse** from the menu.
+1. Click on the node **Transform events or add Destination** and select **Eventhouse** from the menu.
 
     ![](./media/tj14.png)
 
-13. Provide the following values in the pane **Eventhouse**. Click the button **Save** after you entered all the values.
+1. Provide the following values in the pane **Eventhouse**. Click the button **Save** after you entered all the values.
 
     | Field                          | Value |
     |--------------------------------|-------|
-    | Event processing before ingestion | Ensure that this option is selected. |
-    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />**|
-    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />*** |
-    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />*** |
-    | Destination table              | Click **Create new**, enter **products** as the table name, and click **Done** |
-    | Input data format              | Ensure that the **JSON** option is selected |
+    | Event processing before ingestion | Ensure that this option is selected.|
+    | Destination name               | Eventhouse (1) |
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** (2)|
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />*** (3) |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />*** (4) |
+    | Destination table              | Click **Create new**, enter **products** as the table name, and click **Done** (5) |
+    | Input data format              | Ensure that the **JSON** option is selected (6) |
 
     ![](./media/tj15.png)
 
@@ -639,7 +620,7 @@ notebook.
 
    ![](./media/tj16.png)
 
-1. Return to the **SQL Database Query Editor**, select **+ New query**,paste the provided product data SQL script into the query editor,and then execute the query to insert the data.
+1. Return to the **SQL Database Query Editor** in the Azure portal, select **+ New query**,paste the provided product data SQL script into the query editor,and then execute the query to insert the data.
    
   ```
   -- Step 2: Insert the product data
@@ -674,7 +655,7 @@ notebook.
 
     ![](./media/tj19.png)
 
-3.  Click on the icon **Eventhouse** in the top toolbar.
+1.  Click on the icon **Eventhouse** in the top toolbar.
 
      ![](./media/tj20.png)
 
@@ -692,8 +673,7 @@ notebook.
 
     ![](./media/tk2.png)
 
-3.  In the **Workspace identity** settings pane and select **+ Workspace
-    identity**
+3.  In the **Workspace identity** settings pane and select **+ Workspace identity**
 
     ![](./media/tk3.png)
 
@@ -701,8 +681,7 @@ notebook.
 
 ## Task 2: Assign Storage Blob Data Contributor Role to Fabric Workspace
 
-1.  Open your browser, navigate to the address bar, and type or paste the following URL<https://portal.azure.com>, then press
-    the **Enter** button.
+1.  Open your browser, navigate to the address bar, and type or paste the following URL <https://portal.azure.com>, then press the **Enter** button.
 
 2.  Select **FabricRG**.
 
@@ -710,8 +689,7 @@ notebook.
 
     ![](./media/tk5.png)
 
-5.  From the left menu, click on the **Access control(IAM**). On the access control(IAM) page, Click **+Add** and select **Add role
-    assignments**.
+5.  From the left menu, click on the **Access control(IAM**). On the access control(IAM) page, Click **+Add** and select **Add role assignments**.
 
     ![](./media/tk6.png)
 
@@ -719,7 +697,7 @@ notebook.
 
     ![](./media/tk7.png)
 
-6.  In the **Add role assignment** tab, select Assign access to User group or service principal. Under Members, click **+Select members**
+6.  In the **Add role assignment** tab, select Assign access to **User group or service principal**. Under Members, click **+Select members**
 
     ![](./media/tk8.png)
 
@@ -731,14 +709,13 @@ notebook.
 
     ![](./media/tk10.png)
 
-9.  You will see a notification – added as **Stronge Blob Data Contributor** for the storage account.
+9.  You will see a notification – added as **Storage Blob Data Contributor** for the storage account.
 
 ## Task 3: Import Shipping Data Notebook
 
 1.  Return to the Fabric workspace .
 
-2.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and
-    select **From this computer** as shown in the below image.
+2.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and select **From this computer** as shown in the below image.
 
     ![](./media/tk11.png)
 
@@ -754,12 +731,11 @@ notebook.
 
     ![](./media/tk14.png)
 
-6.  Select the cell ,paste the **BLOB_CONNECTION_STRING** (the value that you have saved in your notepad in
-    the Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that appears on the left side of the cell.
+6.  Select the cell ,paste the **BLOB_CONNECTION_STRING** (the value that you have saved in your notepad in Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that appears on the left side of the cell.
 
     ![](./media/tk15.png)
 
-7.  The last code cell its still running continue the next steps.
+7.  While the last code cell its still running continue the next steps.
 
     ![](./media/tk16.png)
 
@@ -779,7 +755,7 @@ notebook.
 
     ![](./media/tk20.png)
 
-12. Configure the Azure Blob Storage source by selecting **Connect to a storage account** (1), choose the default **Subscription**, **Blob storage account**.
+12. Configure the Azure Blob Storage source by selecting **Connect to a storage account** (1), choose the default **Subscription**(2), **Blob storage account**(3).
 
     ![](./media/tk21.png)
 
@@ -799,8 +775,7 @@ notebook.
 
 15. Click on **Finish** button
 
-16. The **Get data** process will take approximately **10–13 minutes**
-    to complete.
+16. The **Get data** process will take approximately **10–13 minutes** to complete.
 
     ![](./media/tk25.png)
 
@@ -820,8 +795,7 @@ notebook.
 
     ![](./media/tl2.png)
 
-3.  Select **United States (US)** as the location for ingesting Real-time weather data, verify the **Eventstream name** as
-    **weather_eventstream**, and then click **Next** to continue.
+3.  Select **United States (US)** (1) as the location for ingesting Real-time weather data, verify the **Eventstream name** as **weather_eventstream** (2), and then click **Next** (3) to continue.
 
     ![](./media/tl3.png)
 
@@ -841,33 +815,28 @@ notebook.
 
     ![](./media/tl7.png)
 
-8.  Select the your wworkspace, create a new **Activator** by entering **temperature** as the activator
-    name, keep the input data format as **JSON**, and then click
-    **Done** to save the configuration.
+8.  Select your workspace, create a new **Activator** by entering **temperature** as the activator name, keep the input data format as **JSON**, and then click **Done** to save the configuration.
 
      ![](./media/tl8.png)
 
 8.  Click on **Save**
 
-9.  Click on the button **Publish** that is located in the toolbar at
-    the top of the screen.
+9.  Click on the button **Publish** that is located in the toolbar at the top of the screen.
 
     ![](./media/tl9.png)
 
-   ![](./media/tl20.png)
+    ![](./media/tl20.png)
 
-10. Click on the icon **RealTimeWorkspaceXXX** in the left toolbar and
-    select **temperature**
+10. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **temperature**
 
    ![](./media/tl21.png)
-
 
 11. Under the **Events** tab, select **New rule** to create a new event
     rule.
 
     ![](./media/tl22.png)
 
-13. Leave everything as default and click on Start button
+13. Leave everything as default and click on **Start** button
 
     ![](./media/tl23.png)
 
@@ -875,6 +844,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
