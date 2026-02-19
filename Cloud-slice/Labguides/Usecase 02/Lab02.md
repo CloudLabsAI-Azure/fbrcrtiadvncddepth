@@ -1,4 +1,4 @@
-# Lab 2: Build real-time operational dashboards with Real-Time Intelligence in Microsoft Fabric 
+<img width="1467" height="757" alt="image" src="https://github.com/user-attachments/assets/6037b637-c930-4ed1-8b8d-4d0e31063dd4" /># Lab 2: Build real-time operational dashboards with Real-Time Intelligence in Microsoft Fabric 
 
 **Introduction**
 
@@ -338,63 +338,48 @@ products
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image23.png)
 
-7.  Click on the icon **RealTimeWorkspaceXXX** in the left toolbar and
-    select **L400_Eventhouse**
+7.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and
+    select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image24.png)
+    ![](./media/kc1.png)
 
-8.  Select L400_Eventhouse KQL Database
+8.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image25.png)
+    ![](./media/kc2.png)
 
-9.  Click on the button **Get data** in the menu bar at the top.
-    Choose **Local file** from the dropdown menu.
+9.  Click on the button **Get data** in the menu bar at the top.Choose **Local file** from the dropdown menu.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image26.png)
+    ![](./media/kc3.png)
 
 10. Select the **+ New table**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image27.png)
+    ![](./media/kc4.png)
 
-11. Enter the new table name as +++**shipping_provider+++ and click on
-    Browse for file**
+11. Enter the new table name as **shipping_provider** and click on the checkmark.Click on Browse for file
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image28.png)
+    ![](./media/kc5.png)
 
-12. Navigate and select **Shipping \_Provider_Details** notebooks
-    from **C:\LabFiles**and click on the **Open** button.
+12. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles**and click on the **Open** button.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image29.png)
+    ![](./media/kc6.png)
 
 13. Select **Next**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image30.png)
+    ![](./media/kc7.png)
 
 14. Click on **Finish** button
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image31.png)
+    ![](./media/kc8.png)
 
 15. Click on **Close** button
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image32.png)
+    ![](./media/kc9.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image33.png)
+    ![](./media/kc10.png)
 
-16. Click on the icon **RealTimeWorkspaceXXX** in the left toolbar and
-    select **L400_KQL_Queryset**
+16. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **L400_KQL_Queryset**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image34.png)
+    ![](./media/kc11.png)
 
 17. Create a new tab within the queryset by clicking on the ***+* icon**
 
@@ -413,14 +398,11 @@ manufacturing
 | project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress
 ```
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image35.png)
+ ![](./media/kc12.png)
 
 19. Create a new tab within the queryset by clicking on the ***+* icon**
 
-20. In the query editor, paste the provided code to stop operator from
-    production with a defect, then click **Run** to execute the query.
-    After execution, the results will be displayed
+20. In the query editor, paste the provided code to stop operator from  production with a defect, then click **Run** to execute the query. After execution, the results will be displayed
 ```
 //stop operator from production with a defect
 manufacturing
@@ -434,65 +416,54 @@ manufacturing
 | extend ProductDetails = strcat(ProductId, "-" ,ProductName)
 | project OperatorDetails, ProductDetails, Phone, AssetId, BatchId
 ```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image36.png)
+![](./media/kc13.png)
 
-Task 4: Create an Alert to Stop the Production Line with Detailed
+## Task 3: Create an Alert to Stop the Production Line with Detailed
+
 Product and Operator Information
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-2.  In the query editor, paste the provided code to show all operators
-    details, then click **Run** to execute the query. After execution,
-    the results will be displayed.
-```
-//Show all operators details
-external_table('operators')
-| project Name, Phone, Email, Role, Shift
-```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image37.png)
+1.  In the query editor, paste the provided code to show all operators details, then click **Run** to execute the query. After execution,the results will be displayed.
+  ```
+  //Show all operators details
+  external_table('operators')
+  | project Name, Phone, Email, Role, Shift
+  ```
+  ![](./media/kd1.png)
 
-3.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-4.  In the query editor, paste the provided code to Current Defective
-    Item Detail, then click **Run** to execute the query. After
-    execution, the results will be displayed.
-```
-// Current Defective Item Detail
-manufacturing
-| where ingestion_time()> ago(24h)
-| top 1 by DefectProbability desc 
-| join kind=inner external_table('operators') on OperatorId
-| join (shipping_silver | where Status == "Dispatched") on ProductId
-| join (shipping_provider | project Provider = trim(" ", Provider), contact, HQAddress) on Provider
-| join products_silver on ProductId
-| project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress, OperatorName, DefectProbability
-```
+1.  In the query editor, paste the provided code to Current Defective Item Detail, then click **Run** to execute the query. After execution, the results will be displayed.
+  ```
+  // Current Defective Item Detail
+  manufacturing
+  | where ingestion_time()> ago(24h)
+  | top 1 by DefectProbability desc 
+  | join kind=inner external_table('operators') on OperatorId
+  | join (shipping_silver | where Status == "Dispatched") on ProductId
+  | join (shipping_provider | project Provider = trim(" ", Provider), contact, HQAddress) on Provider
+  | join products_silver on ProductId
+  | project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress, OperatorName, DefectProbability
+  ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image38.png)
+  ![](./media/kd2.png)
 
-5.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-6.  In the query editor, paste the provided code to correlation between
-    defective and non-defective products in 1 hour bins, then click
-    **Run** to execute the query. After execution, the results will be
-    displayed.
+1.  In the query editor, paste the provided code to correlation between defective and non-defective products in 1 hour bins, then click **Run** to execute the query. After execution, the results will be displayed.
 ```
 // Correlation between defective and non-defective products in 1 hour bins
 manufacturing
 | summarize count() by bin(todatetime(timestamp), 1h), DefectProbability
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image39.png)
+  ![](./media/kd3.png)
 
 7.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-8.  In the query editor, paste the provided code to Current shipment
-    status (count of orders by status), then click **Run** to execute
-    the query. After execution, the results will be displayed.
+8.  In the query editor, paste the provided code to Current shipment status (count of orders by status), then click **Run** to execute the query. After execution, the results will be displayed.
+   
 ```
 // Current shipment status (count of orders by status).
 shipping_silver
@@ -500,14 +471,12 @@ shipping_silver
 | project Status, NumberofOrders = countOfOrders
 | order by NumberofOrders
 ```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image40.png)
+  ![](./media/kd4.png)
 
 9.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-10. In the query editor, paste the provided code to shipment count by
-    destination, then click **Run** to execute the query. After
-    execution, the results will be displayed.
+10. In the query editor, paste the provided code to shipment count by destination, then click **Run** to execute the query. After execution, the results will be displayed.
+
 ```
 // shipment count by destination
 shipping_silver
@@ -515,33 +484,23 @@ shipping_silver
 | project DestinationCountry, DestinationCity, DestinationLatitude, DestinationLongitude, shipmentCount
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image41.png)
+![](./media/kd5.png)
 
-## Task 3: Create an operational dashboard for Fabrikam management
+## Task 4: Create an operational dashboard for Fabrikam management
 
-1.  Click on the icon **RealTimeWorkspaceXXX** in the left toolbar.
+1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image42.png)
+2.  In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Real-Time-Dashboard** and select the **Real-Time-Dashboard** item.
 
-2.  In the Workspaces pane, select **+ New item**. In the **Filter by
-    item type** search box, enter +++**Real-Time-Dashboard+++** and
-    select the **Real-Time-Dashboard** item.
+    ![](./media/kd6.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image43.png)
+3.  Enter **L400-RTDashboard** as the eventstream name and select **Create**. 
 
-3.  Enter **+++L400-RTDashboard+++** as the eventstream name and
-    select **Create**. 
+    ![](./media/kd7.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image44.png)
+4.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database
 
-4.  Select **L400-Eventhousae** KQL Database
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image45.png)
+    ![](./media/kd8.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image46.png)
@@ -820,6 +779,7 @@ incorrect.](./media/image77.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image78.png)
+
 
 
 
