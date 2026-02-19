@@ -255,13 +255,11 @@ ParseShippingXML()
 1. In the query editor, paste the provided code to verify that data is available. If no data is found, rerun the notebook and redo the continuous ingestion for Blob. Then click **Run** to execute the query. After execution, the results will be displayed
    
 ```
-//Verify you have data, if not rerun the notebok, and redo the continuos
-ingestion for Blob
+//Verify you have data, if not rerun the notebok, and redo the continous ingestion for Blob
 shipping_silver
 | take 10000
 ```
-  ![A screenshot of a computer AI-generated content may be
-  incorrect.](./media/image19.png)
+  ![](./media/kb20.png)
 
 1. Create a new tab within the queryset by clicking on the ***+* icon**
 
@@ -275,18 +273,16 @@ shipping_silver
     | summarize arg_max(EventTime, *) by OrderNumber
 }
 ```
-  ![A screenshot of a computer AI-generated content may be
-  incorrect.](./media/image20.png)
+  ![](./media/kb21.png)
 
 ## Task 2: Stop the shipping providers and production line that is carrying the highest defect probability product for every 1 hour
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-2.  In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
+2.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
+   
 ```
-//clik on jPath instead of inline when on payload, click on ProdId * copy path
+//click on jPath instead of inline when on payload, click on ProdId * copy path
 products
 | extend Operator = payload.op
 | where  Operator == ("c") 
@@ -824,6 +820,7 @@ incorrect.](./media/image77.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image78.png)
+
 
 
 
