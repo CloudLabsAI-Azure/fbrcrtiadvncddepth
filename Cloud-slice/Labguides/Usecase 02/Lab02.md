@@ -37,32 +37,21 @@ logistics, or any time-sensitive business process.
 
 ## Task 1: Get Latest Shipping details
 
-1.  In
-    the [**RealTimeWorkspaceXXX**](mailto:Warehouse_Fabric@lab.LabInstance.Id) view,
-    select the **L400_Eventhouse** KQL Database.
+1.  From the **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** view, select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image1.png)
+    ![](./media/kb1.png)
 
-1.  Navigate to the Database tab and select **KQL Queryset** to begin
-    creating your queries
+1.  Navigate to the Database tab and select **KQL Queryset** to begin creating your queries
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image2.png)
+    ![](./media/kb2.png)
 
-2.  In the **New KQL Queryset** dialog
-    box, enter +++**L400_KQL_Queryset**+++, then click on
-    the **Create** button.
+1.  In the **New KQL Queryset** dialog  box, enter **L400KQL_Queryset**, then click on the **Create** button.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image3.png)
+    ![](./media/imagkb3.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image4.png)
+    ![](./media/kb4.png)
 
-3.  In the query editor, paste the provided code to create the Shipping
-    Silver table, then click **Run** to execute the query. Once
-    completed, the results will be displayed.
+1.  In the query editor, replace the existing code by pasting the code provided below to create the Shipping Silver table, then click **Run** to execute the query. Once completed, the results will be displayed.
 ```
 .create table shipping_silver (
     Provider: string,
@@ -87,17 +76,15 @@ incorrect.](./media/image4.png)
 )
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image5.png)
+   ![](./media/kb5.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image6.png)
+   ![](./media/kb6.png)
 
-4.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-5.  In the query editor, paste the provided code to expand the XML and
-    project only the required fields, then click **Run** to execute the
-    query. After execution, the results will be displayed
+    ![](./media/kb7.png)
+
+1.  In the query editor, paste the provided code to expand the XML and  project only the required fields, then click **Run** to execute the query. After execution, the results will be displayed
 ```
 //Let`s expand the whole xml and project only the fields needed
 shipping
@@ -145,20 +132,16 @@ shipping
     ProductQuantity,
     ProductId
 ```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image7.png)
+   ![](./media/kb8.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image8.png)
+   ![](./media/kb9.png)
 
-6.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-7.  In the query editor, paste the provided code to copy data from the
-    Shipping table to the Shipping Silver table, then click **Run** to
-    execute the query. After execution, the results will be displayed.
+1.  In the query editor, paste the provided code to copy data from the shipping table to the shipping_silver table, then click **Run** to  execute the query. After execution, the results will be displayed.
 ```
 .set-or-append shipping_silver <|
- Shipping
+ shipping
     | extend parsed = parse_xml(data)
     | extend ShippingEvent = parsed.ShippingEvent
     | extend Products = ShippingEvent.ShippingContents.Product
@@ -184,28 +167,21 @@ incorrect.](./media/image8.png)
         ProductId = tostring(Products.ProductId)
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image9.png)
+   ![](./media/kb10.png)
 
-8.  In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
+1.  Create a new tab within the queryset by clicking on the ***+* icon**.In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
 ```
 shipping_silver
 | take 100
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image10.png)
+  ![](./media/kb11.png)
+  
+  ![](./media/kb12.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image11.png)
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-9.  Create a new tab within the queryset by clicking on the ***+* icon**
-
-10. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
 ```
 //another way to do it is through a function 
 .create-or-alter function with (folder = "UpdatePolicyFunctions", skipvalidation = "true") ParseShippingXML()
@@ -236,79 +212,61 @@ incorrect.](./media/image11.png)
         ProductId = tostring(Products.ProductId)
 }
 ```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image12.png)
+  ![](./media/kb13.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image13.png)
+  ![](./media/kb14.png)
 
-11. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image14.png)
+   ![](./media/kb15.png)
 
-12. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
+1. In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
 ```
 .alter table shipping_silver policy update
 @'[{  "IsEnabled": true, "Source": "shipping", "Query": "ParseShippingXML()",  "IsTransactional": false, "PropagateIngestionProperties": false }]'
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image15.png)
+   ![](./media/kb16.png)
 
 13. Create a new tab within the queryset by clicking on the ***+* icon**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image16.png)
+    ![](./media/kb17.png)
 
-14. In the query editor, paste the provided code to **verify that your
-    function is working**, then click **Run** to execute the query.
-    After execution, the results will be displayed.
+1. In the query editor, paste the provided code to **verify that your function is working**, then click **Run** to execute the query. After execution, the results will be displayed.
 ```
 //Verify your function is working
 ParseShippingXML()
 | take 1000
 ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image17.png)
+  ![](./media/kb18.png)
 
-15. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-16. In the query editor, paste the provided code to **verify policy
-    exists**, then click **Run** to execute the query. After execution,
-    the results will be displayed.
+1. In the query editor, paste the provided code to **verify policy  exists**, then click **Run** to execute the query. After execution, the results will be displayed.
 ```
 //Verify policy exists
 .show table shipping_silver policy update
 ```
+  ![](./media/kb19.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image18.png)
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-17. Create a new tab within the queryset by clicking on the ***+* icon**
-
-18. In the query editor, paste the provided code to verify that data is
-    available. If no data is found, rerun the notebook and redo the
-    continuous ingestion for Blob. Then click **Run** to execute the
-    query. After execution, the results will be displayed
+1. In the query editor, paste the provided code to verify that data is available. If no data is found, rerun the notebook and redo the continuous ingestion for Blob. Then click **Run** to execute the query. After execution, the results will be displayed
+   
 ```
 //Verify you have data, if not rerun the notebok, and redo the continuos
 ingestion for Blob
-
 shipping_silver
 | take 10000
 ```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image19.png)
+  ![A screenshot of a computer AI-generated content may be
+  incorrect.](./media/image19.png)
 
-19. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-20. In the query editor, paste the provided code to **get latest
-    shipping details**, then click **Run** to execute the query. After
-    execution, the results will be displayed.
+1. In the query editor, paste the provided code to **get latest shipping details**, then click **Run** to execute the query. After execution, the results will be displayed.
+   
 ```
 //get latest shipping details 
  .create materialized-view with (backfill=true) LatestOrderStatus on table shipping_silver
@@ -317,9 +275,8 @@ incorrect.](./media/image19.png)
     | summarize arg_max(EventTime, *) by OrderNumber
 }
 ```
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image20.png)
+  ![A screenshot of a computer AI-generated content may be
+  incorrect.](./media/image20.png)
 
 ## Task 2: Stop the shipping providers and production line that is carrying the highest defect probability product for every 1 hour
 
@@ -867,5 +824,6 @@ incorrect.](./media/image77.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image78.png)
+
 
 
