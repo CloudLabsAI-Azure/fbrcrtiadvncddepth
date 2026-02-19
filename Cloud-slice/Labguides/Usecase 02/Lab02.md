@@ -1,4 +1,4 @@
-<img width="1467" height="757" alt="image" src="https://github.com/user-attachments/assets/6037b637-c930-4ed1-8b8d-4d0e31063dd4" /># Lab 2: Build real-time operational dashboards with Real-Time Intelligence in Microsoft Fabric 
+# Lab 2: Build real-time operational dashboards with Real-Time Intelligence in Microsoft Fabric 
 
 **Introduction**
 
@@ -779,6 +779,7 @@ incorrect.](./media/image77.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image78.png)
+
 
 
 
