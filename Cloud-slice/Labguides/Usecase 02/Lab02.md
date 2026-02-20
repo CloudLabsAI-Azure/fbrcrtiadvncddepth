@@ -47,38 +47,39 @@ logistics, or any time-sensitive business process.
 
 1.  In the **New KQL Queryset** dialog  box, enter **L400KQL_Queryset**, then click on the **Create** button.
 
-    ![](./media/imagkb3.png)
+    ![](./media/kb3.png)
 
     ![](./media/kb4.png)
 
 1.  In the query editor, replace the existing code by pasting the code provided below to create the Shipping Silver table, then click **Run** to execute the query. Once completed, the results will be displayed.
-```
-.create table shipping_silver (
-    Provider: string,
-    OrderNumber: string,
-    EventTime: datetime,
-    Status: string,
-    SourceCity: string,
-    SourceCountry: string,
-    SourceLatitude: real,
-    SourceLongitude: real,
-    DestinationName: string,
-    DestinationStreet: string,
-    DestinationCity: string,
-    DestinationZip: string,
-    DestinationCountry: string,
-    DestinationLatitude: real,
-    DestinationLongitude: real,
-    WeightKg: real,
-    ProductSize: string,
-    ProductQuantity: int,
-    ProductId: string
-)
-```
+   
+    ```
+    .create table shipping_silver (
+        Provider: string,
+        OrderNumber: string,
+        EventTime: datetime,
+        Status: string,
+        SourceCity: string,
+        SourceCountry: string,
+        SourceLatitude: real,
+        SourceLongitude: real,
+        DestinationName: string,
+        DestinationStreet: string,
+        DestinationCity: string,
+        DestinationZip: string,
+        DestinationCountry: string,
+        DestinationLatitude: real,
+        DestinationLongitude: real,
+        WeightKg: real,
+        ProductSize: string,
+        ProductQuantity: int,
+        ProductId: string
+    )
+    ```
 
-   ![](./media/kb5.png)
-
-   ![](./media/kb6.png)
+       ![](./media/kb5.png)
+    
+       ![](./media/kb6.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
@@ -779,6 +780,7 @@ incorrect.](./media/image77.png)
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image78.png)
+
 
 
 
