@@ -705,7 +705,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tk8.png)
 
-7.  On the Select members tab , search your Fabric workspace and click **Select.**
+7.  On the Select members tab , search your Fabric workspace **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** and click **Select.**
 
     ![](./media/tk9.png)
 
@@ -735,7 +735,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tk14.png)
 
-6.  Select the cell ,paste the **BLOB_CONNECTION_STRING** (the value that you have saved in your notepad in Exercise 1\> **Task 1\>Step 13)**, select the **Run** icon that appears on the left side of the cell.
+6.  Select the cell, paste the **BLOB_CONNECTION_STRING** (the value that you have saved in your notepad in Exercise 1\> **Task 1\>Step 9)**, select the **Run** icon that appears on the left side of the cell.
 
     ![](./media/tk15.png)
 
@@ -771,7 +771,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
    ![](./media/tk23.png)
 
-1. Select the default container from the dropdown.
+1. Select the connection you just created under **Connection**. Select the default container from the dropdown.
+
+   ![](./media/ssxx1.png)
 
 1. Select **Next**
 
@@ -848,6 +850,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
