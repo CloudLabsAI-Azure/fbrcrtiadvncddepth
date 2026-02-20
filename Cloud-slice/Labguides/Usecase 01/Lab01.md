@@ -477,9 +477,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![.](./media/ti45.png)
 
-    >**Note:** If you don't see the tables.kindly refresh
+    >**Note:** If you don't see the tables.Kindly refresh
 
-1.  Next we have to create delta tables in our Lakehouse from the files we uploaded. To do this access the context menu by clicking on the three dots (**...**). Select **Load to tables** from the context
+1.  Next, we have to create delta tables in our Lakehouse from the files we uploaded. To do this access the context menu by clicking on the three dots (**...**). Select **Load to tables** from the context
     menu.
 
     ![](./media/ti46.png)
@@ -490,7 +490,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/ti48.png)
 
-1.  These steps executed for the **assets.csv** file must be executed for the **operators.csv, product.csv**, and **sites.csv** files in the same manner as mentioned in the above step.
+1.  Repeat the above two steps done for **assets.csv** file for the next three files **operators.csv, product.csv**, and **sites.csv** files in the same manner as mentioned in the above step.
 
 1.  To verify the data in the Eventhouse, select the **Eventstream<inject key="DeploymentID" enableCopy="false" />** icon from the top toolbar.
 
@@ -499,6 +499,8 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 1.  Select the **Eventhouse** and verify the data.
 
     ![](./media/ti50.png)
+
+    >**Note:** Kindly click on **Refresh** button in the Data Preview tab if you dont see the data.
 
 ## Task 4: Accessing Eventhouse data from the lakehouse 
 
@@ -846,6 +848,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
