@@ -280,506 +280,457 @@ shipping_silver
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-2.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
+1.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
    
-```
-//click on jPath instead of inline when on payload, click on ProdId * copy path
-products
-| extend Operator = payload.op
-| where  Operator == ("c") 
-| extend ProductId = ['payload']['after']['ProductId']
-| extend ProductName = payload.after.ProductName
-| extend SKU = payload.after.SKU
-| extend Brand = payload.after.Brand
-| extend Category = payload.after.Category
-| extend UnitCost = payload.after.UnitCost
-```
+    ```
+    //click on jPath instead of inline when on payload, click on ProdId * copy path
+    products
+    | extend Operator = payload.op
+    | where  Operator == ("c") 
+    | extend ProductId = ['payload']['after']['ProductId']
+    | extend ProductName = payload.after.ProductName
+    | extend SKU = payload.after.SKU
+    | extend Brand = payload.after.Brand
+    | extend Category = payload.after.Category
+    | extend UnitCost = payload.after.UnitCost
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image21.png)
+    ![](./media/kc14.png)
 
-3.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-4.  In the query editor, paste the provided code to create **products
+1.  In the query editor, paste the provided code to create **products
     silver** table, then click **Run** to execute the query. After
     execution, the results will be displayed
-```
-.create table products_silver (
-    ProductId: string,
-    ProductName: string,
-    SKU: string,
-    Brand: string,
-    Category: string,
-    UnitCost: int
-)
-```
+    
+    ```
+    .create table products_silver (
+        ProductId: string,
+        ProductName: string,
+        SKU: string,
+        Brand: string,
+        Category: string,
+        UnitCost: int
+    )
+    ```
+     ![](./media/kc15.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image22.png)
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-5.  Create a new tab within the queryset by clicking on the ***+* icon**
-
-6.  In the query editor, copy and paste the following code. Click on
+1.  In the query editor, copy and paste the following code. Click on
     the **Run** button to execute the query. After the query is
     executed, you will see the results.
-```
-.set-or-append products_silver <|
-products
-| extend Operator = payload.op
-| where  Operator == ("c") 
-| extend ProductId = tostring(['payload']['after']['ProductId'])
-| extend ProductName = tostring(payload.after.ProductName)
-| extend SKU = tostring(payload.after.SKU)
-| extend Brand = tostring(payload.after.Brand)
-| extend Category = tostring(payload.after.Category)
-| extend UnitCost = toint(payload.after.UnitCost)
-| project ProductId, ProductName, SKU, Brand, Category, UnitCost
-```
+    
+    ```
+    .set-or-append products_silver <|
+    products
+    | extend Operator = payload.op
+    | where  Operator == ("c") 
+    | extend ProductId = tostring(['payload']['after']['ProductId'])
+    | extend ProductName = tostring(payload.after.ProductName)
+    | extend SKU = tostring(payload.after.SKU)
+    | extend Brand = tostring(payload.after.Brand)
+    | extend Category = tostring(payload.after.Category)
+    | extend UnitCost = toint(payload.after.UnitCost)
+    | project ProductId, ProductName, SKU, Brand, Category, UnitCost
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image23.png)
+    ![](./media/kc16.png)
 
-7.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and
-    select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
+1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
     ![](./media/kc1.png)
 
-8.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database
+1.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database
 
     ![](./media/kc2.png)
 
-9.  Click on the button **Get data** in the menu bar at the top.Choose **Local file** from the dropdown menu.
+1.  Click on the button **Get data** in the menu bar at the top.Choose **Local file** from the dropdown menu.
 
     ![](./media/kc3.png)
 
-10. Select the **+ New table**
+1. Select the **+ New table**
 
     ![](./media/kc4.png)
 
-11. Enter the new table name as **shipping_provider** and click on the checkmark.Click on Browse for file
+1. Enter the new table name as **shipping_provider** and click on the checkmark.Click on Browse for file
 
     ![](./media/kc5.png)
 
-12. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles**and click on the **Open** button.
+1. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles**and click the **Open** button.
 
     ![](./media/kc6.png)
 
-13. Select **Next**
+1. Select **Next**
 
     ![](./media/kc7.png)
 
-14. Click on **Finish** button
+1. Click on **Finish** button
 
     ![](./media/kc8.png)
 
-15. Click on **Close** button
+1. Click on **Close** button
 
     ![](./media/kc9.png)
 
     ![](./media/kc10.png)
 
-16. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **L400_KQL_Queryset**
+1. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **L400_KQL_Queryset**
 
     ![](./media/kc11.png)
 
-17. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-18. In the query editor, paste the provided code to stop shipping from
-    production when a defect is detected, then click **Run** to execute
-    the query. After execution, the results will be displayed.
-```
-//stop shipping from production with a defect
-manufacturing
-| where ingestion_time()> ago(24h)
-| top 1 by DefectProbability desc 
-| join kind=inner external_table('operators') on OperatorId
-| join (shipping_silver | where Status == "Dispatched") on ProductId
-| join (shipping_provider | project Provider = trim(" ", Provider), contact, HQAddress) on Provider
-| join products_silver on ProductId
-| project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress
-```
+1. In the query editor, paste the provided code to stop shipping from production when a defect is detected, then click **Run** to execute the query. After execution, the results will be displayed.
+    
+    ```
+    //stop shipping from production with a defect
+    manufacturing
+    | where ingestion_time()> ago(24h)
+    | top 1 by DefectProbability desc 
+    | join kind=inner external_table('operators') on OperatorId
+    | join (shipping_silver | where Status == "Dispatched") on ProductId
+    | join (shipping_provider | project Provider = trim(" ", Provider), contact, HQAddress) on Provider
+    | join products_silver on ProductId
+    | project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress
+    ```
 
- ![](./media/kc12.png)
+     ![](./media/kc12.png)
 
-19. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-20. In the query editor, paste the provided code to stop operator from  production with a defect, then click **Run** to execute the query. After execution, the results will be displayed
-```
-//stop operator from production with a defect
-manufacturing
-| where ingestion_time()> ago(24h)
-| top 1 by DefectProbability desc 
-| join kind=inner external_table('operators') on OperatorId
-| join (shipping_silver | where Status == "Dispatched") on ProductId
-| join (shipping_provider | project Provider = trim(" ", Provider)) on Provider
-| join products_silver on ProductId
-| extend OperatorDetails = strcat(OperatorId, "-" ,OperatorName)
-| extend ProductDetails = strcat(ProductId, "-" ,ProductName)
-| project OperatorDetails, ProductDetails, Phone, AssetId, BatchId
-```
-![](./media/kc13.png)
+1. In the query editor, paste the provided code to stop operator from  production with a defect, then click **Run** to execute the query. After execution, the results will be displayed
+   
+    ```
+    //stop operator from production with a defect
+    manufacturing
+    | where ingestion_time()> ago(24h)
+    | top 1 by DefectProbability desc 
+    | join kind=inner external_table('operators') on OperatorId
+    | join (shipping_silver | where Status == "Dispatched") on ProductId
+    | join (shipping_provider | project Provider = trim(" ", Provider)) on Provider
+    | join products_silver on ProductId
+    | extend OperatorDetails = strcat(OperatorId, "-" ,OperatorName)
+    | extend ProductDetails = strcat(ProductId, "-" ,ProductName)
+    | project OperatorDetails, ProductDetails, Phone, AssetId, BatchId
+    ```
 
-## Task 3: Create an Alert to Stop the Production Line with Detailed
+    ![](./media/kc13.png)
 
-Product and Operator Information
+## Task 3: Create an Alert to Stop the Production Line with Detailed Product and Operator Information
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1.  In the query editor, paste the provided code to show all operators details, then click **Run** to execute the query. After execution,the results will be displayed.
-  ```
-  //Show all operators details
-  external_table('operators')
-  | project Name, Phone, Email, Role, Shift
-  ```
-  ![](./media/kd1.png)
+   
+    ```
+    //Show all operators details
+    external_table('operators')
+    | project Name, Phone, Email, Role, Shift
+    ```
+  
+    ![](./media/kd1.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1.  In the query editor, paste the provided code to Current Defective Item Detail, then click **Run** to execute the query. After execution, the results will be displayed.
-  ```
-  // Current Defective Item Detail
-  manufacturing
-  | where ingestion_time()> ago(24h)
-  | top 1 by DefectProbability desc 
-  | join kind=inner external_table('operators') on OperatorId
-  | join (shipping_silver | where Status == "Dispatched") on ProductId
-  | join (shipping_provider | project Provider = trim(" ", Provider), contact, HQAddress) on Provider
-  | join products_silver on ProductId
-  | project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress, OperatorName, DefectProbability
-  ```
+   
+    ```
+    // Current Defective Item Detail
+    manufacturing
+    | where ingestion_time()> ago(24h)
+    | top 1 by DefectProbability desc 
+    | join kind=inner external_table('operators') on OperatorId
+    | join (shipping_silver | where Status == "Dispatched") on ProductId
+    | join (shipping_provider | project Provider = trim(" ", Provider), contact, HQAddress) on Provider
+    | join products_silver on ProductId
+    | project OrderNumber, ProductName,  ShippingProvider = Provider1 , ProviderNUmber =contact , HQAddress, OperatorName, DefectProbability
+    ```
 
-  ![](./media/kd2.png)
+    ![](./media/kd2.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1.  In the query editor, paste the provided code to correlation between defective and non-defective products in 1 hour bins, then click **Run** to execute the query. After execution, the results will be displayed.
-```
-// Correlation between defective and non-defective products in 1 hour bins
-manufacturing
-| summarize count() by bin(todatetime(timestamp), 1h), DefectProbability
-```
+   
+    ```
+    // Correlation between defective and non-defective products in 1 hour bins
+    manufacturing
+    | summarize count() by bin(todatetime(timestamp), 1h), DefectProbability
+    ```
 
-  ![](./media/kd3.png)
+    ![](./media/kd3.png)
 
 7.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 8.  In the query editor, paste the provided code to Current shipment status (count of orders by status), then click **Run** to execute the query. After execution, the results will be displayed.
    
-```
-// Current shipment status (count of orders by status).
-shipping_silver
-| summarize countOfOrders=count() by Status
-| project Status, NumberofOrders = countOfOrders
-| order by NumberofOrders
-```
-  ![](./media/kd4.png)
+    ```
+    // Current shipment status (count of orders by status).
+    shipping_silver
+    | summarize countOfOrders=count() by Status
+    | project Status, NumberofOrders = countOfOrders
+    | order by NumberofOrders
+    ```
+    
+    ![](./media/kd4.png)
 
 9.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 10. In the query editor, paste the provided code to shipment count by destination, then click **Run** to execute the query. After execution, the results will be displayed.
 
-```
-// shipment count by destination
-shipping_silver
-| summarize shipmentCount=count() by DestinationCountry, DestinationCity, DestinationLatitude, DestinationLongitude
-| project DestinationCountry, DestinationCity, DestinationLatitude, DestinationLongitude, shipmentCount
-```
+    ```
+    // shipment count by destination
+    shipping_silver
+    | summarize shipmentCount=count() by DestinationCountry, DestinationCity, DestinationLatitude, DestinationLongitude
+    | project DestinationCountry, DestinationCity, DestinationLatitude, DestinationLongitude, shipmentCount
+    ```
 
-![](./media/kd5.png)
+     ![](./media/kd5.png)
 
 ## Task 4: Create an operational dashboard for Fabrikam management
 
 1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
 
-2.  In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Real-Time-Dashboard** and select the **Real-Time-Dashboard** item.
+1.  In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Real-Time Dashboard** and select the **Real-Time-Dashboard** item.
 
     ![](./media/kd6.png)
 
-3.  Enter **L400-RTDashboard** as the eventstream name and select **Create**. 
+1.  Enter **RTDashboard<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
     ![](./media/kd7.png)
 
-4.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database
+1.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database and click on **Add Tile**
 
     ![](./media/kd8.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image46.png)
+    ![](./media/kd9.png)
 
-5.  In the Query editor, select **Copilot** from the top menu and use it
-    to generate KQL query
-     ![A screenshot of a computer AI-generated
-    content may be incorrect.](./media/image47.png)
+    ![](./media/kd10.png)
 
-7.  Enter the following text and click on the **Submit icon** as shown
+1.  In the Query editor, select **Copilot** from the top menu and use it to generate KQL query
+
+    ![](./media/kd11.png)
+
+1.  Enter the following text and click on the **Submit icon** as shown
     in the below image.
-```
-Create a real-time dashboard table that shows all operators handling shipments in the last 24 hour.
-Include operator name, phone number, provider, total shipments handled, defective shipment count, and average defect probability.
-Sort by total shipments in descending order and refresh automatically.
-```
+    
+    ```
+    Create a real-time dashboard table that shows all operators handling shipments in the last 24 hour.
+    Include operator name, phone number, provider, total shipments handled, defective shipment count, and average defect probability.
+    Sort by total shipments in descending order and refresh automatically.
+    ```
+
+    ![](./media/kd12.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image48.png)
+1.  Select the **Replace** option to update the existing content as required.
 
-7.  Select the **Replace** option to update the existing content as
-    required.
+    ![](./media/kd13.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image49.png)
+1.  Click **Run** to execute the query.
 
-8.  Click **Run** to execute the query.
+    ![](./media/kd14.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image50.png)
+       >**Note:** If you face any error with the AI generated code.Kindly run the below code in the query editor
+  
+       ```
+        // This KQL query was generated by AI:
+        
+        // Create a real-time dashboard table that shows all operators handling
+        shipments in the last 24 hour.
+        
+        //Include operator name, phone number, provider, total shipments
+        handled, defective shipment count, and average defect probability.
+        
+        //Sort by total shipments in descending order and refresh automatically.
+        
+        //
+        
+        manufacturing
+        
+        | where ingestion_time() \> ago(24h)
+        
+        | join kind=inner (shipping_silver | where Status == "Dispatched") on
+        ProductId
+        
+        | join kind=inner (shipping_provider | project Provider = trim(" ",
+        Provider), contact) on Provider
+        
+        | summarize
+        
+            TotalShipments=count() ,
+        
+            DefectiveShipments=countif(DefectProbability \> 0),
+        
+            AvgDefectProbability=avg(DefectProbability)
+        
+            by OperatorName, contact, Provider
+        
+        | sort by TotalShipments desc
+        
+        | project OperatorName, PhoneNumber=contact, Provider, TotalShipments,
+        DefectiveShipments, AvgDefectProbability
+     
+       ```
+
+1.  Click on the **+Add visual**
+
+    ![](./media/kd15.png)
+
+1. In the **Visual formatting** tab, set Tile name to **shipments in the last 24 hour**, set Visual type to **Table.** Click on **Apply changes**.
+
+   ![](./media/kd16.png)
+
+   ![](./media/kd17.png)
+
+1. While editing the dashboard, click on the tab **Manage** on the top left then click on the button **Parameters**.
+
+   ![](./media/kd18.png)
+
+1. To edit the parameter **Time range** click on the pencil icon. This will enter the edit mode for this parameter.
+
+   ![](./media/kd19.png)
+
+1. Select **Last 7 Days** in the combo box **Default value**. Then click on **Done**.
+
+   ![](./media/kd20.png)
+
+1. In the parameter pane click on the button **Close**.
+
+1. Click on the tab **Home** and then click on the button **New tile** again to proceed with the next visuals.
+
+   ![](./media/kd21.png)
+
+1. In the query editor, **paste** the following code.
+    ```
+    shipping_silver
+    | where Status  in ("Dispatched", "PickedUp", "Routing")
+    | where EventTime > ago(1h)
+    | summarize countByStatus=count() by Status
+    ```
+
+1. Click on **Run** to execute the query.Select **+Add visual**
+
+    ![](./media/kd22.png)
+
+1. In the **Visual formatting** tab, set Tile name to **Last One Hour Shippment status**, set Visual type to **Multi stat.**. Change the Display Orientation to **Vertical** and Text size to **Small**
+
+    ![](./media/kd23.png)
+
+1. Change the Layout configuration to **1 column x 3 rows**.Click on the **Apply changes**
+   
+    ![](./media/kd24.png)
+
+    ![](./media/kd25.png)
 
-// This KQL query was generated by AI:
+1. While editing the dashboard, click **Home** on the top left, and select **New title** to proceed with the next visuals.
 
-// Create a real-time dashboard table that shows all operators handling
-shipments in the last 24 hour.
+    ![](./media/kd26.png)
 
-//Include operator name, phone number, provider, total shipments
-handled, defective shipment count, and average defect probability.
+1. In the query editor, **paste** the following code, then click  on **Run** to execute the query. Select **+Add visual**
+   
+    ```
+    // manufacturing
+    //| where DefectProbability >= 0.2
+    //| summarize arg_max(EventProcessedUtcTime, *)
+    //| project
+    //    Provider,
+    //    ProductName,
+    //    OrderNumber,
+    //    OperatorName,
+    //    Phone,
+    //    max_DefectProbability = DefectProbability
+    //
+    manufacturing
+    | where DefectProbability >= 0.2
+    | summarize arg_max(EventProcessedUtcTime, *) 
+    | join kind=leftouter (operators | project OperatorId, OperatorName=Name, Phone) on OperatorId
+    | join kind=leftouter (products | project ProductId, ProductName) on ProductId
+    | project
+        Provider = "",
+        ProductName,
+        OrderNumber = "",
+        OperatorName,
+        Phone,
+        max_DefectProbability = DefectProbability
+    ```
 
-//Sort by total shipments in descending order and refresh automatically.
+     ![](./media/kd27.png)
 
-//
+1. In the **Visual formatting** tab, set Tile name to **Current defective item details**, set Visual type to **Table.** Click on the **Apply changes**.
 
-manufacturing
+     ![](./media/kd28.png)
 
-| where ingestion_time() \> ago(24h)
+1. While editing the dashboard, click **Home** on the top left, and  select **New title** to proceed with the next visuals.
 
-| join kind=inner (shipping_silver | where Status == "Dispatched") on
-ProductId
+     ![](./media/kd29.png)
 
-| join kind=inner (shipping_provider | project Provider = trim(" ",
-Provider), contact) on Provider
+1. In the query editor, **paste** the following code, then click  on **Run** to execute the query.Select **+Add visual**
 
-| summarize
+    ```
+    shipping
+    | extend xmlData = parse_xml(data)
+    | project
+        country = tostring(['xmlData']['ShippingEvent']['DestinationAddress']['Country']),
+        city = tostring(['xmlData']['ShippingEvent']['DestinationAddress']['City'])
+    | summarize countCountry=count() by country, city
+    | lookup sites on $left.country == $right.Country and $left.city == $right.City
+    | project country, city, Longitude, Latitude, countCountry
+    | where isnotnull(Longitude) and isnotnull(Latitude)
+    | render scatterchart with (kind = map, xcolumn = Longitude, ycolumns = Latitude, series = country, title = "Delivery Country by Destination")
+    ```  
 
-    TotalShipments=count() ,
+    ![](./media/kd30.png)
 
-    DefectiveShipments=countif(DefectProbability \> 0),
+1. In the **Visual formatting** tab, set Tile name to **Delivery Country by Destination**, set Visual type to **Map.** Under Data in the **Define location by** select **Latitude and longitude**. Finally, Click on **Apply changes**.
 
-    AvgDefectProbability=avg(DefectProbability)
+   ![](./media/kd31.png)
 
-    by OperatorName, contact, Provider
+   ![](./media/kd32.png)
 
-| sort by TotalShipments desc
+1. While editing the dashboard, click **Home** on the top left, and select **New title** to proceed with the next visuals.
 
-| project OperatorName, PhoneNumber=contact, Provider, TotalShipments,
-DefectiveShipments, AvgDefectProbability
+   ![](./media/kd33.png)
 
-9.  Click on the **+Add visual**
+1. In the query editor, **paste** the following code, then click on **Run** to execute the query. Select **+Add visual**
+   
+    ```
+    // Correlation between defective and non-defective products in 1 hour bins
+    //Hint: Use the anomaly flag column you defined in the SQL Code Operator before, to see the defection & non-defective products and use that in a line chart
+    manufacturing
+    | extend Defective = iff(Anamoly == "1", 1, 0), NonDefective = iff(Anamoly == "0", 1, 0)
+    | summarize DefectiveCount=sum(Defective), NonDefectiveCount=sum(NonDefective) by bin(EventProcessedUtcTime, 1h)
+    | project EventProcessedUtcTime, DefectiveCount, NonDefectiveCount
+    | render linechart 
+        with (
+            title="Defective vs Non-Defective Products (1h bins)",
+            xtitle="Time (1h bins)",
+            ytitle="Count"
+        )
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image51.png)
+      ![](./media/kd34.png)
 
-10. In the **Visual formatting** tab, set Tile name to +++**shipments in
-    the last 24 hour**+++, set Visual type to **Area chart.** Click on
-    the **Apply changes**.
+1. In the **Visual formatting** tab, set Tile name to **Defective and Proper production**, set Visual type to **Line chart.** Click on the **Apply changes**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image52.png)
+     ![](./media/kd35.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image53.png)
+     ![](./media/kd36.png)
 
-11. While editing the dashboard, click on the tab **Manage** on the top
-    left then click on the button **Parameters**.
+1. While editing the dashboard, click on the tab **Manage** and then click on the button **Auto refresh**. This will open a pane on the right side of the browser.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image54.png)
+    ![](./media/kd37.png)
 
-12. To edit the parameter **Time range** click on the pencil icon. This
-    will enter the edit mode for this parameter.
+1. In the pane **Auto refresh** set it to **Enabled** and set **Default refresh rate** to **Continous**. Then click on the button **Apply**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image55.png)
+    ![](./media/kd38.png)
 
-13. Select **Last 7 Days** in the combo box **Default value**. Then
-    click on **Done**.
+1. Click on the tab **Home** and then click on the button **Save**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image56.png)
+   ![](./media/kd39.png)
 
-14. In the parameter pane click on the button **Close**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image57.png)
 
-15. Click on the tab **Home** and then click on the button **New
-    tile** again to proceed with the next visuals.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image58.png)
-
-16. In the query editor, **paste** the following code, then click
-    on **Run** to execute the query.
-```
-shipping_silver
-| where Status  in ("Dispatched", "PickedUp", "Routing")
-| where EventTime > ago(1h)
-| summarize countByStatus=count() by Status
-```
-
-17. Select **+Add visual**
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image59.png)
-
-18. In the **Visual formatting** tab, set Tile name to +++**Last One Hour Shippment status**+++, set Visual type to **Multi stat.** Click
-    on the **Apply changes**.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image60.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image61.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image62.png)
-
-19. While editing the dashboard, click **Home** on the top left, and
-    select **New title** to proceed with the next visuals.
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image63.png)
-
-20. In the query editor, **paste** the following code, then click
-    on **Run** to execute the query.
-
-21. Select **+Add visual**
-```
-// manufacturing
-//| where DefectProbability >= 0.2
-//| summarize arg_max(EventProcessedUtcTime, *)
-//| project
-//    Provider,
-//    ProductName,
-//    OrderNumber,
-//    OperatorName,
-//    Phone,
-//    max_DefectProbability = DefectProbability
-//
-manufacturing
-| where DefectProbability >= 0.2
-| summarize arg_max(EventProcessedUtcTime, *) 
-| join kind=leftouter (operators | project OperatorId, OperatorName=Name, Phone) on OperatorId
-| join kind=leftouter (products | project ProductId, ProductName) on ProductId
-| project
-    Provider = "",
-    ProductName,
-    OrderNumber = "",
-    OperatorName,
-    Phone,
-    max_DefectProbability = DefectProbability
-```
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image64.png)
-
-19. In the **Visual formatting** tab, set Tile name to +++**Current defective item details**+++, set Visual type to **Table.** Click on
-    the **Apply changes**.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image65.png)
-
-20. While editing the dashboard, click **Home** on the top left, and
-    select **New title** to proceed with the next visuals.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image66.png)
-
-21. In the query editor, **paste** the following code, then click
-    on **Run** to execute the query.
-```
-shipping
-| extend xmlData = parse_xml(data)
-| project
-    country = tostring(['xmlData']['ShippingEvent']['DestinationAddress']['Country']),
-    city = tostring(['xmlData']['ShippingEvent']['DestinationAddress']['City'])
-| summarize countCountry=count() by country, city
-| lookup sites on $left.country == $right.Country and $left.city == $right.City
-| project country, city, Longitude, Latitude, countCountry
-| where isnotnull(Longitude) and isnotnull(Latitude)
-| render scatterchart with (kind = map, xcolumn = Longitude, ycolumns = Latitude, series = country, title = "Delivery Country by Destination")
-```
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image67.png)
-
-22. Select **+Add visual**
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image68.png)
-
-23. In the **Visual formatting** tab, set Tile name to +++**Delivery
-    Country by Destination**+++, set Visual type to **Map.** Click on
-    the **Apply changes**.
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image69.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image70.png)
-
-23. While editing the dashboard, click **Home** on the top left, and
-    select **New title** to proceed with the next visuals.
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image71.png)
-
-24. In the query editor, **paste** the following code, then click
-    on **Run** to execute the query. Select **+Add visual**
-```
-// Correlation between defective and non-defective products in 1 hour bins
-//Hint: Use the anomaly flag column you defined in the SQL Code Operator before, to see the defection & non-defective products and use that in a line chart
-manufacturing
-| extend Defective = iff(Anamoly == "1", 1, 0), NonDefective = iff(Anamoly == "0", 1, 0)
-| summarize DefectiveCount=sum(Defective), NonDefectiveCount=sum(NonDefective) by bin(EventProcessedUtcTime, 1h)
-| project EventProcessedUtcTime, DefectiveCount, NonDefectiveCount
-| render linechart 
-    with (
-        title="Defective vs Non-Defective Products (1h bins)",
-        xtitle="Time (1h bins)",
-        ytitle="Count"
-    )
-```
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image72.png)
-
-25. In the **Visual formatting** tab, set Tile name to +++**Defective
-    and Proper production**+++, set Visual type to **Line chart.** Click
-    on the **Apply changes**.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image73.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image74.png)
-
-26. While editing the dashboard, click on the tab **Manage** and then
-    click on the button **Auto refresh**. This will open a pane on the
-    right side of the browser.
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image75.png)
-
-27. In the pane **Auto refresh** set it to **Enabled** and set **Default
-    refresh rate** to **Continous**. Then click on the button **Apply**
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image76.png)
-
-28. Click on the tab **Home** and then click on the button **Save**.
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image77.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image78.png)
 
 
 
