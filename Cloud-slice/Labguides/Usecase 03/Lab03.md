@@ -452,199 +452,139 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
    ![](./media/kf35.png)
 
-   ![](./media/image64.png)
+   ![](./media/kf36.png)
 
 1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane.
 
 ## Task 6: Create a “Growth Opportunity” Report
 
-1.  Select PowerBI desktop
+1.  Open  PowerBI desktop from the desktop screen.
 
-1.  In the **Sign in** window, enter the **Username** and click on
-    the **Next** button.
+    ![](./media/kg1.png)
 
-1.  Then, enter the password and click on the **Sign in** button.
+1.  In Power BI Desktop, select **OneLake catalog** to connect to data stored in Microsoft Fabric and start building your report.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image67.png)
+    ![](./media/kg3.png)
 
-1.  In Power BI Desktop, select **OneLake catalog** to connect to data
-    stored in Microsoft Fabric and start building your report.
+1.  From the **OneLake catalog**, select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** and click **Connect** to load the real-time data source into Power BI Desktop.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image68.png)
+    ![](./media/kg4.png)
 
-1.  From the **OneLake catalog**, select **L400-Eventhouse** and click
-    **Connect** to load the real-time data source into Power BI Desktop.
+1.  In the **Sign in** window, click on the **<inject key="AzureAdUserEmail"></inject>** and click on the **Next** button.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image69.png)
+1.  Select all the tables and click **Load** to import the data into Power BI Desktop.
 
-1.  In the **Sign in** window, enter the **Username** and click on
-    the **Next** button.
+    ![](./media/kg5.png)
 
-1.  Then, enter the password and click on the **Sign in** button.
+1.  In the **Connection settings** dialog, select **Import** as the connection mode and click **OK** to proceed.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image70.png)
+    ![](./media/kg6.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image71.png)
+    ![](./media/kg7.png)
 
-1.  Select all the tables and click **Load** to import the data into
-    Power BI Desktop.
+1. From the **Insert** tab in Power BI Desktop, select **Text box** to  add descriptive text or titles to your report canvas.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image72.png)
+    ![](./media/kg8.png)
 
-1.  In the **Connection settings** dialog, select **Import** as the
-    connection mode and click **OK** to proceed.
+1. Type in **Growth Opportunity Report**. **Highlight** the **text** and increase size to **32**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image73.png)
+    ![](./media/kg9.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image74.png)
+1. Select the **Slicer** visual, then drag **ProductName** from the **products_silver** table into the **Field** well to enable product-based filtering in the report.
 
-1. From the **Insert** tab in Power BI Desktop, select **Text box** to
-    add descriptive text or titles to your report canvas.
+    ![](./media/kg10.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image75.png)
+1. In the **Visualizations** pane, open **Format visual**, go to **Visual → Slicer settings**, and set the **Style** to **Dropdown**.
 
-1. Type in **Growth Opportunity
-    Report**. **Highlight** the **text** and increase size to **32**.
+    ![](./media/kg10.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image76.png)
-
-1. Select the **Slicer** visual, then drag **ProductName** from the
-    **products_silver** table into the **Field** well to enable
-    product-based filtering in the report.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image77.png)
-
-1. In the **Visualizations** pane, open **Format visual**, go to
-    **Visual → Slicer settings**, and set the **Style** to **Dropdown**.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image78.png)
-
-1. From the **Insert** tab, select **Text box**, then enter and format
-    the text to display the selected product name as **Classic Wear
-    Hoodies** and highlight it as the **Top Demand Product** in the
+1. From the **Insert** tab, select **Text box**, then enter and format the text to display the selected product name as **Classic Wear Hoodies** and highlight it as the **Top Demand Product** in the
     report.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image79.png)
+    ![](./media/kg11.png)
 
-1. Select the **Pie chart** visual, then drag **referral_platform** to
-    the **Legend** and **event_id** to **Values (Count)** from the
-    **clickstream** table to visualize event distribution by referral
+1. Select the **Pie chart** visual, then drag **referral_platform** to the **Legend** and **event_id** to **Values (Count)** from the **clickstream** table to visualize event distribution by referral
     platform.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image80.png)
+    ![](./media/kg12.png)
 
-1. From the **Insert** tab, select **Text box**, then enter and format
-    the text to display the selected product name as **Pinterest** and
-    highlight it as the **Platform that generates most traffic** in the
+1. From the **Insert** tab, select **Text box**, then enter and format the text to display the selected product name as **Pinterest** and highlight it as the **Platform that generates most traffic** in the
     report.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image81.png)
+    ![](./media/kg13.png)
 
-1. Select the **Pie chart** visual, then drag **referral_source_type**
-    to the **Legend** and **Count of** **event_id** to **Values
-    (Count)** from the **clickstream** table to visualize event
-    distribution by referral platform.
+1. Select the **Pie chart** visual, then drag **referral_source_type**  to the **Legend** and **Count of** **event_id** to **Values (Count)** from the **clickstream** table to visualize event
+    distribution by refferal platform.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image82.png)
+   ![](./media/kg14.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image83.png)
+   ![](./media/kg15.png)
 
-1. In the Power BI report, select **Save As** to create a copy or save
-    the report with a new name
+1. In the Power BI report, select **Save As** to create a copy or save the report with a new name
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image84.png)
+   ![](./media/kg16.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image85.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image86.png)
+   ![](./media/image86.png)
 
 ## Task 7: Setup Data Agent with Real-Time Intelligence
 
-1.  In the **Fabric** home page, select **+New item.** **In the Filter
-    by item type search box, enter +++data agent+++ and select the Data
-    agent**
+1.  Back in  the **Fabric** **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** page in the browser window, select **+New item.** **In the Filter by item type search box, enter +++data agent+++ and select the Data agent**
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image87.png)
+    ![](./media/kh1.png)
 
-1.  Enter **+++l400-agent+++** as the Data agent name and
-    select **Create**.
+1.  Enter **l400-agent** as the Data agent name and select **Create**.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image88.png)
+    ![](./media/kh2.png)
 
 1.  In AI-agent page, select **Add a data source**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image89.png)
+    ![](./media/kh3.png)
 
-1.  In the **OneLake catalog** tab, select the **L400_Eventhouse** and
-    select **Add**.
+1.  In the **OneLake catalog** tab, select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />** and select **Add**.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image90.png)
+    ![](./media/kh4.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image91.png)
+    ![](./media/kh5.png)
 
-1.  Select the tables for which you want the AI skill to have available
-    access.
+1.  Select the tables for which you want the AI skill to have available access.
 
-> This lab uses these tables:
+        > This lab uses these tables:
+        
+        - product_copy
+        
+        - product_silver
+        
+        - Top 3 products
 
-- product_copy
+        - shipping_silver
 
-- product_silver
+1.  Enter the following text and click on the **Submit icon** as shown  in the below image.
 
-- Top products
+    ```
+    What is the most popular product?
+    ```
 
-1.  Enter the following text and click on the **Submit icon** as shown
-    in the below image.
+       ![](./media/kh6.png)
 
-> **+++What is the most popular product+++**
+       ![](./media/kh7.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image92.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image93.png)
+1.  Select **clickstream** and enter the following text and click on the **Submit icon** as shown in the below image.
 
-1.  Select **clickstream** and enter the following text and click on
-    the **Submit icon** as shown in the below image.
+    ```
+    Which website redirected the highest traffic?
+    ```
 
-**+++Which website redirected the highest traffic+++**
+    ![](./media/kh8.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image94.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image95.png)
+    ![](./media/kh9.png)
 
 **Summary**
 >
 This lab builds upon Fabrikam’s real-time operational intelligence foundation by adding customer clickstream analytics to the solution. Using Microsoft Fabric, real-time user interactions from the e-commerce platform are streamed, analyzed, and correlated with product data to reveal demand patterns and revenue opportunities as they emerge.
 Participants implement end-to-end streaming ingestion, perform advanced KQL analytics, automate daily updates, and create interactive Power BI reports that highlight top products, traffic sources, and engagement trends. The lab concludes by enabling AI-powered data exploration, allowing business users to ask natural language questions against live data.
 Together, these capabilities help Fabrikam move from reactive reporting to real-time, customer-driven decision-making, ensuring faster responses to market demand and sustained competitive advantage.
+
 
 
 
