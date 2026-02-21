@@ -27,15 +27,13 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
 ## Task 1: Set Up an Eventstream and Create Custom Endpoints
 
-1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
-    pane.
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane.
 
 1.  In the Workspaces pane, select **+ New item**. In the **Filter by  item type** search box, enter **Eventstream** and select the **Eventstream** item
 
     ![](./media/ke1.png)
 
-1.  Enter **clickstream_eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and
-    select **Create**. 
+1.  Enter **clickstream_eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
 1.  On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will create an event hub connected to the Eventstream.
 
@@ -49,8 +47,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/ke4.png)
 
-1.  On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy
-    the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task
+1.  On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task
 
     ![](./media/ke5.png)
 
@@ -60,7 +57,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
 ## Task 2: Import Clickstream Simulator data Notebook
 
-1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and  select **From this computer** as shown in the below image.
+1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** (1) button, then select **Notebook** (2) and  select **From this computer** (3) as shown in the below image.
 
     ![](./media/ke7.png)
 
@@ -113,13 +110,13 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     | Field                          | Value |
     |--------------------------------|-------|
-    | Event processing before ingestion | Ensure that this option is selected. |
-    | Destination Name               | Eventhouse |
-    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />**.|
-    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
-    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
-    | Destination table              | Click **Create new**, enter **clickstream** as the table name, and click **Done** |
-    | Input data format              | Ensure that the **JSON** option is selected |
+    | Event processing before ingestion | Ensure that this option is selected (1) |
+    | Destination Name               | Eventhouse (2)|
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** (3)|
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (4) |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (5) |
+    | Destination table              | Click **Create new**, enter **clickstream** as the table name, and click **Done**(6)|
+    | Input data format              | Ensure that the **JSON** option is selected (7)|
 
 
      ![](./media/ke19.png)
@@ -130,7 +127,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
    ![](./media/ke21.png)
 
-1. Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation pane. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
    ![](./media/ke22.png)
 
@@ -142,7 +139,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf1.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon.
 
 1.  In the query editor, paste the provided code to top 3 products by demand, then click **Run** to execute the query. After execution,the results will be displayed.
    
@@ -158,7 +155,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf3.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, paste the provided code to see the cost of those top 3 products, then click **Run** to execute the query. After execution, the results will be displayed.
    
@@ -185,7 +182,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf5.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon.
 
 1.  In the query editor, paste the provided code to recommended for one time load, now our table looks like the product table, then click  **Run** to execute the query. After execution, the results will be displayed.
    
@@ -208,7 +205,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf7.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on   the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -237,7 +234,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf9.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
    
@@ -256,7 +253,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
      ![](./media/kf10.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
    
@@ -290,7 +287,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf12.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -304,7 +301,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
     ```
      ![](./media/kf13.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -335,7 +332,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf15.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -360,7 +357,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kf17.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -492,7 +489,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
 1. Select the **Slicer** visual, then drag **ProductName** from the **products_silver** table into the **Field** well to enable product-based filtering in the report.
 
-    ![](./media/kg10.png)
+    ![](./media/kg10.1.png)
 
 1. In the **Visualizations** pane, open **Format visual**, go to **Visual → Slicer settings**, and set the **Style** to **Dropdown**.
 
@@ -513,8 +510,8 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kg13.png)
 
-1. Select the **Pie chart** visual, then drag **referral_source_type**  to the **Legend** and **Count of** **event_id** to **Values (Count)** from the **clickstream** table to visualize event
-    distribution by refferal platform.
+1. Select the **Pie chart** visual, then drag **referral_source_type**  to the **Legend** and **Count of event_id** to **Values (Count)** from the **clickstream** table to visualize event
+    distribution by referral source type.
 
    ![](./media/kg14.png)
 
@@ -546,9 +543,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
     ![](./media/kh5.png)
 
-1.  Select the tables for which you want the AI skill to have available access.
-
-        > This lab uses these tables:
+1.  Select the tables for which you want the AI skill to have available access
         
         - product_copy
         
@@ -584,6 +579,7 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 This lab builds upon Fabrikam’s real-time operational intelligence foundation by adding customer clickstream analytics to the solution. Using Microsoft Fabric, real-time user interactions from the e-commerce platform are streamed, analyzed, and correlated with product data to reveal demand patterns and revenue opportunities as they emerge.
 Participants implement end-to-end streaming ingestion, perform advanced KQL analytics, automate daily updates, and create interactive Power BI reports that highlight top products, traffic sources, and engagement trends. The lab concludes by enabling AI-powered data exploration, allowing business users to ask natural language questions against live data.
 Together, these capabilities help Fabrikam move from reactive reporting to real-time, customer-driven decision-making, ensuring faster responses to market demand and sustained competitive advantage.
+
 
 
 
