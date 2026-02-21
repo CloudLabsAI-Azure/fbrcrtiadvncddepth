@@ -728,7 +728,8 @@ logistics, or any time-sensitive business process.
 
 1. Click on the tab **Home** and then click on the button **Save**.
 
-   ![](./media/kd39.png)
+   ![](./media/kd39.1.png)
+
 
 
 
