@@ -86,199 +86,206 @@ logistics, or any time-sensitive business process.
     ![](./media/kb7.png)
 
 1.  In the query editor, paste the provided code to expand the XML and  project only the required fields, then click **Run** to execute the query. After execution, the results will be displayed
-```
-//Let`s expand the whole xml and project only the fields needed
-shipping
-| extend parsed = parse_xml(data)
-| extend ShippingEvent = parsed.ShippingEvent
-| extend Products = ShippingEvent.ShippingContents.Product
-| extend
-    Provider = tostring(ShippingEvent.Provider),
-    OrderNumber = tostring(ShippingEvent.OrderNumber),
-    EventTime = todatetime(ShippingEvent.EventTime),
-    Status = tostring(ShippingEvent.Status),
-    SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
-    SourceCountry = tostring(ShippingEvent.SourceDistributionCenter.Country),
-    SourceLatitude = todouble(ShippingEvent.SourceDistributionCenter.Latitude),
-    SourceLongitude = todouble(ShippingEvent.SourceDistributionCenter.Longitude),
-    DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
-    DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
-    DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
-    DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
-    DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
-    DestinationLatitude = todouble(ShippingEvent.DestinationAddress.Latitude),
-    DestinationLongitude = todouble(ShippingEvent.DestinationAddress.Longitude),
-    Weight = todouble(ShippingEvent.WeightKg),
-    ProductSize = tostring(Products.Size),
-    ProductQuantity = toint(Products.Quantity),
-    ProductId = tostring(Products.ProductId)
-| project
-    Provider,
-    OrderNumber,
-    EventTime,
-    Status,
-    SourceCity,
-    SourceCountry,
-    SourceLatitude,
-    SourceLongitude,
-    DestinationName,
-    DestinationStreet,
-    DestinationCity,
-    DestinationZip,
-    DestinationCountry,
-    DestinationLatitude,
-    DestinationLongitude,
-    Weight,
-    ProductSize,
-    ProductQuantity,
-    ProductId
-```
-   ![](./media/kb8.png)
+   
+      ```
+      //Let`s expand the whole xml and project only the fields needed
+      shipping
+      | extend parsed = parse_xml(data)
+      | extend ShippingEvent = parsed.ShippingEvent
+      | extend Products = ShippingEvent.ShippingContents.Product
+      | extend
+          Provider = tostring(ShippingEvent.Provider),
+          OrderNumber = tostring(ShippingEvent.OrderNumber),
+          EventTime = todatetime(ShippingEvent.EventTime),
+          Status = tostring(ShippingEvent.Status),
+          SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
+          SourceCountry = tostring(ShippingEvent.SourceDistributionCenter.Country),
+          SourceLatitude = todouble(ShippingEvent.SourceDistributionCenter.Latitude),
+          SourceLongitude = todouble(ShippingEvent.SourceDistributionCenter.Longitude),
+          DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
+          DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
+          DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
+          DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
+          DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
+          DestinationLatitude = todouble(ShippingEvent.DestinationAddress.Latitude),
+          DestinationLongitude = todouble(ShippingEvent.DestinationAddress.Longitude),
+          Weight = todouble(ShippingEvent.WeightKg),
+          ProductSize = tostring(Products.Size),
+          ProductQuantity = toint(Products.Quantity),
+          ProductId = tostring(Products.ProductId)
+      | project
+          Provider,
+          OrderNumber,
+          EventTime,
+          Status,
+          SourceCity,
+          SourceCountry,
+          SourceLatitude,
+          SourceLongitude,
+          DestinationName,
+          DestinationStreet,
+          DestinationCity,
+          DestinationZip,
+          DestinationCountry,
+          DestinationLatitude,
+          DestinationLongitude,
+          Weight,
+          ProductSize,
+          ProductQuantity,
+          ProductId
+      ```
+       ![](./media/kb8.png)
 
-   ![](./media/kb9.png)
+       ![](./media/kb9.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1.  In the query editor, paste the provided code to copy data from the shipping table to the shipping_silver table, then click **Run** to  execute the query. After execution, the results will be displayed.
-```
-.set-or-append shipping_silver <|
- shipping
-    | extend parsed = parse_xml(data)
-    | extend ShippingEvent = parsed.ShippingEvent
-    | extend Products = ShippingEvent.ShippingContents.Product
-    | project
-        Provider = tostring(ShippingEvent.Provider),
-        OrderNumber = tostring(ShippingEvent.OrderNumber),
-        EventTime = todatetime(ShippingEvent.EventTime),
-        Status = tostring(ShippingEvent.Status),
-        SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
-        SourceCountry = tostring(ShippingEvent.SourceDistributionCenter.Country),
-        SourceLatitude = todouble(ShippingEvent.SourceDistributionCenter.Latitude),
-        SourceLongitude = todouble(ShippingEvent.SourceDistributionCenter.Longitude),
-        DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
-        DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
-        DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
-        DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
-        DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
-        DestinationLatitude = todouble(ShippingEvent.DestinationAddress.Latitude),
-        DestinationLongitude = todouble(ShippingEvent.DestinationAddress.Longitude),
-        Weight = todouble(ShippingEvent.WeightKg),
-        ProductSize = tostring(Products.Size),
-        ProductQuantity = toint(Products.Quantity),
-        ProductId = tostring(Products.ProductId)
-```
+   
+      ```
+      .set-or-append shipping_silver <|
+       shipping
+          | extend parsed = parse_xml(data)
+          | extend ShippingEvent = parsed.ShippingEvent
+          | extend Products = ShippingEvent.ShippingContents.Product
+          | project
+              Provider = tostring(ShippingEvent.Provider),
+              OrderNumber = tostring(ShippingEvent.OrderNumber),
+              EventTime = todatetime(ShippingEvent.EventTime),
+              Status = tostring(ShippingEvent.Status),
+              SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
+              SourceCountry = tostring(ShippingEvent.SourceDistributionCenter.Country),
+              SourceLatitude = todouble(ShippingEvent.SourceDistributionCenter.Latitude),
+              SourceLongitude = todouble(ShippingEvent.SourceDistributionCenter.Longitude),
+              DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
+              DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
+              DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
+              DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
+              DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
+              DestinationLatitude = todouble(ShippingEvent.DestinationAddress.Latitude),
+              DestinationLongitude = todouble(ShippingEvent.DestinationAddress.Longitude),
+              Weight = todouble(ShippingEvent.WeightKg),
+              ProductSize = tostring(Products.Size),
+              ProductQuantity = toint(Products.Quantity),
+              ProductId = tostring(Products.ProductId)
+      ```
 
-   ![](./media/kb10.png)
+       ![](./media/kb10.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**.In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
-```
-shipping_silver
-| take 100
-```
+   
+    ```
+    shipping_silver
+    | take 100
+    ```
 
-  ![](./media/kb11.png)
+     ![](./media/kb11.png)
   
-  ![](./media/kb12.png)
-
+     ![](./media/kb12.png)
+ 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
-```
-//another way to do it is through a function 
-.create-or-alter function with (folder = "UpdatePolicyFunctions", skipvalidation = "true") ParseShippingXML()
-{
- shipping
-    | extend parsed = parse_xml(data)
-    | extend ShippingEvent = parsed.ShippingEvent
-    | extend Products = ShippingEvent.ShippingContents.Product
-    | project
-        Provider = tostring(ShippingEvent.Provider),
-        OrderNumber = tostring(ShippingEvent.OrderNumber),
-        EventTime = todatetime(ShippingEvent.EventTime),
-        Status = tostring(ShippingEvent.Status),
-        SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
-        SourceCountry = tostring(ShippingEvent.SourceDistributionCenter.Country),
-        SourceLatitude = todouble(ShippingEvent.SourceDistributionCenter.Latitude),
-        SourceLongitude = todouble(ShippingEvent.SourceDistributionCenter.Longitude),
-        DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
-        DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
-        DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
-        DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
-        DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
-        DestinationLatitude = todouble(ShippingEvent.DestinationAddress.Latitude),
-        DestinationLongitude = todouble(ShippingEvent.DestinationAddress.Longitude),
-        Weight = todouble(ShippingEvent.WeightKg),
-        ProductSize = tostring(Products.Size),
-        ProductQuantity = toint(Products.Quantity),
-        ProductId = tostring(Products.ProductId)
-}
-```
-  ![](./media/kb13.png)
+   
+    ```
+    //another way to do it is through a function 
+    .create-or-alter function with (folder = "UpdatePolicyFunctions", skipvalidation = "true") ParseShippingXML()
+    {
+     shipping
+        | extend parsed = parse_xml(data)
+        | extend ShippingEvent = parsed.ShippingEvent
+        | extend Products = ShippingEvent.ShippingContents.Product
+        | project
+            Provider = tostring(ShippingEvent.Provider),
+            OrderNumber = tostring(ShippingEvent.OrderNumber),
+            EventTime = todatetime(ShippingEvent.EventTime),
+            Status = tostring(ShippingEvent.Status),
+            SourceCity = tostring(ShippingEvent.SourceDistributionCenter.City),
+            SourceCountry = tostring(ShippingEvent.SourceDistributionCenter.Country),
+            SourceLatitude = todouble(ShippingEvent.SourceDistributionCenter.Latitude),
+            SourceLongitude = todouble(ShippingEvent.SourceDistributionCenter.Longitude),
+            DestinationName = tostring(ShippingEvent.DestinationAddress.Name),
+            DestinationStreet = tostring(ShippingEvent.DestinationAddress.Street),
+            DestinationCity = tostring(ShippingEvent.DestinationAddress.City),
+            DestinationZip = tostring(ShippingEvent.DestinationAddress.Zip),
+            DestinationCountry = tostring(ShippingEvent.DestinationAddress.Country),
+            DestinationLatitude = todouble(ShippingEvent.DestinationAddress.Latitude),
+            DestinationLongitude = todouble(ShippingEvent.DestinationAddress.Longitude),
+            Weight = todouble(ShippingEvent.WeightKg),
+            ProductSize = tostring(Products.Size),
+            ProductQuantity = toint(Products.Quantity),
+            ProductId = tostring(Products.ProductId)
+    }
+    ```
+      ![](./media/kb13.png)
 
-  ![](./media/kb14.png)
+      ![](./media/kb14.png)
 
 1. Create a new tab within the queryset by clicking on the ***+* icon**
 
    ![](./media/kb15.png)
 
 1. In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
-```
-.alter table shipping_silver policy update
-@'[{  "IsEnabled": true, "Source": "shipping", "Query": "ParseShippingXML()",  "IsTransactional": false, "PropagateIngestionProperties": false }]'
-```
+   
+    ```
+    .alter table shipping_silver policy update
+    @'[{  "IsEnabled": true, "Source": "shipping", "Query": "ParseShippingXML()",  "IsTransactional": false, "PropagateIngestionProperties": false }]'
+    ```
 
-   ![](./media/kb16.png)
+    ![](./media/kb16.png)
 
-13. Create a new tab within the queryset by clicking on the ***+* icon**
+13. Create a new tab within the queryset by clicking on the **+** icon**
 
     ![](./media/kb17.png)
 
 1. In the query editor, paste the provided code to **verify that your function is working**, then click **Run** to execute the query. After execution, the results will be displayed.
-```
-//Verify your function is working
-ParseShippingXML()
-| take 1000
-```
+   
+    ```
+    //Verify your function is working
+    ParseShippingXML()
+    | take 1000
+    ```
 
-  ![](./media/kb18.png)
+    ![](./media/kb18.png)
 
 1. Create a new tab within the queryset by clicking on the ***+* icon**
 
 1. In the query editor, paste the provided code to **verify policy  exists**, then click **Run** to execute the query. After execution, the results will be displayed.
-```
-//Verify policy exists
-.show table shipping_silver policy update
-```
-  ![](./media/kb19.png)
+   
+    ```
+    //Verify policy exists
+    .show table shipping_silver policy update
+    ```
+     ![](./media/kb19.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon**
 
 1. In the query editor, paste the provided code to verify that data is available. If no data is found, rerun the notebook and redo the continuous ingestion for Blob. Then click **Run** to execute the query. After execution, the results will be displayed
    
-```
-//Verify you have data, if not rerun the notebok, and redo the continous ingestion for Blob
-shipping_silver
-| take 10000
-```
-  ![](./media/kb20.png)
+    ```
+    //Verify you have data, if not rerun the notebok, and redo the continous ingestion for Blob
+    shipping_silver
+    | take 10000
+    ```
+     ![](./media/kb20.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon**
 
 1. In the query editor, paste the provided code to **get latest shipping details**, then click **Run** to execute the query. After execution, the results will be displayed.
    
-```
-//get latest shipping details 
- .create materialized-view with (backfill=true) LatestOrderStatus on table shipping_silver
-{
-    shipping_silver
-    | summarize arg_max(EventTime, *) by OrderNumber
-}
-```
-  ![](./media/kb21.png)
+    ```
+    //get latest shipping details 
+     .create materialized-view with (backfill=true) LatestOrderStatus on table shipping_silver
+    {
+        shipping_silver
+        | summarize arg_max(EventTime, *) by OrderNumber
+    }
+    ```
+     ![](./media/kb21.png)
 
 ## Task 2: Stop the shipping providers and production line that is carrying the highest defect probability product for every 1 hour
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon**
 
 1.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -297,45 +304,41 @@ shipping_silver
 
     ![](./media/kc14.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon**
 
-1.  In the query editor, paste the provided code to create **products
-    silver** table, then click **Run** to execute the query. After
-    execution, the results will be displayed
+1.  In the query editor, paste the provided code to create **products silver** table, then click **Run** to execute the query. After execution, the results will be displayed
     
-    ```
-    .create table products_silver (
-        ProductId: string,
-        ProductName: string,
-        SKU: string,
-        Brand: string,
-        Category: string,
-        UnitCost: int
-    )
-    ```
-     ![](./media/kc15.png)
+      ```
+      .create table products_silver (
+          ProductId: string,
+          ProductName: string,
+          SKU: string,
+          Brand: string,
+          Category: string,
+          UnitCost: int
+      )
+      ```
+      ![](./media/kc15.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+* icon**
 
-1.  In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
+1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
     
-    ```
-    .set-or-append products_silver <|
-    products
-    | extend Operator = payload.op
-    | where  Operator == ("c") 
-    | extend ProductId = tostring(['payload']['after']['ProductId'])
-    | extend ProductName = tostring(payload.after.ProductName)
-    | extend SKU = tostring(payload.after.SKU)
-    | extend Brand = tostring(payload.after.Brand)
-    | extend Category = tostring(payload.after.Category)
-    | extend UnitCost = toint(payload.after.UnitCost)
-    | project ProductId, ProductName, SKU, Brand, Category, UnitCost
-    ```
+      ```
+      .set-or-append products_silver <|
+      products
+      | extend Operator = payload.op
+      | where  Operator == ("c") 
+      | extend ProductId = tostring(['payload']['after']['ProductId'])
+      | extend ProductName = tostring(payload.after.ProductName)
+      | extend SKU = tostring(payload.after.SKU)
+      | extend Brand = tostring(payload.after.Brand)
+      | extend Category = tostring(payload.after.Category)
+      | extend UnitCost = toint(payload.after.UnitCost)
+      | project ProductId, ProductName, SKU, Brand, Category, UnitCost
+      ```
 
-    ![](./media/kc16.png)
+      ![](./media/kc16.png)
 
 1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
@@ -345,7 +348,7 @@ shipping_silver
 
     ![](./media/kc2.png)
 
-1.  Click on the button **Get data** in the menu bar at the top.Choose **Local file** from the dropdown menu.
+1.  Click on the button **Get data** in the menu bar at the top. Choose **Local file** from the dropdown menu.
 
     ![](./media/kc3.png)
 
@@ -379,7 +382,7 @@ shipping_silver
 
     ![](./media/kc11.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon**
 
 1. In the query editor, paste the provided code to stop shipping from production when a defect is detected, then click **Run** to execute the query. After execution, the results will be displayed.
     
@@ -397,7 +400,7 @@ shipping_silver
 
      ![](./media/kc12.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the **+** icon**
 
 1. In the query editor, paste the provided code to stop operator from  production with a defect, then click **Run** to execute the query. After execution, the results will be displayed
    
@@ -415,11 +418,11 @@ shipping_silver
     | project OperatorDetails, ProductDetails, Phone, AssetId, BatchId
     ```
 
-    ![](./media/kc13.png)
+     ![](./media/kc13.png)
 
 ## Task 3: Create an Alert to Stop the Production Line with Detailed Product and Operator Information
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, paste the provided code to show all operators details, then click **Run** to execute the query. After execution,the results will be displayed.
    
@@ -431,7 +434,7 @@ shipping_silver
   
     ![](./media/kd1.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon.
 
 1.  In the query editor, paste the provided code to Current Defective Item Detail, then click **Run** to execute the query. After execution, the results will be displayed.
    
@@ -449,7 +452,7 @@ shipping_silver
 
     ![](./media/kd2.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon**
 
 1.  In the query editor, paste the provided code to correlation between defective and non-defective products in 1 hour bins, then click **Run** to execute the query. After execution, the results will be displayed.
    
@@ -461,9 +464,9 @@ shipping_silver
 
     ![](./media/kd3.png)
 
-7.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon**
 
-8.  In the query editor, paste the provided code to Current shipment status (count of orders by status), then click **Run** to execute the query. After execution, the results will be displayed.
+1.  In the query editor, paste the provided code to Current shipment status (count of orders by status), then click **Run** to execute the query. After execution, the results will be displayed.
    
     ```
     // Current shipment status (count of orders by status).
@@ -475,9 +478,9 @@ shipping_silver
     
     ![](./media/kd4.png)
 
-9.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the **+** icon**
 
-10. In the query editor, paste the provided code to shipment count by destination, then click **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to shipment count by destination, then click **Run** to execute the query. After execution, the results will be displayed.
 
     ```
     // shipment count by destination
@@ -498,8 +501,6 @@ shipping_silver
 
 1.  Enter **RTDashboard<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
-    ![](./media/kd7.png)
-
 1.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database and click on **Add Tile**
 
     ![](./media/kd8.png)
@@ -512,8 +513,7 @@ shipping_silver
 
     ![](./media/kd11.png)
 
-1.  Enter the following text and click on the **Submit icon** as shown
-    in the below image.
+1.  Enter the following text and click on the **Submit icon** as shown in the below image.
     
     ```
     Create a real-time dashboard table that shows all operators handling shipments in the last 24 hour.
@@ -577,7 +577,7 @@ shipping_silver
 
     ![](./media/kd15.png)
 
-1. In the **Visual formatting** tab, set Tile name to **shipments in the last 24 hour**, set Visual type to **Table.** Click on **Apply changes**.
+1. In the **Visual formatting** tab, set Tile name to **shipments in the last 24 hour**(1), set Visual type to **Table.**(2) Click on **Apply changes**(3).
 
    ![](./media/kd16.png)
 
@@ -602,6 +602,7 @@ shipping_silver
    ![](./media/kd21.png)
 
 1. In the query editor, **paste** the following code.
+   
     ```
     shipping_silver
     | where Status  in ("Dispatched", "PickedUp", "Routing")
@@ -613,7 +614,7 @@ shipping_silver
 
     ![](./media/kd22.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Last One Hour Shippment status**, set Visual type to **Multi stat.**. Change the Display Orientation to **Vertical** and Text size to **Small**
+1. In the **Visual formatting** tab, set Tile name to **Last One Hour Shippment status**(1), set Visual type to **Multi stat**(2) Change the Display Orientation to **Vertical**(3) and Text size to **Small**(4)
 
     ![](./media/kd23.png)
 
@@ -657,7 +658,7 @@ shipping_silver
 
      ![](./media/kd27.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Current defective item details**, set Visual type to **Table.** Click on the **Apply changes**.
+1. In the **Visual formatting** tab, set Tile name to **Current defective item details** (1), set Visual type to **Table** (2) Click on the **Apply changes**(3)
 
      ![](./media/kd28.png)
 
@@ -682,7 +683,7 @@ shipping_silver
 
     ![](./media/kd30.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Delivery Country by Destination**, set Visual type to **Map.** Under Data in the **Define location by** select **Latitude and longitude**. Finally, Click on **Apply changes**.
+1. In the **Visual formatting** tab, set Tile name to **Delivery Country by Destination**(1), set Visual type to **Map**(2) Under Data in the **Define location by** select **Latitude and longitude**(3). Finally, click on **Apply changes**(4).
 
    ![](./media/kd31.png)
 
@@ -711,7 +712,7 @@ shipping_silver
 
       ![](./media/kd34.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Defective and Proper production**, set Visual type to **Line chart.** Click on the **Apply changes**.
+1. In the **Visual formatting** tab, set Tile name to **Defective and Proper production**(1), set Visual type to **Line chart**(2). Click on the **Apply changes**(3).
 
      ![](./media/kd35.png)
 
@@ -721,13 +722,14 @@ shipping_silver
 
     ![](./media/kd37.png)
 
-1. In the pane **Auto refresh** set it to **Enabled** and set **Default refresh rate** to **Continous**. Then click on the button **Apply**
+1. In the pane **Auto refresh** set it to **Enabled**(1) and set **Default refresh rate** to **Continous**(2). Then click on the button **Apply**(3)
 
     ![](./media/kd38.png)
 
 1. Click on the tab **Home** and then click on the button **Save**.
 
    ![](./media/kd39.png)
+
 
 
 
