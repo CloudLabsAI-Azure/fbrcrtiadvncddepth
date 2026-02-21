@@ -27,592 +27,463 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
 
 ## Task 1: Set Up an Eventstream and Create Custom Endpoints
 
-1.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image1.png)
+1.  In the Workspaces pane, select **+ New item**. In the **Filter by  item type** search box, enter **Eventstream** and select the **Eventstream** item
 
-2.  In the Workspaces pane, select **+ New item**. In the **Filter by
-    item type** search box, enter +++**Eventstream+++** and select the
-    **Eventstream** item
+    ![](./media/ke1.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image2.png)
-
-3.  Enter **+++clickstream_eventstream+++** as the eventstream name and
+1.  Enter **clickstream_eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and
     select **Create**. 
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image3.png)
+1.  On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will create an event hub connected to the Eventstream.
 
-4.  On the Screen **Design a flow to ingest, transform, and route
-    streaming events** click on **Use custom Endpoint**. This will
-    create an event hub connected to the Eventstream.
+    ![](./media/ke2.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image4.png)
+1.  Insert **CustomEndpoint-clickstream** as the source name and click on **Add**.
 
-5.  Insert +++**CustomEndpoint-clickstream**+++ as the source name and
-    the click on **Add**.
+    ![](./media/ke3.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image5.png)
+1.  Click on the **Publish** button.
 
-6.  Click on the **Publish** button.
+    ![](./media/ke4.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image6.png)
+1.  On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy
+    the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task
 
-7.  On the **Eventstream** pane, select the **keys** under
-    the **Details**, select **SAS key Authentication ,** copy
-    the **Event hub name**, **connection strings-primarykey** and paste
-    them on a notepad, as you need them in the upcoming task
+    ![](./media/ke5.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image7.png)
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation  pane.
 
-8.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
-    pane.
-
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image8.png)
+    ![](./media/ke6.png)
 
 ## Task 2: Import Clickstream Simulator data Notebook
 
-1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and
-    click on **-\>|Import** button, then select **Notebook** and
-    select **From this computer** as shown in the below image.
+1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and  select **From this computer** as shown in the below image.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image9.png)
+    ![](./media/ke7.png)
 
-2.  Select **Upload** from the **Import status** pane that appears on
-    the right side of the screen.
+1.  Select **Upload** from the **Import status** pane that appears on  the right side of the screen.
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image10.png)
+1.  Navigate and select **Clickstream Simulator** notebooks from **C:\LabFiles**and click on the **Open** button.
 
-3.  Navigate and select **Clickstream Simulator** notebooks
-    from **C:\LabFiles**and click on the **Open** button.
+    ![](./media/ke8.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image11.png)
+1.  Then, select the **Clickstream Simulator**  notebook.
 
-4.  Then, select the **Clickstream Simulator**  notebook.
+    ![](./media/ke9.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image12.png)
+1.  To start the notebook, run the first cell.
 
-5.  To start the notebook, run the 1^(st) cell.
+    ![](./media/ke10.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image13.png)
+1.  Run the second cell.
 
-6.  Run the 2^(nd) cell.
+    ![](./media/ke11.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image14.png)
-
-7.  In the **3^(rd)** cell paste the **connection string of your custom
-    app source and EventHubName** (the value that you have saved in your
-    notepad in the , select the **Run** icon that appears on the left
+1.  In the  third cell paste the **connection string of your custom  app source and EventHubName** (the value that you have saved in your notepad in Task 1 step number 7, select the **Run** icon that appears on the left
     side of the cell
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image15.png)
+    ![](./media/ke12.png)
 
-8.  Run the 4^(th) cell.
+1.  Run the fourth cell.
 
-> ![A screenshot of a computer program AI-generated content may be
-> incorrect.](./media/image16.png)
+   ![](./media/ke13.png)
 
-9.  Select the 5th cell and run the cell.
+1.  Run the subsequent cells
 
-> ![A screenshot of a computer program AI-generated content may be
-> incorrect.](./media/image17.png)
->
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image18.png)
+    ![](./media/ke14.png)
 
-10. Now, click on **clickstream_eventstream** on the top navigation
-    pane.
+    ![](./media/ke15.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image19.png)
+1. Now, click on **clickstream_eventstream** on the top navigation  pane.
 
-11. In the event stream authoring canvas, select the **Edit**
+   ![](./media/ke16.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image20.png)
+1. In the event stream authoring canvas, select the **Edit**
 
-12. Click on the node **Transform events or add Destination** and
-    select **Eventhouse** from the menu.
+   ![](./media/ke17.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image21.png)
+1. Click on the node **Transform events or add Destination** and select **Eventhouse** from the menu.
 
-13. Provide the following values in the pane **Eventhouse**. Click the
-    button **Save** after you entered all the values.
+   ![](./media/ke18.png)
 
-| Field                          | Value |
-|--------------------------------|-------|
-| Event processing before ingestion | Ensure that this option is selected. |
-| Workspace                      | Select **RealTimeWorkspaceXXX**. If you attend the Precon at dataMinds Connectrope, select the workspace name that was provided to you. |
-| Eventhouse                     | Select the Eventhouse **L400_Eventhouse** |
-| KQL Database                   | Select the KQL Database **L400_Eventhouse** |
-| Destination table              | Click **Create new**, enter **+++clickstream+++** as the table name, and click **Done** |
-| Input data format              | Ensure that the **JSON** option is selected |
+1. Provide the following values in the pane **Eventhouse**. Click the button **Save** after you entered all the values.
+
+    | Field                          | Value |
+    |--------------------------------|-------|
+    | Event processing before ingestion | Ensure that this option is selected. |
+    | Destination Name               | Eventhouse |
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />**.|
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** |
+    | Destination table              | Click **Create new**, enter **clickstream** as the table name, and click **Done** |
+    | Input data format              | Ensure that the **JSON** option is selected |
 
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image22.png)
+     ![](./media/ke19.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image23.png)
+1. Click on the button **Publish** that is located in the toolbar at the top of the screen.
 
-14. Click on the button **Publish** that is located in the toolbar at
-    the top of the screen.
+   ![](./media/ke20.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image24.png)
+   ![](./media/ke21.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image25.png)
+1. Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation pane. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
-15. Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
-    pane. Select **L400-Eventhouse**
+   ![](./media/ke22.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image26.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image27.png)
+   ![](./media/ke23.png)
 
 ## Task 3: Knowledge of Kusto Query Language (KQL) to analyze the data.
 
-1.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
-    pane and select **L400_KQL_Queryset**
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane and select **L400_KQL_Queryset**
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image28.png)
+    ![](./media/kf1.png)
 
-2.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-3.  In the query editor, paste the provided code to top 3 products by
-    demand, then click **Run** to execute the query. After execution,
-    the results will be displayed.
-```
-//top 3 products by demand
-//summarize is similar to group by in sql
-clickstream
-| where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
-| summarize TotalDemand = count() by product_id
-| top 3 by TotalDemand desc
-| project TotalDemand, product_id
-```
+1.  In the query editor, paste the provided code to top 3 products by demand, then click **Run** to execute the query. After execution,the results will be displayed.
+   
+    ```
+    //top 3 products by demand
+    //summarize is similar to group by in sql
+    clickstream
+    | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
+    | summarize TotalDemand = count() by product_id
+    | top 3 by TotalDemand desc
+    | project TotalDemand, product_id
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image29.png)
+    ![](./media/kf3.png)
 
-4.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-5.  In the query editor, paste the provided code to see the cost of
-    those top 3 products, then click **Run** to execute the query. After
-    execution, the results will be displayed.
-```
-//let`s see the cost of those top 3 products
-clickstream
-| where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
-| summarize TotalDemand = count() by product_id
-| top 3 by TotalDemand desc
-| join products_silver on $left.product_id == $right.ProductId
-```
+1.  In the query editor, paste the provided code to see the cost of those top 3 products, then click **Run** to execute the query. After execution, the results will be displayed.
+   
+    ```
+    //let`s see the cost of those top 3 products
+    clickstream
+    | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
+    | summarize TotalDemand = count() by product_id
+    | top 3 by TotalDemand desc
+    | join products_silver on $left.product_id == $right.ProductId
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image30.png)
+    ![](./media/kf4.png)
 
-6.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-7.  In the query editor, paste the provided code to create a copy of the
-    table products_silver to test out the cost increase, then click
-    **Run** to execute the query. After execution, the results will be
+1.  In the query editor, paste the provided code to create a copy of the  table products_silver to test out the cost increase, then click  **Run** to execute the query. After execution, the results will be
     displayed.
-```
-//let`s create a copy of the table products_silver to test out the cost increase
-.create table product_copy (ProductId:string, ProductName:string, SKU:string, Brand:string, Category:string, UnitCost:int)
-```
+    
+    ```
+    //let`s create a copy of the table products_silver to test out the cost increase
+    .create table product_copy (ProductId:string, ProductName:string, SKU:string, Brand:string, Category:string, UnitCost:int)
+    ```
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image31.png)
+    ![](./media/kf5.png)
 
-8.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-9.  In the query editor, paste the provided code to recommended for one
-    time load, now our table looks like the product table, then click
-    **Run** to execute the query. After execution, the results will be
-    displayed.
-```
-//recommended for one time load, now our table looks like the product table
-.set-or-replace product_copy <|
-products_silver
-```
+1.  In the query editor, paste the provided code to recommended for one time load, now our table looks like the product table, then click  **Run** to execute the query. After execution, the results will be displayed.
+   
+    ```
+    //recommended for one time load, now our table looks like the product table
+    .set-or-replace product_copy <|
+    products_silver
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image32.png)
+     ![](./media/kf6.png)
 
-10. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-11. In the query editor, paste the provided code, then click **Run** to
-    execute the query. After execution, the results will be displayed.
-```
-//let`s also save the result of the TOP 3 products in another table, because we`ll need it in the update command, the let Delete or Append only accepts the table name you are modifying 
-.create table Top3Products (ProductId:string, ProductName:string, SKU:string, Brand:string, Category:string, UnitCost:int)
-```
+1. In the query editor, paste the provided code, then click **Run** to  execute the query. After execution, the results will be displayed.
+   
+    ```
+    //let`s also save the result of the TOP 3 products in another table, because we`ll need it in the update command, the let Delete or Append only accepts the table name you are modifying 
+    .create table Top3Products (ProductId:string, ProductName:string, SKU:string, Brand:string, Category:string, UnitCost:int);
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image33.png)
+    ![](./media/kf7.png)
 
-12. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-13. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-.set-or-replace Top3Products <|
-clickstream
-| where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
-| summarize TotalDemand = count() by product_id
-| top 3 by TotalDemand desc
-| join products_silver on $left.product_id == $right.ProductId
-| project ProductId, ProductName, SKU, Brand, Category, UnitCost;
-```
+1. In the query editor, copy and paste the following code. Click on   the **Run** button to execute the query. After the query is  executed, you will see the results.
+   
+    ```
+    .set-or-replace Top3Products <|
+    clickstream
+    | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
+    | summarize TotalDemand = count() by product_id
+    | top 3 by TotalDemand desc
+    | join products_silver on $left.product_id == $right.ProductId
+    | project ProductId, ProductName, SKU, Brand, Category, UnitCost;
+    ```
+    ![](./media/kf8.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image34.png)
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+   
+    ```
+    //to update we`ll use a .update command that uses append and delete
+    .update table product_copy delete top3Products append Top3ProductsWithUpdatedCost <|
+    let top3Products = product_copy
+    | where ProductId in (Top3Products | project ProductId );
+    let Top3ProductsWithUpdatedCost = product_copy
+    | where ProductId in (Top3Products | project ProductId )
+    | extend UnitCost = toint(UnitCost + UnitCost * 0.15);
+    ```
 
-14. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//to update we`ll use a .update command that uses append and delete
-.update table product_copy delete top3Products append Top3ProductsWithUpdatedCost <|
-let top3Products = product_copy
-| where ProductId in (Top3Products | project ProductId );
-let Top3ProductsWithUpdatedCost = product_copy
-| where ProductId in (Top3Products | project ProductId )
-| extend UnitCost = toint(UnitCost + UnitCost * 0.15);
-```
+    ![](./media/kf9.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image35.png)
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-15. Create a new tab within the queryset by clicking on the ***+* icon**
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+   
+    ```
+    //great, now run again the query that finds out the Top 3 products, they aren`t the same right?
+    // that is why we need to have a pipe
+    //in the pipe we`ll create 1 KQL acitivity where we`ll update our top 3 products daily
+    .set-or-replace Top3Products <|
+    clickstream
+    | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated") and ingestion_time() > ago(1d)
+    | summarize TotalDemand = count() by product_id
+    | top 3 by TotalDemand desc
+    | join products_silver on $left.product_id == $right.ProductId
+    | project ProductId, ProductName, SKU, Brand, Category, UnitCost;
+    ```
 
-16. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//great, now run again the query that finds out the Top 3 products, they aren`t the same right?
-// that is why we need to have a pipe
-//in the pipe we`ll create 1 KQL acitivity where we`ll update our top 3 products daily
-.set-or-replace Top3Products <|
-clickstream
-| where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated") and ingestion_time() > ago(1d)
-| summarize TotalDemand = count() by product_id
-| top 3 by TotalDemand desc
-| join products_silver on $left.product_id == $right.ProductId
-| project ProductId, ProductName, SKU, Brand, Category, UnitCost;
-```
+     ![](./media/kf10.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image36.png)
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-17. Create a new tab within the queryset by clicking on the ***+* icon**
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+   
+    ```
+    //the 2nd KQL activity will update the products table with the cost increased by 15% for the most demanded products
+    .update table product_copy delete top3Products append Top3ProductsWithUpdatedCost <|
+    let top3Products = product_copy
+    | where ProductId in (Top3Products | project ProductId );
+    let Top3ProductsWithUpdatedCost = product_copy
+    | where ProductId in (Top3Products | project ProductId )
+    | extend UnitCost = toint(UnitCost + UnitCost * 0.15);
+    ```    
 
-18. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//the 2nd KQL activity will update the products table with the cost increased by 15% for the most demanded products
-.update table product_copy delete top3Products append Top3ProductsWithUpdatedCost <|
-let top3Products = product_copy
-| where ProductId in (Top3Products | project ProductId );
-let Top3ProductsWithUpdatedCost = product_copy
-| where ProductId in (Top3Products | project ProductId )
-| extend UnitCost = toint(UnitCost + UnitCost * 0.15);
-```
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image37.png)
+     ![](./media/kf11.png)
 
 ## Task 4: Create a Growth Opportunity Report
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-2.  In the query editor, paste the provided code to get demand product,
-    then click **Run** to execute the query. After execution, the
-    results will be displayed.
-```
-//in demand product
-clickstream
-| where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
-| summarize TotalDemand = count() by product_id
-| top 1 by TotalDemand desc
-| join products_silver on $left.product_id == $right.ProductId
-| project ProductName
-```
+1.  In the query editor, paste the provided code to get demand product, then click **Run** to execute the query. After execution, the results will be displayed.
+   
+    ```
+    //in demand product
+    clickstream
+    | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
+    | summarize TotalDemand = count() by product_id
+    | top 1 by TotalDemand desc
+    | join products_silver on $left.product_id == $right.ProductId
+    | project ProductName
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image38.png)
+    ![](./media/kf12.png)
 
-3.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-4.  In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//website with highest traffic
-//you mean referral platform
-clickstream
-| where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated") and isnotempty(referral_platform) 
-| summarize TotalDemand = count() by referral_platform
-| top 1 by TotalDemand desc
-```
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image39.png)
+1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+   
+    ```
+    //website with highest traffic
+    //you mean referral platform
+    clickstream
+    | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated") and isnotempty(referral_platform) 
+    | summarize TotalDemand = count() by referral_platform
+    | top 1 by TotalDemand desc
+    ```
+     ![](./media/kf13.png)
 
-5.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-6.  In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-// product clicks over time
-clickstream
-| where event_type == "product_click"
-| extend EventTime = todatetime(timestamp)
-| extend ClickTime = bin(EventTime, 1h)
-| summarize NumberOfClicks = count() by product_id, ClickTime
-| order by ClickTime asc
-```
+1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+   
+    ```
+    // product clicks over time
+    clickstream
+    | where event_type == "product_click"
+    | extend EventTime = todatetime(timestamp)
+    | extend ClickTime = bin(EventTime, 1h)
+    | summarize NumberOfClicks = count() by product_id, ClickTime
+    | order by ClickTime asc
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image40.png)
+    ![](./media/kf14.png)
 
-7.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-8.  In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//product clicks over time 
-clickstream
-| where event_type in ("product_click")
-| extend ClickTime = bin(todatetime(timestamp), 1h)
-| summarize NumberOfClicks = count() by product_id, ClickTime
-| order by ClickTime asc
-```
+1.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
+   
+    ```
+    //product clicks over time 
+    clickstream
+    | where event_type in ("product_click")
+    | extend ClickTime = bin(todatetime(timestamp), 1h)
+    | summarize NumberOfClicks = count() by product_id, ClickTime
+    | order by ClickTime asc
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image41.png)
+    ![](./media/kf15.png)
 
-9.  Create a new tab within the queryset by clicking on the ***+* icon**
+1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
-10. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//website traffic distribution
-clickstream
-| where isnotempty(referral_platform) 
-| summarize Websites = count() by referral_platform
-```
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image42.png)
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+   
+    ```
+    //website traffic distribution
+    clickstream
+    | where isnotempty(referral_platform) 
+    | summarize Websites = count() by referral_platform
+    ```
+    ![](./media/kf16.png)
 
-11. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-12. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//device traffic distribution
-clickstream
-| where isnotempty(referral_source_type) 
-| summarize Traffic = count() by referral_source_type
-```
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+   
+    ```
+    //device traffic distribution
+    clickstream
+    | where isnotempty(referral_source_type) 
+    | summarize Traffic = count() by referral_source_type
+    ```
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image43.png)
+    ![](./media/kf17.png)
 
-13. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-14. In the query editor, copy and paste the following code. Click on
-    the **Run** button to execute the query. After the query is
-    executed, you will see the results.
-```
-//forecast the temperature
-manufacturing
-| extend timestamp = todatetime(timestamp) 
-| where DefectProbability == "Anomaly"
-// Creates a time series of average temperature values, grouped into 1-hour intervals over the past 1 day
-| make-series avg_temp=avg(Temperature) on timestamp from ago(3d) to now() step 6m 
-// Applies anomaly detection to the temperature series, 7h
-| extend forecast = series_decompose_forecast(avg_temp,48) 
-| render timechart 
-```
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image44.png)
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+   
+    ```
+    //forecast the temperature
+    manufacturing
+    | extend timestamp = todatetime(timestamp) 
+    | where DefectProbability == "Anomaly"
+    // Creates a time series of average temperature values, grouped into 1-hour intervals over the past 1 day
+    | make-series avg_temp=avg(Temperature) on timestamp from ago(3d) to now() step 6m 
+    // Applies anomaly detection to the temperature series, 7h
+    | extend forecast = series_decompose_forecast(avg_temp,48) 
+    | render timechart 
+    ```
 
 ## Task 5: Create Dataflow Gen2
 
-1.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image45.png)
+1.  In the Workspaces pane, select **+ New item** and select the **Dataflow Gen2**.
 
-2.  In the Workspaces pane, select **+ New item** and select the
-    **Dataflow Gen2**.
+     ![](./media/kf18.png)
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image46.png)
+1.  Enter **RTI_Dataflow** as the new Dataflow Gen2 name and select **Create**. 
 
-3.  Enter **+++RTI_Dataflow+++** as the new Dataflow Gen2 name and
-    select **Create**. 
+    ![ ](./media/kf19.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image47.png)
+1.  From the **Home** tab, select **Get data** and then click on the **More...** option to upload the tables into Dataflow Gen2
 
-4.  From the **Home** tab, select **Get data** and then
-    the **More...** option to upload the tables into Dataflow Gen2
+    ![](./media/kf20.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image48.png)
+ 1. Select the KQL Database and click on **Connect**   
 
-5.  Select clickstream table
+    ![](./media/kf21.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image49.png)
+1.  Select clickstream table and click **Create**
 
-6.  On the Home window, select **Save & run** and click on **Save &
-    run** button
+    ![](./media/kf22.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image50.png)
+1. Click on **Diagram View** in the bottom right corner of the window to change the view.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image51.png)
+    ![](./media/kf23.png)
 
-7.  Now, click on **RealTimeWorkspaceXXX** on the left-sided navigation
+1.  On the Home window, select **Save & run** and click on **Save & run** button
+
+     ![](./media/kf24.png)
+
+     ![](./media/kf25.png)
+
+1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image52.png)
+1.  Select the **New item** option on the workspace page. Select **Pipeline** from the new item flyout menu.
 
-8.  Select **OneLake catalog** and select the existing KQL
-    Databse, **L400_Eventhouse**, on the data destination configuration
-    page that appears.
+     ![](./media/kf26.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image53.png)
+1.  Provide a Pipeline Name as **datafactory_pipeline** and then select **Create**.
 
-9.  Select **RealTimeworkspace** in the left-sided navigation menu to
-    return to the workspace item list.
+     ![](./media/kf27.png)
 
-10.  Select the **New item** option on the workspace page.
-    Select **Pipeline** from the new item flyout menu.
+1.  Select Dataflow
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image54.png)
+    ![](./media/kf28.png)
 
-11.  Provide a Pipeline Name as **+++datafactory_pipeline+++** and then
-    select **Create**.
+1.  Select workspace and dataflow
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image55.png)
+    ![](./media/kf29.png)
 
-12.  Select Dataflow
+1. On the **Home** tab of the pipeline editor window, select the **Run** button to manually trigger the run of the pipeline.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image56.png)
+    ![](./media/kf30.png)
 
-13.  Select workspace and dataflow
+1. On the **Save and run?** dialog box, select **Save and run** to execute these activities. This activity will take around 1-2 min.
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image57.png)
+    ![](./media/kf31.png)
 
-14. On the **Home** tab of the pipeline editor window, select
-    the **Run** button to manually trigger the run of the pipeline.
+    ![](./media/kf32.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image58.png)
+1. On the **Home** tab of the pipeline editor window,select **Schedule**.
 
-15. On the **Save and run?** dialog box, select **Save and run** to
-    execute these activities. This activity will take around 1-2 min.
+   ![](./media/kf33.png)
 
-> ![A screenshot of a computer AI-generated content may be
-> incorrect.](./media/image59.png)
+1. Select **+ Add schedule** and configure the schedule as required. 
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image60.png)
+   ![](./media/kf34.png)
 
-16. On the **Home** tab of the pipeline editor window,
-    select **Schedule**.
+1. Select the **Daily** as schedule and click on **Save** button and close the Schedule pane
 
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image61.png)
+   ![](./media/kf35.png)
 
-17. Select **+ Add schedule** and configure the schedule as required
-    then select **Save** and close the **Schedule** panel.
+   ![](./media/image64.png)
 
-![A screenshot of a schedule AI-generated content may be
-incorrect.](./media/image62.png)
-
-18. Select the Daily as schedule and click on Save button
-
-![A screenshot of a schedule AI-generated content may be
-incorrect.](./media/image63.png)
-
-![A screenshot of a schedule AI-generated content may be
-incorrect.](./media/image64.png)
-19. Now, click on RealTimeWorkspaceXXX on the left-sided navigation pane.
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image65.png)
-
-![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image66.png)
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane.
 
 ## Task 6: Create a “Growth Opportunity” Report
 
-1.  Select PowerBI descktop
+1.  Select PowerBI desktop
 
-2.  In the **Sign in** window, enter the **Username** and click on
+1.  In the **Sign in** window, enter the **Username** and click on
     the **Next** button.
 
-3.  Then, enter the password and click on the **Sign in** button.
+1.  Then, enter the password and click on the **Sign in** button.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image67.png)
 
-4.  In Power BI Desktop, select **OneLake catalog** to connect to data
+1.  In Power BI Desktop, select **OneLake catalog** to connect to data
     stored in Microsoft Fabric and start building your report.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image68.png)
 
-5.  From the **OneLake catalog**, select **L400-Eventhouse** and click
+1.  From the **OneLake catalog**, select **L400-Eventhouse** and click
     **Connect** to load the real-time data source into Power BI Desktop.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image69.png)
 
-6.  In the **Sign in** window, enter the **Username** and click on
+1.  In the **Sign in** window, enter the **Username** and click on
     the **Next** button.
 
-7.  Then, enter the password and click on the **Sign in** button.
+1.  Then, enter the password and click on the **Sign in** button.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image70.png)
@@ -620,13 +491,13 @@ incorrect.](./media/image70.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image71.png)
 
-8.  Select all the tables and click **Load** to import the data into
+1.  Select all the tables and click **Load** to import the data into
     Power BI Desktop.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image72.png)
 
-9.  In the **Connection settings** dialog, select **Import** as the
+1.  In the **Connection settings** dialog, select **Import** as the
     connection mode and click **OK** to proceed.
 
 ![A screenshot of a computer AI-generated content may be
@@ -635,32 +506,32 @@ incorrect.](./media/image73.png)
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image74.png)
 
-10. From the **Insert** tab in Power BI Desktop, select **Text box** to
+1. From the **Insert** tab in Power BI Desktop, select **Text box** to
     add descriptive text or titles to your report canvas.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image75.png)
 
-11. Type in **Growth Opportunity
+1. Type in **Growth Opportunity
     Report**. **Highlight** the **text** and increase size to **32**.
 
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image76.png)
 
-12. Select the **Slicer** visual, then drag **ProductName** from the
+1. Select the **Slicer** visual, then drag **ProductName** from the
     **products_silver** table into the **Field** well to enable
     product-based filtering in the report.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image77.png)
 
-13. In the **Visualizations** pane, open **Format visual**, go to
+1. In the **Visualizations** pane, open **Format visual**, go to
     **Visual → Slicer settings**, and set the **Style** to **Dropdown**.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image78.png)
 
-14. From the **Insert** tab, select **Text box**, then enter and format
+1. From the **Insert** tab, select **Text box**, then enter and format
     the text to display the selected product name as **Classic Wear
     Hoodies** and highlight it as the **Top Demand Product** in the
     report.
@@ -668,7 +539,7 @@ incorrect.](./media/image76.png)
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image79.png)
 
-15. Select the **Pie chart** visual, then drag **referral_platform** to
+1. Select the **Pie chart** visual, then drag **referral_platform** to
     the **Legend** and **event_id** to **Values (Count)** from the
     **clickstream** table to visualize event distribution by referral
     platform.
@@ -676,7 +547,7 @@ incorrect.](./media/image76.png)
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image80.png)
 
-16. From the **Insert** tab, select **Text box**, then enter and format
+1. From the **Insert** tab, select **Text box**, then enter and format
     the text to display the selected product name as **Pinterest** and
     highlight it as the **Platform that generates most traffic** in the
     report.
@@ -684,7 +555,7 @@ incorrect.](./media/image76.png)
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image81.png)
 
-17. Select the **Pie chart** visual, then drag **referral_source_type**
+1. Select the **Pie chart** visual, then drag **referral_source_type**
     to the **Legend** and **Count of** **event_id** to **Values
     (Count)** from the **clickstream** table to visualize event
     distribution by referral platform.
@@ -695,7 +566,7 @@ incorrect.](./media/image82.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image83.png)
 
-18. In the Power BI report, select **Save As** to create a copy or save
+1. In the Power BI report, select **Save As** to create a copy or save
     the report with a new name
 
 > ![A screenshot of a computer AI-generated content may be
@@ -716,18 +587,18 @@ incorrect.](./media/image86.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image87.png)
 
-2.  Enter **+++l400-agent+++** as the Data agent name and
+1.  Enter **+++l400-agent+++** as the Data agent name and
     select **Create**.
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image88.png)
 
-3.  In AI-agent page, select **Add a data source**
+1.  In AI-agent page, select **Add a data source**
 
 > ![A screenshot of a computer AI-generated content may be
 > incorrect.](./media/image89.png)
 
-4.  In the **OneLake catalog** tab, select the **L400_Eventhouse** and
+1.  In the **OneLake catalog** tab, select the **L400_Eventhouse** and
     select **Add**.
 
 ![A screenshot of a computer AI-generated content may be
@@ -736,7 +607,7 @@ incorrect.](./media/image90.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image91.png)
 
-5.  Select the tables for which you want the AI skill to have available
+1.  Select the tables for which you want the AI skill to have available
     access.
 
 > This lab uses these tables:
@@ -747,7 +618,7 @@ incorrect.](./media/image91.png)
 
 - Top products
 
-6.  Enter the following text and click on the **Submit icon** as shown
+1.  Enter the following text and click on the **Submit icon** as shown
     in the below image.
 
 > **+++What is the most popular product+++**
@@ -758,7 +629,7 @@ incorrect.](./media/image92.png)
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image93.png)
 
-7.  Select **clickstream** and enter the following text and click on
+1.  Select **clickstream** and enter the following text and click on
     the **Submit icon** as shown in the below image.
 
 **+++Which website redirected the highest traffic+++**
@@ -774,6 +645,7 @@ incorrect.](./media/image95.png)
 This lab builds upon Fabrikam’s real-time operational intelligence foundation by adding customer clickstream analytics to the solution. Using Microsoft Fabric, real-time user interactions from the e-commerce platform are streamed, analyzed, and correlated with product data to reveal demand patterns and revenue opportunities as they emerge.
 Participants implement end-to-end streaming ingestion, perform advanced KQL analytics, automate daily updates, and create interactive Power BI reports that highlight top products, traffic sources, and engagement trends. The lab concludes by enabling AI-powered data exploration, allowing business users to ask natural language questions against live data.
 Together, these capabilities help Fabrikam move from reactive reporting to real-time, customer-driven decision-making, ensuring faster responses to market demand and sustained competitive advantage.
+
 
 
 
