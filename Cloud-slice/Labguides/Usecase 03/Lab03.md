@@ -570,15 +570,16 @@ In this lab, Fabrikam extends its real-time intelligence platform to capture and
     Which website redirected the highest traffic?
     ```
 
-    ![](./media/kh8.png)
+       ![](./media/kh8.png)
 
-    ![](./media/kh9.png)
+       ![](./media/kh9.png)
 
 **Summary**
 >
 This lab builds upon Fabrikam’s real-time operational intelligence foundation by adding customer clickstream analytics to the solution. Using Microsoft Fabric, real-time user interactions from the e-commerce platform are streamed, analyzed, and correlated with product data to reveal demand patterns and revenue opportunities as they emerge.
 Participants implement end-to-end streaming ingestion, perform advanced KQL analytics, automate daily updates, and create interactive Power BI reports that highlight top products, traffic sources, and engagement trends. The lab concludes by enabling AI-powered data exploration, allowing business users to ask natural language questions against live data.
 Together, these capabilities help Fabrikam move from reactive reporting to real-time, customer-driven decision-making, ensuring faster responses to market demand and sustained competitive advantage.
+
 
 
 
