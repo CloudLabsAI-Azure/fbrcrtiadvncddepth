@@ -666,6 +666,8 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![](./media/tj21.png)
 
+      > **Important Note**: If you are unable to see the Product table in the KQL database, go to Eventstream, Deactivate All, wait 20 seconds, and then Activate All again.
+
 # Exercise 4: Ingest Shipping Data from Azure Storage Container into Eventhouse
 
 ## Task 1: Create a Workspace Identity 
@@ -851,6 +853,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
