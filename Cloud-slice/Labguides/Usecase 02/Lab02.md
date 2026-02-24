@@ -169,7 +169,6 @@ logistics, or any time-sensitive business process.
               ProductQuantity = toint(Products.Quantity),
               ProductId = tostring(Products.ProductId)
       ```
-
        ![](./media/kb10.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**.In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
@@ -729,6 +728,7 @@ logistics, or any time-sensitive business process.
 1. Click on the tab **Home** and then click on the button **Save**.
 
    ![](./media/kd39.1.png)
+
 
 
 
