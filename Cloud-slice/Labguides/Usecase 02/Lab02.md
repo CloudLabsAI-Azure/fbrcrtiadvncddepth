@@ -76,10 +76,9 @@ logistics, or any time-sensitive business process.
         ProductId: string
     )
     ```
-
-       ![](./media/kb5.png)
+      ![](./media/kb5.png)
     
-       ![](./media/kb6.png)
+      ![](./media/kb6.png)
 
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
@@ -729,6 +728,7 @@ logistics, or any time-sensitive business process.
 1. Click on the tab **Home** and then click on the button **Save**.
 
    ![](./media/kd39.1.png)
+
 
 
 
