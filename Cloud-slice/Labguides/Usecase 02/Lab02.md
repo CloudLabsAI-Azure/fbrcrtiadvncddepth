@@ -359,7 +359,7 @@ logistics, or any time-sensitive business process.
 
     ![](./media/kc5.png)
 
-1. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles\fbrcrtiadvncddepth\Cloud-slice\Labfiles**and click the **Open** button.
+1. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles\Data\Files**and click the **Open** button.
 
     ![](./media/kc6.png)
 
@@ -728,6 +728,7 @@ logistics, or any time-sensitive business process.
 1. Click on the tab **Home** and then click on the button **Save**.
 
    ![](./media/kd39.1.png)
+
 
 
 
