@@ -136,6 +136,18 @@ For convenience, you can open the lab guide in a separate window by selecting th
 
   ![](./media/managevm.png)
 
+## Lab Duration Extension
+
+1. To extend the duration of the lab, kindly click the Hourglass icon in the top right corner of the lab environment.
+
+   > **Note**: You will get the Hourglass icon when 10 minutes are remaining in the lab.
+
+    ![](./media/sg6.png)
+
+1. Click OK to extend your lab duration. The duration can be extended for **1 hour**
+
+1. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
+
 ## Let's Get Started with Azure Portal
 
 1. On your virtual machine, click on the **Azure Portal** icon.
@@ -161,6 +173,10 @@ For convenience, you can open the lab guide in a separate window by selecting th
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
 1. If a **Welcome to Microsoft Azure** popup window appears, select **Maybe Later** to skip the tour.
+
+1. If you encounter any issue related to Fabric Capacity while performing as shown in the image below, kindly reach out to us using the support contact provided below.
+
+    ![](./media/fabcap.png)
 
 ## Support Contact
 
