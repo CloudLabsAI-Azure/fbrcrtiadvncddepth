@@ -132,11 +132,9 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 - We recommend stopping or pausing the VM whenever it is not in use. This will help save the remaining VM hours so they can be used later within the 3-day period.  
  
-- Users can Stop/Start the VM from the "Resources" tab that is available from the Guide section as shown below:
-   - Start VM
-   - Stop VM
-     
-     ![](./media/gpxx.png)
+- Users can Stop/Start the VM from the "Resources" tab that is available from the Guide section as shown below.**Start**(1) and **Stop**(2)
+
+  ![](./media/gpxx.png)
 
 ## Let's Get Started with Azure Portal
 
