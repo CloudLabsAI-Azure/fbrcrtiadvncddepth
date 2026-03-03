@@ -144,7 +144,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
 
     ![](./media/sg6.png)
 
-1. Click OK to extend your lab duration. The duration can be extended for **1 hour**
+1. Click OK to extend your lab duration.
 
 1. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
 
