@@ -2,38 +2,46 @@
 
 **Introduction**
 
-In this lab, you will learn how to build a **real-time operational
-dashboard** using **Microsoft Fabric Real-Time Intelligence (RTI)**.
-Real-time dashboards enable organizations to visualize streaming data,
-monitor key metrics, and respond instantly to anomalies or operational
-changes. By leveraging Fabric RTI components such as **Eventstream**,
-**Real-Time Hub**, and **KQL queries**, you will create interactive
-dashboards that provide actionable insights for manufacturing,
-logistics, or any time-sensitive business process.
+In this lab, you will build a real-time operational dashboard using Microsoft Fabric Real-Time Intelligence (RTI). You will connect streaming data sources, analyze live data using KQL queries, and create interactive dashboards that provide immediate visibility into operational performance.
 
-------------------------------------------------------------------------
+By the end of this lab, you will be able to monitor key metrics in real time, detect anomalies as they occur, and enable faster, data-driven decision-making across business operations.
+
+**Scenario: Operational Visibility in Motion – Turning Streaming Data into Action**
+
+Following the successful implementation of real-time parcel monitoring, Fabrikam now aims to empower its operations and leadership teams with interactive dashboards that surface live insights across the business.
+
+Multiple streams of operational data are flowing into Microsoft Fabric — including logistics updates, manufacturing telemetry, quality signals, and service metrics. However, raw streaming data alone is not enough. Teams need intuitive, real-time dashboards that clearly highlight:
+
+ - Shipment delays and delivery performance trends
+
+ - Manufacturing anomalies and defect probability spikes
+
+ - Inventory levels and fulfillment risks
+
+ - Customer return patterns and service escalations
+
+Without centralized, live dashboards, operational teams struggle to identify emerging issues quickly. Decision-makers require a single pane of glass that transforms streaming telemetry into meaningful, actionable intelligence.
+
+Fabrikam now needs real-time operational dashboards that enable proactive monitoring, faster response times, and improved business resilience
 
 **Objectives**
 
-- **Connect Real-Time Data Sources**  
-  Integrate streaming data from sensors, IoT devices, or operational
+- **Connect Real-Time Data Sources**:  Integrate streaming data from sensors, IoT devices, or operational
   systems into Fabric RTI using Eventstream.
 
-- **Design and Configure Dashboards**  
-  Build dynamic dashboards in Power BI or Fabric that display live
+- **Design and Configure Dashboards**: Build dynamic dashboards in Power BI or Fabric that display live
   metrics, alerts, and KPIs with minimal latency.
 
-- **Implement Real-Time Analytics**  
-  Use KQL queries and transformations to process incoming data streams
+- **Implement Real-Time Analytics**: Use KQL queries and transformations to process incoming data streams
   and derive meaningful insights.
 
-- **Enable Alerts and Monitoring**  
-  Configure real-time alerts for anomalies or threshold breaches to
+- **Enable Alerts and Monitoring**: Configure real-time alerts for anomalies or threshold breaches to
   support proactive decision-making.
 
-- **Validate Dashboard Performance**  
-  Test the dashboard under simulated real-time conditions to ensure
+- **Validate Dashboard Performance**: Test the dashboard under simulated real-time conditions to ensure
   responsiveness and accuracy.
+
+# Exercise 1: Prepare and Transform Real-Time Operational Data
 
 ## Task 1: Get Latest Shipping details
 
@@ -728,6 +736,7 @@ logistics, or any time-sensitive business process.
 1. Click on the tab **Home** and then click on the button **Save**.
 
    ![](./media/kd39.1.png)
+
 
 
 
