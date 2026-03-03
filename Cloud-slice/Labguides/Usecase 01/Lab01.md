@@ -1,42 +1,30 @@
 ## Lab 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
 
-**Scenario: The Fabrikam Frenzy – Real-Time Intelligence Under
-Pressure**
+**Introduction**
 
-Fabrikam, a global lifestyle brand known for its high-quality outerwear
-and athleisure, operates a thriving retail and e-commerce business. As
-the monsoon season intensifies, an unexpected wave of publicity hits:
-several celebrity athletes post viral videos wearing Fabrikam’s latest
-apparel. Within minutes, online clickstream traffic surges, add-to-cart
-rates spike, and store associates struggle to understand what inventory
-is actually available in real time.
+In this lab, you will build a real-time parcel delivery monitoring solution using Microsoft Fabric Real-Time Intelligence (RTI). You will ingest streaming logistics and operational data, analyze it using KQL queries, and create dashboards that provide immediate visibility into supply chain performance.
 
-At the same moment, a series of operational disruptions emerge across
-Fabrikam’s supply chain:
+By the end of this lab, you will be able to detect disruptions, monitor delivery health, and respond proactively to operational challenges using real-time insights.
 
-- A tropical depression abruptly changes course, disrupting major
-  transit routes and triggering carrier ETA delays.
+**Scenario**: **The Fabrikam Frenzy – Real-Time Intelligence Under Pressure**
 
-- A key fabric supplier reports a loom vibration anomaly, with rising
-  defect probabilities detected in quality telemetry.
+Fabrikam, a global lifestyle brand known for its high-quality outerwear and athleisure, operates a thriving retail and e-commerce business. As the monsoon season intensifies, an unexpected wave of publicity hits: several celebrity athletes post viral videos wearing Fabrikam’s latest apparel. Within minutes, online clickstream traffic surges, add-to-cart rates spike, and store associates struggle to understand what inventory is actually available in real time.
 
-- Several defective apparel units slip through and get shipped to
-  customers, causing a rise in returns and service complaints.
+At the same moment, a series of operational disruptions emerge across Fabrikam’s supply chain:
 
-- Headquarters receives reports from operations teams that visibility
-  into real-time conditions is nearly nonexistent.
+A tropical depression abruptly changes course, disrupting major transit routes and triggering carrier ETA delays.
 
-- Leadership grows increasingly frustrated that operational issues are
-  being solved reactively instead of proactively.
+A key fabric supplier reports a loom vibration anomaly, with rising defect probabilities detected in quality telemetry.
 
-With demand surging and disruptions unfolding minute-by-minute, Fabrikam
-faces the risk of stockouts, delayed deliveries, customer
-dissatisfaction, and reputational damage. The company urgently needs
-**real-time intelligence** to sense demand as it happens, maintain
-product availability, and fulfill customer promises despite rapidly
-shifting conditions.
+Several defective apparel units slip through and get shipped to customers, causing a rise in returns and service complaints.
 
-**Objective:**
+Headquarters receives reports from operations teams that visibility into real-time conditions is nearly nonexistent.
+
+Leadership grows increasingly frustrated that operational issues are being solved reactively instead of proactively.
+
+With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces the risk of stockouts, delayed deliveries, customer dissatisfaction, and reputational damage. The company urgently needs real-time intelligence to sense demand as it happens, maintain product availability, and fulfill customer promises despite rapidly shifting conditions.
+
+**Objectives:**
 
   - Ingest and unify real-time data streams from manufacturing, logistics, e-commerce clickstream, weather, and product systems.
   - Detect operational disruptions such as shipment delays, manufacturing defects, and supply chain risks as they occur.
@@ -853,6 +841,7 @@ Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
 The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+
 
 
 
