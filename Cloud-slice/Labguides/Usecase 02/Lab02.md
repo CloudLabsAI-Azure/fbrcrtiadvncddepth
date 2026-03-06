@@ -36,6 +36,24 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 - Test the dashboard under simulated real-time conditions to ensure responsiveness and accuracy.
 
+# Please follow these steps to Resume the Fabric.
+
+- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+
+    ![](./media/1014.png)
+
+- In the **Resource groups** page, locate and select the resource group **labvm-rg**.
+
+    ![](./media/1015.png)
+
+- Inside the **labvm-rg** resource group, find and click on the **Fabric Capacity** resource named **fabric<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](./media/1016.png)
+
+- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+
+    ![](./media/1019.png)
+
 # Exercise 1: Prepare and Transform Real-Time Operational Data
 
 ## Task 1: Get Latest Shipping details
@@ -731,6 +749,24 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 1. Click on the tab **Home** and then click on the button **Save**.
 
    ![](./media/kd39.1.png)
+
+Please follow these steps to pause the Fabric.
+
+- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+
+    ![](./media/1014.png)
+
+- In the **Resource groups** page, locate and select the resource group **labvm-rg**.
+
+    ![](./media/1015.png)
+
+- Inside the **labvm-rg** resource group, find and click on the **Fabric Capacity** resource named **fabric<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](./media/1016.png)
+
+- On the **Overview** page of the Fabric Capacity resource, click **Pause** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+
+    ![](./media/1018.png)
 
 
 

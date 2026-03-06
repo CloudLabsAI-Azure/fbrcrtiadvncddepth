@@ -47,12 +47,12 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
     |  |   |
     |----|----|
-    |Subscription|	Select your Azure OpenAI subscription (1)|
-    |Resource group|	Select **FabricRG** (2) |
-    |Storage account name	|```storage<inject key="DeploymentID" enableCopy="false" />``` (3)|
-    |Region	|**<inject key="Region" enableCopy="false" />** (4)|
-    |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)(5)|
-    |Redundancy	|Locally-redundant storage (LRS (6)|
+    |Subscription|	Select your Azure OpenAI subscription **(1)**|
+    |Resource group|	Select **FabricRG** **(2)** |
+    |Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />** **(3)**|
+    |Region	|**<inject key="Region" enableCopy="false" />** **(4)**|
+    |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)**(5)**|
+    |Redundancy	|Locally-redundant storage (LRS) **(6)**|
 
      ![](./media/tf2.png)
 
@@ -72,7 +72,7 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
      ![](./media/tf6.png)
 
-1. Click **+Add Container** (1).On the New container pane that appears on the right side, enter the container Name as **shipping-events** (2) and click on **Create**(3) button.
+1. Click **+Add Container** **(1)**.On the New container pane that appears on the right side, enter the container Name as **shipping-events** **(2)** and click on **Create** **(3)** button.
 
     ![](./media/tf7.png)
 
@@ -96,22 +96,22 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
     | Setting                | Value / Action |
     |------------------------|----------------|
-    | Subscription           | Leave the subscription group as default (1) |
-    | Resource group         | Select ```FabricRG``` (2) |
-    | Database name          | ```sqldatabase<inject key="DeploymentID" enableCopy="false" />``` (3) |
+    | Subscription           | Leave the subscription group as default **(1)** |
+    | Resource group         | Select **FabricRG (2)** |
+    | Database name          | **sqldatabase<inject key="DeploymentID" enableCopy="false" /> (3)** |
   
      ![](./media/tg3.png)
   
     | Setting                | Value / Action |
     |------------------------|----------------|
     | Server                  | Select **Create new** |
-    | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />** (1)|
-    | Location                | **<inject key="Region" enableCopy="false" />** (2) |
-    | Authentication Method   | Use SQL authentication (3) |
-    | Server admin login      | sqladmin (4) |
-    | Password                | password321! (5)|
-    | Confirm password        | password321! (6)|
-    | Action                  | Click **OK** (7) |
+    | Server name             | **sqlserver<inject key="DeploymentID" enableCopy="false" />** **(1)**|
+    | Location                | **<inject key="Region" enableCopy="false" />** **(2)** |
+    | Authentication Method   | Use SQL authentication **(3)** |
+    | Server admin login      | **sqladmin** **(4)** |
+    | Password                | **password321! (5)**|
+    | Confirm password        | **password321! (6)**|
+    | Action                  | Click **OK** **(7)** |
   
      ![](./media/tg4.png)
 
@@ -135,7 +135,9 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
      ![](./media/tg7.png)
 
-1.  On **Microsoft.SQLDatabase** window, after the deployment is completed, click on the **Go to resource** button
+1.  On **Microsoft.SQLDatabase** window, after the deployment is completed, click on the **Go to resource** button.
+
+    ![](./media/1000.png)
 
 1.  In SQL database page select **Query editor**.
 
@@ -143,9 +145,9 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
 1.  In the **Query editor (preview)**, enter the SQL server **login** as **sqladmin** and **password** as **password321!**, then click **OK** to connect to the database.
 
-    ![](./media/tg9.png)
+    ![](./media/1001.png)
 
-1. To create the **Product** table, paste the following code into the **Query editor** and run it to create the stored procedure.
+1. To create the **dbo.Product (3)** table under **Tables**, paste the following code into the **Query editor (1)** and **Run (2)** it to create the stored procedure.
     ```
     -- Step 1: Create the Products table
     CREATE TABLE Products (
@@ -216,7 +218,7 @@ reports.
 
     ![](./media/th3.png)
     
-    ![](./media/th4.png)
+    ![](./media/1002.png)
 
 ## Task 4: Create a lakehouse
 
@@ -256,7 +258,7 @@ reports.
 
 1.  When provisioning is complete, the eventhouse **System overview** page is shown.
 
-    ![](./media/th14.png)
+    ![](./media/1003.png)
 
 # Exercise 2: Ingest Manufacturing data into Eventhouse using Eventstream
 
@@ -310,7 +312,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 1.  Navigate and select **Manufacturing Simulator** notebooks from **C:\LabFiles\Data\Files**and click on the **Open** button.
 
-     ![](./media/ti11.png)
+     ![](./media/1004.png)
 
 1.  You will see a notification stating **Imported successfully.**
 
@@ -322,9 +324,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![](./media/ti13.png)
 
-1.  In the **OneLake catalog**, select **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Connect** to link it as a data source.
+1.  In the **OneLake catalog**, select **Lakehouse<inject key="DeploymentID" enableCopy="false" /> (1)** and click **Add (2)** to link it as a data source.
 
-     ![.](./media/ssxx.png)
+     ![.](./media/1005.png)
 
 1.  To start the notebook, run the **0th** cell.
 
@@ -382,9 +384,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/t27.png)
 
-1. Click on the node **Transform events or add Destination** and select **SQL Code** from the menu.
+1. Click on the node **Transform events or add Destination (1)** and select **SQL Code (2)** from the menu.
 
-    ![](./media/ti28.png)
+    ![](./media/1006.png)
 
 1. Select **SqlCode** node and click on **Action**
 
@@ -401,7 +403,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
     ```
    ![](./media/t31.png)
 
-   ![](./media/ti32.png)
+   ![](./media/1007.png)
 
 1. Click **Save** to apply the changes.
 
@@ -460,7 +462,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 1.  Select on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and click on **Lakehouse<inject key="DeploymentID" enableCopy="false" />**
 
-    ![](./media/ti44.png)
+    ![](./media/1008.png)
 
 1.  To verify that the files have been successfully loaded, click the **Files** folder in the **Explorer** pane. You should see the files listed in the right-hand pane of the window.
 
@@ -471,7 +473,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 1.  Next, we have to create delta tables in our Lakehouse from the files we uploaded. To do this access the context menu by clicking on the three dots (**...**). Select **Load to tables** from the context
     menu.
 
-    ![](./media/ti46.png)
+    ![](./media/1009.png)
 
 1.  Retain all default values and click on the button **Load**.
 
@@ -507,7 +509,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 1.  Click on the button **+New** in the menu bar at the top.Choose **OneLake shortcut** from the dropdown menu.
 
-    ![.](./media/ti54.png)
+    ![.](./media/1010.png)
 
 1.  Select **Microsoft OneLake**
 
@@ -539,9 +541,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![](./media/tj1.png)
 
-1.  Select **Data sources** from the left navigation pane, choose the **Database CDC** tab, and then click **Connect** on **Azure SQL DB (CDC)**.
+1.  Select **Add data (1)** from the left navigation pane, search for **Azure AQL DB (CDC) (2)** and then click on **Azure SQL DB (CDC) (3)**.
 
-     ![](./media/tj2.png)
+     ![](./media/1012.png)
 
 1.  Click on **New connection**
 
@@ -641,6 +643,8 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
     
       ```
       ![](./media/tj17.png)
+
+      > **Note:** If SQL Database asks password, enter **password321!**. 
    
 1. Return to the **sql_eventstream**, click **Refresh**, and verify that the data has been updated successfully.
 
@@ -656,6 +660,55 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
       > **Important Note**: If you are unable to see the Product table in the KQL database, go to Eventstream, Deactivate All, wait 20 seconds, and then Activate All again.
 
+      > Eventhough you are not able to see Data preview please follow these below stps.
+
+      - Reperform the step 12 in this task Click on the node Transform events or add Destination and select Eventhouse from the menu.
+
+        ![](./media/tj14.png)
+
+      -  Provide the following values in the pane **Eventhouse**. Click the button **Save** after you entered all the values. Keep everything as same in step 13, just create a new KQL destination table with name **products-1**, and save it.
+
+         ![](./media/1020.png)
+
+    - From the menu ribbon, select **Publish**.
+
+        ![](./media/tj16.png)
+
+    - Wait until Eventhouse get **Active.**
+
+    - Return to the **SQL Database Query Editor** in the Azure portal, select **+ New query**,paste the provided product data SQL script into the query editor,and then execute the query to insert the data.
+
+        ```
+        INSERT INTO dbo.Products (ProductId, ProductName, SKU, Brand, Category, UnitCost) VALUES
+        ('PROD400', 'Cyberpunk Hat', 'SKU450', 'AirRun', 'Altars', 133.79),
+        ('PROD451', 'CloudShell Jacket', 'SKU451', 'AirRun', 'Kids', 272.67),
+        ('PROD452', 'Oldschool Cardigan', 'SKU452', 'UrbanStep', 'GenZ Pros', 295.88),
+        ('PROD453', 'TropicFeel Tshirt', 'SKU453', 'UrbanStep', 'Colours', 138.43),
+        ('PROD454', 'ClassicWear Hoodie', 'SKU454', 'ClassicWear', 'Kids', 63.33),
+        ('PROD455', 'TropicFeel Tshirt', 'SKU455', 'AirRun', 'GenZ Pros', 182.16),
+        ('PROD456', 'UrbanStep Shoes', 'SKU456', 'ZAVA', 'Colours', 36.00),
+        ('PROD457', 'UrbanStep Shoes', 'SKU457', 'UrbanStep', 'Altars', 35.92),
+        ('PROD458', 'UrbanStep Shoes', 'SKU458', 'ZAVA', 'Altars', 39.18),
+        ('PROD459', 'Cyberpunk Hat', 'SKU459', 'AirRun', 'Kids', 53.56),
+        ('PROD420', 'UrbanStep Shoes', 'SKU4015', 'AirRun', 'GenZ Pros', 193.42),
+        ('PROD421', 'CloudShell Jacket', 'SKU411', 'ClassicWear', 'Colours', 281.71),
+        ('PROD422', 'Oldschool Cardigan', 'SKU412', 'StreetFlex', 'Altars', 94.36),
+        ('PROD423', 'Oldschool Cardigan', 'SKU413', 'StreetFlex', 'Kids', 108.52),
+        ('PROD424', 'Cyberpunk Hat', 'SKU416', 'ZAVA', 'Kids', 193.91),
+        ('PROD425', 'UrbanStep Shoes', 'SKU465', 'ZAVA', 'GenZ Pros', 170.53),
+        ('PROD426', 'UrbanStep Shoes', 'SKU466', 'StreetFlex', 'Altars', 281.30),
+        ('PROD427', 'Cyberpunk Hat', 'SKU467', 'AirRun', 'Colours', 99.79),
+        ('PROD428', 'CloudShell Jacket', 'SKU468', 'ClassicWear', 'Colours', 191.26),
+        ('PROD429', 'ClassicWear Hoodie', 'SKU419', 'ClassicWear', 'GenZ Pros', 206.99);
+        ```
+
+    - Return to the sql_eventstream, click Refresh, and verify that the data has been updated successfully.
+
+    - It will take few to appear the data.
+
+    - Click on the icon **Eventhouse** in the top toolbar, under KQO database you will able to see **products-1** under Tables.
+
+        
 # Exercise 4: Ingest Shipping Data from Azure Storage Container into Eventhouse
 
 ## Task 1: Create a Workspace Identity 
@@ -788,9 +841,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tl1.png)
 
-2.  In the **Data sources** pane, search for **Real-time weather**, and then select **Connect** to start ingesting live weather data into  the Eventstream.
+2.  In the **Add data** pane, search for **Real-time weather**, and then select **Real-time weather** to start ingesting live weather data into  the Eventstream.
 
-    ![](./media/tl2.png)
+    ![](./media/1013.png)
 
 3.  Select **United States (US)** (1) as the location for ingesting Real-time weather data, verify the **Eventstream name** as **weather_eventstream** (2), and then click **Next** (3) to continue.
 
@@ -836,6 +889,24 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 13. Leave everything as default and click on **Start** button
 
     ![](./media/tl23.png)
+
+Please follow these steps to pause the Fabric.
+
+- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+
+    ![](./media/1014.png)
+
+- In the **Resource groups** page, locate and select the resource group **labvm-rg**.
+
+    ![](./media/1015.png)
+
+- Inside the **labvm-rg** resource group, find and click on the **Fabric Capacity** resource named **fabric<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](./media/1016.png)
+
+- On the **Overview** page of the Fabric Capacity resource, click **Pause** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+
+    ![](./media/1018.png)
 
 Summary:
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.

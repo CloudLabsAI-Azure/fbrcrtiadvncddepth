@@ -46,6 +46,24 @@ In this lab, you will:
 
 - Enable AI-driven exploration of streaming data using a Fabric Data Agent
 
+# Please follow these steps to Resume the Fabric.
+
+- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+
+    ![](./media/1014.png)
+
+- In the **Resource groups** page, locate and select the resource group **labvm-rg**.
+
+    ![](./media/1015.png)
+
+- Inside the **labvm-rg** resource group, find and click on the **Fabric Capacity** resource named **fabric<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](./media/1016.png)
+
+- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+
+    ![](./media/1019.png)
+
 # Exercise 1: Stream, Transform, and Analyze Clickstream Events
 
 ## Task 1: Set Up an Eventstream and Create Custom Endpoints
