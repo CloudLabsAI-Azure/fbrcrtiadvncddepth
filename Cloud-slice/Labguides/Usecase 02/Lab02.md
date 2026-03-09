@@ -16,7 +16,7 @@ Multiple streams of operational data are flowing into Microsoft Fabric — inclu
 
  - Manufacturing anomalies and defect probability spikes
 
- - Inventory levels and fulfillment risks
+ - Inventory levels and fulfilment risks
 
  - Customer return patterns and service escalations
 
@@ -38,7 +38,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 ## Fabric Management
 
-- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+- Navigate to the **Azure Portal**, from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
     ![](./media/1014.png)
 
@@ -50,7 +50,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/1016.png)
 
-- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to resume the Fabric Capacity resource.
 
     ![](./media/1019.png)
 
@@ -312,7 +312,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 ## Task 2: Stop the shipping providers and production line that is carrying the highest defect probability product for every 1 hour
 
-1. Create a new tab within the queryset by clicking on the **+ icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
 1. In the query editor, copy and paste the following code. Enter the table name you copied in Exercise 3 at the place of **//Replace with Table name** in the query, then click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -335,7 +335,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1. In the query editor, paste the provided code to create **products silver** table, then click **Run** to execute the query. After execution, the results will be displayed
+1. In the query editor, paste the provided code to create **products silver** table, then click **Run** to execute the query. After execution, the results will be displayed.
     
       ```
       .create table products_silver (
@@ -698,7 +698,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
      ![](./media/kd29.png)
 
-1. In the query editor, **paste (1)** the following code, then click  on **Run (2)** to execute the query.Select **+ Add visual (3).**
+1. In the query editor, **paste (1)** the following code, then click  on **Run (2)** to execute the query.Select **+ Add visual (3)**.
 
     ```
     shipping
@@ -725,7 +725,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
    ![](./media/kd33.png)
 
-1. In the query editor, **paste** the following code, then click on **Run** to execute the query. Select **+ Add visual.**
+1. In the query editor, **paste** the following code, then click on **Run** to execute the query. Select **+ Add visual**.
    
     ```
     // Correlation between defective and non-defective products in 1 hour bins
@@ -764,7 +764,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 ## Fabric Management
 
-- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+- Navigate to the **Azure Portal**, from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
     ![](./media/1014.png)
 

@@ -1,4 +1,4 @@
-## Lab 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
+# Lab 01-Build a Real-Time Parcel Delivery Monitoring Solution with Microsoft Fabric
 
 **Introduction**
 
@@ -18,18 +18,18 @@ At the same moment, a series of operational disruptions emerge across Fabrikam�
 
 - Several defective apparel units slip through and get shipped to customers, causing a rise in returns and service complaints.
 
-- Headquarters receives reports from operations teams that visibility into real-time conditions is nearly nonexistent.
+- Headquarters receives reports from operations teams that visibility into real-time conditions is nearly non existent.
 
 - Leadership grows increasingly frustrated that operational issues are being solved reactively instead of proactively.
 
-With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces the risk of stockouts, delayed deliveries, customer dissatisfaction, and reputational damage. The company urgently needs real-time intelligence to sense demand as it happens, maintain product availability, and fulfill customer promises despite rapidly shifting conditions.
+With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces the risk of stockouts, delayed deliveries, customer dissatisfaction, and reputational damage. The company urgently needs real-time intelligence to sense demand as it happens, maintain product availability, and fulfil customer promises despite rapidly shifting conditions.
 
 **Objectives:**
 
   - Ingest and unify real-time data streams from manufacturing, logistics, e-commerce clickstream, weather, and product systems.
   - Detect operational disruptions such as shipment delays, manufacturing defects, and supply chain risks as they occur.
   - Provide real-time visibility through dashboards that enable proactive decision-making.
-  - Monitor customer demand signals to prevent stockouts and improve fulfillment accuracy.
+  - Monitor customer demand signals to prevent stockouts and improve fulfilment accuracy.
   - Automate alerts and actions using Microsoft Fabric Activator to reduce reaction time to critical events.
 
 
@@ -41,7 +41,7 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
     ![](./media/tf1.png)
 
-1.  On the **Storage account** page, click **+Create**.
+1.  On the **Storage account** page, click **+ Create**.
 
 1.  On **Create a storage account** page, under the **Basics** tab, enter the following details to create a storage account and then click on **Next**
 
@@ -51,12 +51,12 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
     |Resource group|	Select **FabricRG** **(2)** |
     |Storage account name	|**storage<inject key="DeploymentID" enableCopy="false" />** **(3)**|
     |Region	|**<inject key="Region" enableCopy="false" />** **(4)**|
-    |Performance	|Standard: Recommended for most scenarios (general-purpose v2 account)**(5)**|
-    |Redundancy	|Locally-redundant storage (LRS) **(6)**|
+    |Performance	|**Standard: Recommended for most scenarios (general-purpose v2 account)** **(5)**|
+    |Redundancy	|**Locally-redundant storage (LRS)** **(6)**|
 
      ![](./media/tf2.png)
 
-1.  Under the **Advanced** tab, select **"Enable hierarchical namespace"** and click on **Review+create.**
+1.  Under the **Advanced** tab, select **"Enable hierarchical namespace"** and click on **Review + create.**
 
      ![](./media/tf3.png)
 
@@ -72,27 +72,27 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
      ![](./media/tf6.png)
 
-1. Click **+Add Container** **(1)**.On the New container pane that appears on the right side, enter the container Name as **shipping-events** **(2)** and click on **Create** **(3)** button.
+1. Click **+Add Container** **(1)**. On the New container pane that appears on the right side, enter the container Name as **shipping-events** **(2)** and click on **Create** **(3)** button.
 
     ![](./media/tf7.png)
 
-1. Go back to your Storage Account. From the left navigation, select **Access keys** under **Security + networking** group,copy **Connection string** and **Storage account name**, paste them
+1. Go back to your Storage Account. From the left navigation, select **Access keys (1)** under **Security + networking** group, copy  **Storage account name (2)** and click on **Show (3)** and copy **Connection string (4)** and paste them
     in a notepad, and then **Save** the notepad to use the information in the upcoming task.
 
     ![](./media/tf9.png)
 
 ## Task 2: Create a single database - Azure SQL Database
 
-1.  From the Azure portal home page, click on **Azure portal menu** represented by three horizontal bars on the left side of the Microsoft Azure command bar. Select  **Azure SQL database**
+1.  From the Azure portal home page, click on **Azure portal menu (1)** represented by three horizontal bars on the left side of the Microsoft Azure command bar. Select  **Azure SQL database (2)**.
 
-    ![](./media/tg1.png)
+    ![](./media/1023.png)
 
-1.  Click on **+ Create** and select **SQL Database**
+1.  Click on **+ Create (3)** and select **SQL Database (4)**.
 
-    ![](./media/tg2.png)
+    ![](./media/1024.png)
 
 1.  In this pane, under the **Basics** tab, enter the below details to create an Azure SQL Database and then click
-    on **Next: Networking**
+    on **Next: Networking**.
 
     | Setting                | Value / Action |
     |------------------------|----------------|
@@ -119,19 +119,19 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
     ![](./media/tgx1.png)
 
-1.  For Service tier from the dropdown select **Standard(Budget Friendly)**
+1.  For Service tier from the dropdown select **Standard(Budget Friendly)**.
 
     ![](./media/tgx2.png)
 
-1.  For DTU enter **100** and click **Apply**
+1.  For DTU enter **100** and click **Apply**.
 
      ![](./media/tgx3.1.png)
 
-1.  Click **Next: Networking** on the **Networking** tab, select **Public endpoint** (1), set **Allow Azure services and resources** to **Yes**, enable **Add current client IP address** (2), and then click **Review + create** (3).
+1.  Click **Next: Networking** on the **Networking** tab, select **Public endpoint** **(1)**, set **Allow Azure services and resources** to **Yes**, enable **Add current client IP address** **(2)**, and then click **Review + create** **(3)**.
    
      ![](./media/tg6.png)
 
-1.  On the **Review + create** page, after reviewing, select **Create**
+1.  On the **Review + create** page, after reviewing, select **Create**.
 
      ![](./media/tg7.png)
 
@@ -162,7 +162,7 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
     ![](./media/tg10.png)
 
-1. To enable database for **CDC,** click on **+New Query** and  paste the following code into the **Query editor** and run it to create the stored procedure.
+1. To enable database for **CDC,** click on **+ New Query (1)** and  paste the following code into the **Query editor (2)** and **Run (3)** it to create the stored procedure.
 
     ```
     -- Enable Database for CDC
@@ -171,7 +171,7 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
      ![](./media/tg11.png)
 
-1. To enable CDC for a table using a gating role option, click on **+New Query** and paste the following code into the **Query editor** and run it to create the
+1. To enable CDC for a table using a gating role option, click on **+ New Query (1)** and paste the following code into the **Query editor (2)** and **Run (3)** it to create the
     stored procedure.
     
       ```
@@ -185,7 +185,7 @@ With demand surging and disruptions unfolding minute-by-minute, Fabrikam faces t
 
       ![](./media/tg12.png)
 
-1. Go back to your SQL Database. Copy **Server name** (1) and **SQL Database name** (2), paste them in a notepad, and then **Save** the
+1. Go back to your SQL Database. Copy **Server name** **(1)** and **SQL Database name** **(2)**, paste them in a notepad, and then **Save** the
     notepad to use the information in the upcoming task.
 
       ![](./media/tg13.png)
@@ -204,11 +204,11 @@ reports.
 
     ![](./media/th1.png)
 
-1.  In the Workspaces pane, click on **+New workspace** tile
+1.  In the Workspaces pane, click on **+New workspace** tile.
 
     ![](./media/th2.png)
 
-1.  In the **Create a workspace** pane that appears on the right side,enter the following details, and click on the **Apply** button.
+1.  In the **Create a workspace** pane that appears on the right side, enter the following details, and click on the **Apply** button.
 
     |  |    |
     |-----|-----|
@@ -226,11 +226,11 @@ reports.
 
     ![.](./media/th5.png)
 
-1.  In the **Filter by item type** search box,enter **Lakehouse** and select the lakehouse item.
+1.  In the **Filter by item type** search box, enter **Lakehouse** and select the lakehouse item.
 
     ![.](./media/th6.png)
 
-1.  Enter **Lakehouse<inject key="DeploymentID" enableCopy="false" />**(1) as the lakehouse name and unselect the lakehouses schemas (2). Select **Create** (3).
+1.  Enter **Lakehouse<inject key="DeploymentID" enableCopy="false" />** **(1)** as the lakehouse name and unselect the lakehouses schemas **(2)**. Select **Create** **(3)**.
 
     ![](./media/th7.png)
 
@@ -271,7 +271,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
     ![](./media/ti1.png)
 
 1.  In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Eventstream** and select the
-    **Eventstream** item
+    **Eventstream** item.
 
     ![](./media/ti3.png)
 
@@ -291,7 +291,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/ti6.png)
 
-1.  On the **Eventstream** pane, select the **keys** under the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste them on a notepad, as you need them in the upcoming task
+1.  On the **Eventstream** pane, select the **keys** under the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste them on a notepad, as you need them in the upcoming task.
 
     ![.](./media/ti7.png)
 
@@ -302,7 +302,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 ## Task 2: Import Manufacturing data Notebook
 
-1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and select **From this computer** as shown in the below image.
+1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import (1)** button, then select **Notebook (2)** and select **From this computer (3)** as shown in the below image.
     
      ![.](./media/ti9.png)
 
@@ -310,7 +310,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![.](./media/ti10.png)
 
-1.  Navigate and select **Manufacturing Simulator** notebooks from **C:\LabFiles\Data\Files**and click on the **Open** button.
+1.  Navigate to **C:\LabFiles\Data\Files (1)** and select **Manufacturing Simulator (2)** and click on the **Open** button.
 
      ![](./media/1004.png)
 
@@ -332,31 +332,31 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![.](./media/ti15.png)
 
-1.  In the **first** cell paste the **connection string of your custom app source and EventHubName** (the value that you have saved in your notepad in the (Exercise 2\>**Task 1\>Step 7)**, select the **Run** icon that appears on the left side of the cell
+1.  In the **first** cell paste the **connection string of your custom app source and EventHubName (1)** (the value that you have saved in your notepad in the (Exercise 2\>**Task 1\>Step 7)**, then update **NUM_PRODUCTS** as **40 (2)** select the **Run (3)** icon that appears on the left side of the cell.
 
-     ![](./media/ti16.png)
+     ![](./media/1025.png)
 
-     ![](./media/ti17.png)
+     ![](./media/1026.png)
 
-1. Select the **second** cell to **generate the site location**, and then **run** the cell.
+1. Select the **second** cell to **generate the site location** and then **run** the cell.
 
     ![](./media/ti18.png)
 
-1. Select the third cell to generate the assets, and then run the cell.
+1. Select the third cell to generate the assets and then run the cell.
 
     ![](./media/ti19.png)
 
-1. Select the fourth cell to generate the Operators, and then run the
+1. Select the fourth cell to generate the Operators and then run the
     cell.
 
     ![](./media/ti20.png)
 
-1. Select the fifth cell to generate the products, and then run the
+1. Select the fifth cell to generate the products and then run the
     cell.
 
     ![.](./media/ti21.png)
 
-1. Select the sixth cell to generate the event functions, and then run
+1. Select the sixth cell to generate the event functions and then run
     the cell.
 
     ![](./media/ti22.png)
@@ -365,7 +365,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
    ![](./media/ti23.png)
 
-1. Select the eighth cell to Streaming simulations, and then run
+1. Select the eighth cell to Streaming simulations and then run
     the cell.
 
    ![](./media/ti24.png)
@@ -380,7 +380,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/ti26.png)
 
-1. In the event stream authoring canvas, select the **Edit**
+1. In the event stream authoring canvas, select the **Edit**.
 
     ![](./media/t27.png)
 
@@ -388,11 +388,11 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/1006.png)
 
-1. Select **SqlCode** node and click on **Action**
+1. Select **SqlCode** node and click on **Action**.
 
     ![](./media/ti29.png)
 
-1. Click on **Edit query**
+1. Click on **Edit query**.
 
     ![](./media/ti30.png)
 
@@ -421,12 +421,12 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     | Field                          | Value |
     |--------------------------------|-------|
-    | Event processing before ingestion | Ensure that this option is selected. (1) |
-    | Destination name | Eventhouse (2) |
-    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** (3) |
-    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (4) |
-    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (5) |
-    | Destination table              | Click **Create new**, enter **manufacturing** as the table name, and click **Done** (6) |
+    | Event processing before ingestion | Ensure that this option is selected. **(1)** |
+    | Destination name | Eventhouse **(2)** |
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** **(3)** |
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** **(4)** |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** **(5)** |
+    | Destination table              | Click **Create new**, enter **manufacturing** as the table name, and click **Done** **(6)** |
     | Input data format              | Ensure that the **JSON** option is selected |
 
     ![](./media/ti36.png)
@@ -442,17 +442,17 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![](./media/ti39.png)
 
-1. Click on the icon **Manufacturing Simulator notebook** in the top toolbar
+1. Click on the icon **Manufacturing Simulator notebook** in the top toolbar.
 
     ![](./media/ti40.png)
 
-1. Right-click **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Set as default lakehouse** from the menu
+1. Right-click **Lakehouse<inject key="DeploymentID" enableCopy="false" />** and click **Set as default lakehouse** from the menu.
 
     ![](./media/ti41.png)
 
-     >**Note:** If you get a prompt click on**Stop Now**
+     >**Note:** If you get a prompt click on **Stop Now**.
      
-1. Click the **Run all** button to execute all the cells
+1. Click the **Run all** button to execute all the cells.
 
     ![](./media/ti42.png)
 
@@ -460,7 +460,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 ## Task 3: Creating delta tables in the lakehouse 
 
-1.  Select on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and click on **Lakehouse<inject key="DeploymentID" enableCopy="false" />**
+1.  Select on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" /> (1)** in the left toolbar and click on **Lakehouse<inject key="DeploymentID" enableCopy="false" /> (2)**
 
     ![](./media/1008.png)
 
@@ -468,10 +468,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![.](./media/ti45.png)
 
-    >**Note:** If you don't see the tables.Kindly refresh
+    >**Note:** If you don't see the tables. Kindly refresh.
 
-1.  Next, we have to create delta tables in our Lakehouse from the files we uploaded. To do this access the context menu by clicking on the three dots (**...**). Select **Load to tables** from the context
-    menu.
+1.  Next, we have to create delta tables in our Lakehouse from the files we uploaded. To do this access the context menu by clicking on the three dots (**...**) **(1)**. Select **Load to tables (2)** then click on **New table (3)**.
 
     ![](./media/1009.png)
 
@@ -495,15 +494,15 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 ## Task 4: Accessing Eventhouse data from the lakehouse 
 
-1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
+1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select the **Workspace**.
 
     ![](./media/ti51.png)
 
-1.  Select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
+1.  Select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](./media/ti52.png)
 
-1.  From the **KQL databases** section, select **Eventhouse**
+1.  From the **KQL databases** section, select **Eventhouse**.
 
     ![](./media/ti53.png)
 
@@ -511,7 +510,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![.](./media/1010.png)
 
-1.  Select **Microsoft OneLake**
+1.  Select **Microsoft OneLake**.
 
     ![](./media/ti55.png)
 
@@ -527,7 +526,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![](./media/ti58.png)
 
-1.  Click the **Close** button
+1.  Click the **Close** button.
 
     ![](./media/ti59.png)
 
@@ -571,25 +570,25 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tj7.png)
 
-1.  Enter the table name as **dbo.Products** and click **Next**
+1.  Enter the table name as **dbo.Products** and click **Next**.
 
     ![](./media/tj8.png)
 
-1.  Click on **Connect** button
+1.  Click on **Connect** button.
 
     ![](./media/tj9.png)
 
-1.  Click on **Finish** button
+1.  Click on **Finish** button.
 
     ![](./media/tj10.png)
 
-1. Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left-sided navigation menu and click on **sql_eventstream**
+1. Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left-sided navigation menu and click on **sql_eventstream**.
 
     ![](./media/tj11.png)
 
     ![](./media/tj12.png)
 
-1. In the event stream authoring canvas, select the **Edit**
+1. In the event stream authoring canvas, select the **Edit**.
 
     ![](./media/tj13.png)
 
@@ -602,12 +601,12 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
     | Field                          | Value |
     |--------------------------------|-------|
     | Event processing before ingestion | Ensure that this option is selected.|
-    | Destination name               | Eventhouse (1) |
-    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** (2)|
-    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />*** (3) |
-    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />*** (4) |
-    | Destination table              | Click **Create new**, enter **products** as the table name, and click **Done** (5) |
-    | Input data format              | Ensure that the **JSON** option is selected (6) |
+    | Destination name               | Eventhouse **(1)** |
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** **(2)**|
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** **(3)** |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** **(4)** |
+    | Destination table              | Click **Create new**, enter **products** as the table name, and click **Done** **(5)** |
+    | Input data format              | Ensure that the **JSON** option is selected **(6)** |
 
     ![](./media/tj15.png)
 
@@ -615,7 +614,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
    ![](./media/tj16.png)
 
-1. Return to the **SQL Database Query Editor** in the Azure portal, select **+ New query**,paste the provided product data SQL script into the query editor,and then execute the query to insert the data.
+1. Return to the **SQL Database Query Editor** in the Azure portal, select **+ New query**, paste the provided product data SQL script into the query editor,and then execute the query to insert the data.
    
       ```
       -- Step 2: Insert the product data
@@ -659,17 +658,13 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
       > **Important Note**: If you are unable to see the Product table in the KQL database, go to Eventstream, Deactivate All, wait 20 seconds, and then Activate All again.
 
-      > Eventhough you are not able to see Data preview please follow these below stps.
-
-      - Reperform the step 12 in this task Click on the node Transform events or add Destination and select Eventhouse from the menu.
-
-        ![](./media/tj14.png)
+      > Eventhough you are not able to see Data preview please follow these below steps.
 
       - Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left-sided navigation menu and click on **sql_eventstream**.
 
          ![](./media/tj11.png) 
 
-      - CLick on **Edit** to edit the eventhouse.
+      - Click on **Edit** to edit the eventhouse.
 
          ![](./media/new1.png)    
 
@@ -707,8 +702,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
         ('PROD4036', 'UrbanStep Shoes', 'SKU4036', 'StreetFlex', 'Altars', 281.30),
         ('PROD4037', 'Cyberpunk Hat', 'SKU4037', 'AirRun', 'Colours', 99.79),
         ('PROD4038', 'CloudShell Jacket', 'SKU4038', 'ClassicWear', 'Colours', 191.26),
-        ('PROD4039', 'ClassicWear Hoodie', 'SKU4039', 'ClassicWear', 'GenZ Pros', 206.99)
-        ('PROD4040', 'ClassicWear Hoodie', 'SKU4040', 'ClassicWear', 'GenZ Pros', 206.99);
+        ('PROD4039', 'ClassicWear Hoodie', 'SKU4039', 'ClassicWear', 'GenZ Pros', 206.99);
         ```
 
         > **Note:** If SQL Database asks password, enter **password321!**. 
@@ -725,9 +719,9 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
        ![](./media/new3.png)
 
-    - Click on the icon **Eventhouse** in the top toolbar, under KQO database you will able to see **products1** under Tables.
+    - Click on the icon **Eventhouse** in the top toolbar, under KQO database you will be able to see **products1** under Tables.
 
-    >**Note:** Keep the note of the table name which you are able to see in the Eventhouse KQL database as this is required for next Usecase.
+        >**Note:** Keep the note of the table name which you are able to see in the Eventhouse KQL database as this is required for next usecase.
         
 # Exercise 4: Ingest Shipping Data from Azure Storage Container into Eventhouse
 
@@ -741,7 +735,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tk2.png)
 
-3.  In the **Workspace identity** settings pane and select **+ Workspace identity**
+3.  In the **Workspace identity** settings pane and select **+ Workspace identity**.
 
     ![](./media/tk3.png)
 
@@ -757,15 +751,15 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tk5.png)
 
-5.  From the left menu, click on the **Access control(IAM**). On the access control(IAM) page, Click **+Add** and select **Add role assignments**.
+5.  From the left menu, click on the **Access control(IAM)** **(1)**. On the access control(IAM) page, Click **+Add (2)** and select **Add role assignments (3)**.
 
     ![](./media/tk6.png)
 
-5.  Type the **Storage Blob Data Contributor** in the search box and select it. Click **Next**
+5.  Type the **Storage Blob Data Contributor** in the search box and select it. Click **Next**.
 
     ![](./media/tk7.png)
 
-6.  In the **Add role assignment** tab, select Assign access to **User group or service principal**. Under Members, click **+Select members**
+6.  In the **Add role assignment** tab, select Assign access to **User group or service principal**. Under Members, click **+Select members**.
 
     ![](./media/tk8.png)
 
@@ -781,7 +775,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 ## Task 3: Import Shipping Data Notebook
 
-1.  Return to the Fabric workspace .
+1.  Return to the Fabric workspace.
 
 2.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** button, then select **Notebook** and select **From this computer** as shown in the below image.
 
@@ -811,11 +805,11 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tk17.png)
 
-9.  Click on the button **Get data** in the menu bar at the top.Choose **Azure Storage** from the dropdown menu.
+9.  Click on the button **Get data** in the menu bar at the top. Choose **Azure Storage** from the dropdown menu.
 
     ![](./media/tk18.png)
 
-10. Select the **+ New table**
+10. Select the **+ New table**.
 
     ![](./media/tk19.png)
 
@@ -823,7 +817,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tk20.png)
 
-12. Configure the Azure Blob Storage source by selecting **Connect to a storage account** (1), choose the default **Subscription**(2), **Blob storage account**(3).
+12. Configure the Azure Blob Storage source by selecting **Connect to a storage account** **(1)**, choose the default **Subscription** **(2)**, **Blob storage account** **(3)**.
 
     ![](./media/tk21.png)
 
@@ -839,17 +833,17 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
    ![](./media/ssxx1.png)
 
-1. Select **Next**
+1. Select **Next**.
 
    ![](./media/tk24.png)
 
-15. Click on **Finish** button
+15. Click on **Finish** button.
 
 16. The **Get data** process will take approximately **10–13 minutes** to complete.
 
     ![](./media/tk25.png)
 
-18. Click on **Close** button
+18. Click on **Close** button.
 
     ![](./media/tk26.png)
 
@@ -861,19 +855,19 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tl1.png)
 
-2.  In the **Add data** pane, search for **Real-time weather**, and then select **Real-time weather** to start ingesting live weather data into  the Eventstream.
+2.  In the **Add data (1)** pane, search for **Real-time weather (2)**, and then select **Real-time weather (3)** to start ingesting live weather data into  the Eventstream.
 
     ![](./media/1013.png)
 
-3.  Select **United States (US)** (1) as the location for ingesting Real-time weather data, verify the **Eventstream name** as **weather_eventstream** (2), and then click **Next** (3) to continue.
+3.  Select **United States (US)** **(1)** as the location for ingesting Real-time weather data, verify the **Eventstream name** as **weather_eventstream** **(2)**, and then click **Next** **(3)** to continue.
 
     ![](./media/tl3.png)
 
-4.  Click on **Connect** button
+4.  Click on **Connect** button.
 
     ![](./media/tl4.png)
 
-5.  Click on **Finish** button
+5.  Click on **Finish** button.
 
     ![](./media/tl5.png)
 
@@ -889,7 +883,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
      ![](./media/tl8.png)
 
-8.  Click on **Save**
+8.  Click on **Save**.
 
 9.  Click on the button **Publish** that is located in the toolbar at the top of the screen.
 
@@ -897,7 +891,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tl20.png)
 
-10. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **temperature**
+10. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **temperature**.
 
     ![](./media/tl21.png)
 
@@ -906,13 +900,13 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/tl22.png)
 
-13. Leave everything as default and click on **Start** button
+13. Leave everything as default and click on **Start** button.
 
     ![](./media/tl23.png)
 
 ## Fabric Management
 
-- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+- Navigate to the **Azure Portal**, from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
     ![](./media/1014.png)
 
@@ -924,7 +918,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
     ![](./media/1016.png)
 
-- On the **Overview** page of the Fabric Capacity resource, click **Pause** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+- On the **Overview** page of the Fabric Capacity resource, click **Pause (1)** from the top menu. Click **Yes (2)** to pause the Fabric Capacity resource.
 
     ![](./media/1018.png)
 
@@ -932,7 +926,7 @@ In this task, you will create an Event Stream and add the Manufacturing data as 
 
 This use case focuses on helping Fabrikam, a global retail and e-commerce brand, overcome real-time operational challenges during periods of extreme demand and disruption. A sudden surge in customer traffic, combined with weather-related transit delays and manufacturing quality issues, exposes the lack of real-time visibility across Fabrikam’s supply chain and fulfillment operations.
 Using Microsoft Fabric Real-Time Intelligence, the solution integrates high-velocity data from multiple sources—including manufacturing telemetry, shipment events, e-commerce clickstream, weather data, and product information—into a single operational view. Eventstream, Eventhouse, KQL analytics, real-time dashboards, and Activator alerts work together to detect risks early, visualize live conditions, and trigger automated responses.
-The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions
+The outcome is a proactive, real-time operational command center that enables Fabrikam to protect customer experience, reduce delays, prevent defective shipments, and maintain business continuity under rapidly changing conditions.
 
 
 

@@ -4,11 +4,11 @@
 
 In this lab, you will extend Microsoft Fabric Real-Time Intelligence (RTI) to capture and analyze live product clickstream data from Fabrikam’s e-commerce platform. You will ingest streaming customer interaction events, process them using KQL queries, and generate insights that reveal product demand patterns as they occur.
 
-By the end of this lab, you will be able to monitor real-time customer behavior, identify high-performing products, evaluate demand surges, and transform streaming engagement data into actionable business intelligence.
+By the end of this lab, you will be able to monitor real-time customer behaviour, identify high-performing products, evaluate demand surges, and transform streaming engagement data into actionable business intelligence.
 
 **Scenario: From Operational Stability to Customer Intelligence – Understanding Demand as It Happens**
 
-After establishing real-time visibility across manufacturing, logistics, and shipment operations, Fabrikam has stabilized its operational ecosystem. However, leadership now faces a new strategic priority: understanding customer behavior in real time.
+After establishing real-time visibility across manufacturing, logistics, and shipment operations, Fabrikam has stabilized its operational ecosystem. However, leadership now faces a new strategic priority: understanding customer behaviour in real time.
 
 As digital traffic increases across web and mobile platforms, thousands of clickstream events are generated every minute — including product views, add-to-cart actions, purchases, referral sources, and device interactions.
 
@@ -34,7 +34,7 @@ In this lab, you will:
 
 - Stream clickstream data into Eventhouse for low-latency analytics
 
-- Analyze customer behavior and product demand using Kusto Query Language (KQL)
+- Analyze customer behaviour and product demand using Kusto Query Language (KQL)
 
 - Identify top-demand products and evaluate pricing and cost impact in real time
 
@@ -48,7 +48,7 @@ In this lab, you will:
 
 ## Fabric Management
 
-- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+- Navigate to the **Azure Portal**, from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
     ![](./media/1014.png)
 
@@ -60,7 +60,7 @@ In this lab, you will:
 
     ![](./media/1016.png)
 
-- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to resume the Fabric Capacity resource.
 
     ![](./media/1019.png)
 
@@ -70,7 +70,7 @@ In this lab, you will:
 
 1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane.
 
-1. In the Workspaces pane, select **+ New item**. In the **Filter by  item type** search box, enter **Eventstream** and select the **Eventstream** item
+1. In the Workspaces pane, select **+ New item**. In the **Filter by  item type** search box, enter **Eventstream** and select the **Eventstream** item.
 
     ![](./media/ke1.png)
 
@@ -88,7 +88,7 @@ In this lab, you will:
 
     ![](./media/ke4.png)
 
-1. On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task
+1. On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task.
 
     ![](./media/ke5.png)
 
@@ -98,7 +98,7 @@ In this lab, you will:
 
 ## Task 2: Import Clickstream Simulator data Notebook
 
-1. On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** (1) button, then select **Notebook** (2) and  select **From this computer** (3) as shown in the below image.
+1. On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** **(1)** button, then select **Notebook** **(2)** and  select **From this computer** **(3)** as shown in the below image.
 
     ![](./media/ke7.png)
 
@@ -106,7 +106,7 @@ In this lab, you will:
 
     ![](./media/1021.png)
 
-1. Navigate and select **Clickstream Simulator** notebooks from **C:\LabFiles\Data\Files**and click on the **Open** button.
+1. Navigate to **C:\LabFiles\Data\Files (1)** and select **Clickstream Simulator (2)** notebooks and click on the **Open (3)** button.
 
     ![](./media/1022.png)
 
@@ -122,16 +122,16 @@ In this lab, you will:
 
     ![](./media/ke11.png)
 
-1. In the  third cell paste the **connection string of your custom  app source and EventHubName** (the value that you have saved in your notepad in Task 1 step number 7, select the **Run** icon that appears on the left
-    side of the cell
+1. In the  third cell paste the **connection string of your custom  app source and EventHubName (1)** the value that you have saved in your notepad in Task 1 step number 7, then update the **PRODUCT_IDS (2)** and **SKU (3)** range to **40** select the **Run (4)** icon that appears on the left
+    side of the cell.
 
-    ![](./media/ke12.png)
+    ![](./media/1027.png)
 
 1. Run the fourth cell.
 
     ![](./media/ke13.png)
 
-1. Run the subsequent cells
+1. Run the subsequent cells.
 
     ![](./media/ke14.png)
 
@@ -141,7 +141,7 @@ In this lab, you will:
 
    ![](./media/ke16.png)
 
-1. In the event stream authoring canvas, select the **Edit**
+1. In the event stream authoring canvas, select the **Edit**.
 
    ![](./media/ke17.png)
 
@@ -153,13 +153,13 @@ In this lab, you will:
 
     | Field                          | Value |
     |--------------------------------|-------|
-    | Event processing before ingestion | Ensure that this option is selected (1) |
-    | Destination Name               | Eventhouse (2)|
-    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** (3)|
-    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (4) |
-    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** (5) |
-    | Destination table              | Click **Create new**, enter **clickstream** as the table name, and click **Done**(6)|
-    | Input data format              | Ensure that the **JSON** option is selected (7)|
+    | Event processing before ingestion | Ensure that this option is selected **(1)** |
+    | Destination Name               | Eventhouse **(2)**|
+    | Workspace                      | Select **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** **(3)**|
+    | Eventhouse                     | Select the Eventhouse **Eventhouse<inject key="DeploymentID" enableCopy="false" />** **(4)** |
+    | KQL Database                   | Select the KQL Database **Eventhouse<inject key="DeploymentID" enableCopy="false" />** **(5)** |
+    | Destination table              | Click **Create new**, enter **clickstream** as the table name, and click **Done** **(6)**|
+    | Input data format              | Ensure that the **JSON** option is selected **(7)**|
 
     ![](./media/ke19.png)
 
@@ -169,9 +169,9 @@ In this lab, you will:
 
    ![](./media/ke21.png)
 
-   > **Note:**It will take 2 to 5 minutes to appear data in Data preview.
+   > **Note:** It will take 2 to 5 minutes to appear data in Data preview.
 
-1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media/ke22.png)
 
@@ -179,7 +179,7 @@ In this lab, you will:
 
 ## Task 3: Knowledge of Kusto Query Language (KQL) to analyze the data.
 
-1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane and select **L400_KQL_Queryset**
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane and select **L400_KQL_Queryset**.
 
     ![](./media/kf1.png)
 
@@ -199,29 +199,26 @@ In this lab, you will:
 
     ![](./media/kf3.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, paste the provided code to see the cost of those top 3 products, then click **Run** to execute the query. After execution, the results will be displayed.
 
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
-    //let`s see the cost of those top 3 products
+    //let`s see the cost of those top 40 products
     clickstream
     | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
     | summarize TotalDemand = count() by product_id
-    | top 3 by TotalDemand desc
+    | top 40 by TotalDemand desc
     | join products_silver on $left.product_id == $right.ProductId
     ```
 
     ![](./media/kf4.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, paste the provided code to create a copy of the  table products_silver to test out the cost increase, then click  **Run** to execute the query. After execution, the results will be
     displayed.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
     
     ```
     //let`s create a copy of the table products_silver to test out the cost increase
@@ -233,8 +230,6 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, paste the provided code to recommended for one time load, now our table looks like the product table, then click  **Run** to execute the query. After execution, the results will be displayed.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //recommended for one time load, now our table looks like the product table
@@ -244,11 +239,9 @@ In this lab, you will:
 
      ![](./media/kf6.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, paste the provided code, then click **Run** to  execute the query. After execution, the results will be displayed.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //let`s also save the result of the TOP 3 products in another table, because we`ll need it in the update command, the let Delete or Append only accepts the table name you are modifying 
@@ -260,15 +253,13 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on   the **Run** button to execute the query. After the query is  executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
-    .set-or-replace Top3Products <|
+    .set-or-replace Top40Products <|
     clickstream
     | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
     | summarize TotalDemand = count() by product_id
-    | top 3 by TotalDemand desc
+    | top 40 by TotalDemand desc
     | join products_silver on $left.product_id == $right.ProductId
     | project ProductId, ProductName, SKU, Brand, Category, UnitCost;
     ```
@@ -280,11 +271,11 @@ In this lab, you will:
    
     ```
     //to update we`ll use a .update command that uses append and delete
-    .update table product_copy delete top3Products append Top3ProductsWithUpdatedCost <|
-    let top3Products = product_copy
-    | where ProductId in (Top3Products | project ProductId );
-    let Top3ProductsWithUpdatedCost = product_copy
-    | where ProductId in (Top3Products | project ProductId )
+    .update table product_copy delete top40Products append Top40ProductsWithUpdatedCost <|
+    let top40Products = product_copy
+    | where ProductId in (Top40Products | project ProductId );
+    let Top40ProductsWithUpdatedCost = product_copy
+    | where ProductId in (Top40Products | project ProductId )
     | extend UnitCost = toint(UnitCost + UnitCost * 0.15);
     ```
 
@@ -293,37 +284,33 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
-    //great, now run again the query that finds out the Top 3 products, they aren`t the same right?
+    //great, now run again the query that finds out the Top 40 products, they aren`t the same right?
     // that is why we need to have a pipe
-    //in the pipe we`ll create 1 KQL acitivity where we`ll update our top 3 products daily
-    .set-or-replace Top3Products <|
+    //in the pipe we`ll create 1 KQL acitivity where we`ll update our top 40 products daily
+    .set-or-replace Top40Products <|
     clickstream
     | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated") and ingestion_time() > ago(1d)
     | summarize TotalDemand = count() by product_id
-    | top 3 by TotalDemand desc
+    | top 40 by TotalDemand desc
     | join products_silver on $left.product_id == $right.ProductId
     | project ProductId, ProductName, SKU, Brand, Category, UnitCost;
     ```
 
      ![](./media/kf10.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //the 2nd KQL activity will update the products table with the cost increased by 15% for the most demanded products
-    .update table product_copy delete top3Products append Top3ProductsWithUpdatedCost <|
-    let top3Products = product_copy
-    | where ProductId in (Top3Products | project ProductId );
-    let Top3ProductsWithUpdatedCost = product_copy
-    | where ProductId in (Top3Products | project ProductId )
+    .update table product_copy delete top40Products append Top3ProductsWithUpdatedCost <|
+    let top40Products = product_copy
+    | where ProductId in (Top40Products | project ProductId );
+    let Top40ProductsWithUpdatedCost = product_copy
+    | where ProductId in (Top40Products | project ProductId )
     | extend UnitCost = toint(UnitCost + UnitCost * 0.15);
     ```    
 
@@ -331,29 +318,25 @@ In this lab, you will:
 
 ## Task 4: Create a Growth Opportunity Report
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, paste the provided code to get demand product, then click **Run** to execute the query. After execution, the results will be displayed.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //in demand product
     clickstream
     | where event_type in ("purchase_completed", "add_to_cart", "product_click", "checkout_initiated")
     | summarize TotalDemand = count() by product_id
-    | top 1 by TotalDemand desc
+    | top 40 by TotalDemand desc
     | join products_silver on $left.product_id == $right.ProductId
     | project ProductName
     ```
 
     ![](./media/kf12.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //website with highest traffic
@@ -365,11 +348,9 @@ In this lab, you will:
     ```
      ![](./media/kf13.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     // product clicks over time
@@ -383,11 +364,11 @@ In this lab, you will:
 
     ![](./media/kf14.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
 
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
+    > **Note:** If you are not able to see the output please make it as 40 instaed of 3 in the query.
    
     ```
     //product clicks over time 
@@ -400,11 +381,10 @@ In this lab, you will:
 
     ![](./media/kf15.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
 
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //website traffic distribution
@@ -414,11 +394,9 @@ In this lab, you will:
     ```
     ![](./media/kf16.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //device traffic distribution
@@ -429,11 +407,9 @@ In this lab, you will:
 
     ![](./media/kf17.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
-
-    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //forecast the temperature
@@ -460,15 +436,15 @@ In this lab, you will:
 
     ![ ](./media/kf19.png)
 
-1. From the **Home** tab, select **Get data** and then click on the **More...** option to upload the tables into Dataflow Gen2
+1. From the **Home** tab, select **Get data** and then click on the **More...** option to upload the tables into Dataflow Gen2.
 
     ![](./media/kf20.png)
 
- 1. Select the KQL Database and click on **Connect**   
+ 1. Select the KQL Database and click on **Connect**.   
 
     ![](./media/kf21.png)
 
-1. Select clickstream table and click **Create**
+1. Select clickstream table and click **Create**.
 
     ![](./media/kf22.png)
 
@@ -476,7 +452,7 @@ In this lab, you will:
 
     ![](./media/kf23.png)
 
-1. On the Home window, select **Save & run** and click on **Save & run** button
+1. On the Home window, select **Save & run** and click on **Save & run** button.
 
      ![](./media/kf24.png)
 
@@ -493,11 +469,11 @@ In this lab, you will:
 
      ![](./media/kf27.png)
 
-1. Select Dataflow
+1. Select Dataflow.
 
     ![](./media/kf28.png)
 
-1. Select workspace and dataflow
+1. Select **workspace** and **dataflow**.
 
     ![](./media/kf29.png)
 
@@ -511,7 +487,7 @@ In this lab, you will:
 
     ![](./media/kf32.png)
 
-1. On the **Home** tab of the pipeline editor window,select **Schedule**.
+1. On the **Home** tab of the pipeline editor window, select **Schedule**.
 
    ![](./media/kf33.png)
 
@@ -519,7 +495,7 @@ In this lab, you will:
 
    ![](./media/kf34.png)
 
-1. Select the **Daily** as schedule and click on **Save** button and close the Schedule pane
+1. Select the **Daily** as schedule and click on **Save** button and close the Schedule pane.
 
    ![](./media/kf35.png)
 
@@ -533,7 +509,7 @@ In this lab, you will:
 
      ![](./media/kg1.png)
 
-1. In the PowerBi desktop window click on **Sign in**
+1. In the PowerBI desktop window click on **Sign in**.
 
     ![](./media/us3p1.png)
 
@@ -543,7 +519,7 @@ In this lab, you will:
 
      ![](./media/us3p2.png)
 
-1. On the Sign into Microsoft Azure tab, you will see the login screen,enter the following Email/ Username and then click on **Next**.
+1. On the Sign into Microsoft Azure tab, you will see the login screen, enter the following Email/ Username and then click on **Next**.
 
     ![](./media/us3p3.png)
 
@@ -587,11 +563,11 @@ In this lab, you will:
 
     ![](./media/kg9.png)
 
-1. Select the **Slicer** visual, then drag **ProductName** from the **products_silver** table into the **Field** well to enable product-based filtering in the report.
+1. Select the **Slicer (1)** visual, then drag **ProductName (2)** from the **products_silver** table into the **Field (3)** well to enable product-based filtering in the report.
 
     ![](./media/kg10.1.png)
 
-1. In the **Visualizations** pane, open **Format visual**, go to **Visual → Slicer settings**, and set the **Style** to **Dropdown**.
+1. In the **Visualizations** pane, open **Format visual (1)**, go to **Visual → Slicer settings (2)**, and set the **Style** to **Dropdown (3)**.
 
     ![](./media/kg10.png)
 
@@ -600,7 +576,7 @@ In this lab, you will:
 
     ![](./media/kg11.png)
 
-1. Select the **Pie chart** visual, then drag **referral_platform** to the **Legend** and **event_id** to **Values (Count)** from the **clickstream** table to visualize event distribution by referral
+1. Select the **Pie chart (1)** visual, then drag **referral_platform (2)** to the **Legend (3)** and **event_id (4)** to **Values (Count) (5)** from the **clickstream** table to visualize event distribution by referral
     platform.
 
     ![](./media/kg12.png)
@@ -610,14 +586,14 @@ In this lab, you will:
 
     ![](./media/kg13.png)
 
-1. Select the **Pie chart** visual, then drag **referral_source_type**  to the **Legend** and **Count of event_id** to **Values (Count)** from the **clickstream** table to visualize event
+1. Select the **Pie chart (1)** visual, then drag **referral_source_type (2)**  to the **Legend (3)** and **event_id (4)** to **Values (Count) (5)** from the **clickstream** table to visualize event
     distribution by referral source type.
 
    ![](./media/kg14.png)
 
    ![](./media/kg15.png)
 
-1. In the Power BI report, select **Save As** to create a copy or save the report with a new name
+1. In the Power BI report, select **Save As** to create a copy or save the report with a new name.
 
    ![](./media/kg16.png)
 
@@ -625,7 +601,7 @@ In this lab, you will:
 
 ## Task 7: Setup Data Agent with Real-Time Intelligence
 
-1. Back in  the **Fabric** **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** page in the browser window, select **+New item.** **In the Filter by item type search box, enter +++data agent+++ and select the Data agent**
+1. Back in  the **Fabric** **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** page in the browser window, select **+New item.** In the Filter by item type **search box, enter data agent (2)** and select the **Data agent (3)**.
 
     ![](./media/kh1.png)
 
@@ -633,7 +609,7 @@ In this lab, you will:
 
     ![](./media/kh2.png)
 
-1. In AI-agent page, select **Add a data source**
+1. In AI-agent page, select **Add a data source**.
 
     ![](./media/kh3.png)
 
@@ -643,7 +619,7 @@ In this lab, you will:
 
     ![](./media/kh5.png)
 
-1. Select the tables for which you want the AI skill to have available access
+1. Select the tables for which you want the AI skill to have available access.
         
         - product_copy
         
@@ -674,7 +650,7 @@ In this lab, you will:
 
 ## Fabric Management
 
-- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+- Navigate to the **Azure Portal**, from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
     ![](./media/1014.png)
 
