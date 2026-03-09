@@ -11,41 +11,31 @@ By the end of this lab, participants will be able to:
 **Foundation & Setup**
 
   - Create and configure a Microsoft Fabric workspace for Real-Time Intelligence.
-
   - Set up an Eventhouse and KQL database for streaming analytics.
-
   - Understand core components such as eventstreams, dashboards, and Real-Time hubs.
 
 **Data Ingestion & Streaming**
 
-  - Build eventstreams to ingest real-time data from supported sources.
-  
-  - Configure data routing, filtering, and transformations within event pipelines.
-  
+  - Build eventstreams to ingest real-time data from supported sources. 
+  - Configure data routing, filtering, and transformations within event pipelines. 
   - Manage streaming data flow into KQL databases for analysis.
 
 **Real-Time Analytics & Querying**
 
   - Write and execute Kusto Query Language (KQL) queries to analyze live data.
-  
   - Perform aggregations, filtering, and time-based analysis on streaming datasets.
-  
   - Explore Copilot-assisted querying and data exploration features.
 
 **Visualization & Monitoring**
 
-  - Create interactive real-time dashboards and visualizations.
-  
+  - Create interactive real-time dashboards and visualizations. 
   - Design tiles, charts, and filters for operational monitoring.
-  
   - Track live metrics and analyze trends from streaming events.
 
 **Automation & Operational Insights**
 
   - Implement basic alerting and monitoring concepts for real-time scenarios.
-  
   - Understand how streaming analytics supports automated decision-making workflows.
-  
   - Apply best practices for building scalable real-time intelligence solutions in Fabric.
 
 ## Explanation of Components
@@ -54,42 +44,32 @@ The architecture for this lab involves the following key components:
 
 1. **Microsoft Fabric Workspace**: A unified environment where Real-Time Intelligence resources are created and managed.
 
-   - Acts as the central hub for Eventhouse, eventstreams, dashboards, and analytics assets.
-
-   - Provides governance, collaboration, and resource organization within Fabric.
+    - Acts as the central hub for Eventhouse, eventstreams, dashboards, and analytics assets.
+    - Provides governance, collaboration, and resource organization within Fabric.
 
 2. **Eventhouse & KQL Database**: The core analytics engine used to store and query streaming data.
 
-   - Serves as the backend for real-time analytics and monitoring.
-
-   - Uses Kusto Query Language (KQL) to explore, filter, and aggregate incoming events.
-
-   - Optimized for high-volume, low-latency data ingestion and querying.
+    - Serves as the backend for real-time analytics and monitoring.
+    - Uses Kusto Query Language (KQL) to explore, filter, and aggregate incoming events.
+    - Optimized for high-volume, low-latency data ingestion and querying.
 
 3. **Eventstreams**: The ingestion and routing layer for real-time data.
 
-   - Collects streaming events from supported sources and routes them into destinations like KQL databases.
-
-   - Supports filtering, transformation, and enrichment before storage.
-
-   - Enables near-real-time data pipelines within Fabric.
+    - Collects streaming events from supported sources and routes them into destinations like KQL databases.
+    - Supports filtering, transformation, and enrichment before storage.
+    - Enables near-real-time data pipelines within Fabric.
 
 4. **Kusto Query Language (KQL)**: The primary query language used for analyzing streaming datasets.
 
     - Powers data exploration, aggregations, time-series analysis, and troubleshooting.
-    
-    - Used in dashboards, monitoring views, and advanced analytics scenarios.
-    
-    - Real-Time Dashboards & Visualizations: Interactive dashboards built on top of KQL queries.
-    
-    - Provide live monitoring with charts, tiles, and filters.
-    
+    - Used in dashboards, monitoring views, and advanced analytics scenarios.  
+    - Real-Time Dashboards & Visualizations: Interactive dashboards built on top of KQL queries.  
+    - Provide live monitoring with charts, tiles, and filters.  
     - Help track trends, anomalies, and operational metrics from streaming data.
 
 5. **Monitoring & Automation Concepts**: Real-time analytics enables proactive decision-making.
 
-    - Supports alerting scenarios based on incoming event patterns.
-    
+    - Supports alerting scenarios based on incoming event patterns.  
     - Demonstrates how streaming insights can drive operational workflows and automated actions.
   
 # Getting Started with Lab
