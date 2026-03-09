@@ -46,6 +46,24 @@ In this lab, you will:
 
 - Enable AI-driven exploration of streaming data using a Fabric Data Agent
 
+# Please follow these steps to Resume the Fabric.
+
+- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+
+    ![](./media/1014.png)
+
+- In the **Resource groups** page, locate and select the resource group **labvm-rg**.
+
+    ![](./media/1015.png)
+
+- Inside the **labvm-rg** resource group, find and click on the **Fabric Capacity** resource named **fabric<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](./media/1016.png)
+
+- On the **Overview** page of the Fabric Capacity resource, click **Resume** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+
+    ![](./media/1019.png)
+
 # Exercise 1: Stream, Transform, and Analyze Clickstream Events
 
 ## Task 1: Set Up an Eventstream and Create Custom Endpoints
@@ -86,9 +104,11 @@ In this lab, you will:
 
 1.  Select **Upload** from the **Import status** pane that appears on  the right side of the screen.
 
+    ![](./media/1021.png)
+
 1.  Navigate and select **Clickstream Simulator** notebooks from **C:\LabFiles\Data\Files**and click on the **Open** button.
 
-    ![](./media/ke8.png)
+    ![](./media/1022.png)
 
 1.  Then, select the **Clickstream Simulator**  notebook.
 
@@ -149,6 +169,8 @@ In this lab, you will:
 
    ![](./media/ke21.png)
 
+   > **Note:**It will take 2 to 5 minutes to appear data in Data preview.
+
 1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
 
    ![](./media/ke22.png)
@@ -180,6 +202,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, paste the provided code to see the cost of those top 3 products, then click **Run** to execute the query. After execution, the results will be displayed.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //let`s see the cost of those top 3 products
@@ -196,6 +220,8 @@ In this lab, you will:
 
 1.  In the query editor, paste the provided code to create a copy of the  table products_silver to test out the cost increase, then click  **Run** to execute the query. After execution, the results will be
     displayed.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
     
     ```
     //let`s create a copy of the table products_silver to test out the cost increase
@@ -207,6 +233,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the **+** icon.
 
 1.  In the query editor, paste the provided code to recommended for one time load, now our table looks like the product table, then click  **Run** to execute the query. After execution, the results will be displayed.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //recommended for one time load, now our table looks like the product table
@@ -219,6 +247,8 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the ***+* icon**
 
 1. In the query editor, paste the provided code, then click **Run** to  execute the query. After execution, the results will be displayed.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //let`s also save the result of the TOP 3 products in another table, because we`ll need it in the update command, the let Delete or Append only accepts the table name you are modifying 
@@ -230,6 +260,8 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on   the **Run** button to execute the query. After the query is  executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     .set-or-replace Top3Products <|
@@ -243,6 +275,8 @@ In this lab, you will:
     ![](./media/kf8.png)
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //to update we`ll use a .update command that uses append and delete
@@ -259,6 +293,8 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //great, now run again the query that finds out the Top 3 products, they aren`t the same right?
@@ -278,6 +314,8 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //the 2nd KQL activity will update the products table with the cost increased by 15% for the most demanded products
@@ -296,6 +334,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1.  In the query editor, paste the provided code to get demand product, then click **Run** to execute the query. After execution, the results will be displayed.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //in demand product
@@ -312,6 +352,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //website with highest traffic
@@ -326,6 +368,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     // product clicks over time
@@ -342,6 +386,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the ***+* icon**
 
 1.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //product clicks over time 
@@ -357,6 +403,8 @@ In this lab, you will:
 1.  Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //website traffic distribution
@@ -369,6 +417,8 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the ***+* icon**
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //device traffic distribution
@@ -382,6 +432,8 @@ In this lab, you will:
 1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+
+    > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
     ```
     //forecast the temperature
