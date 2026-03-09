@@ -46,7 +46,7 @@ In this lab, you will:
 
 - Enable AI-driven exploration of streaming data using a Fabric Data Agent
 
-# Please follow these steps to Resume the Fabric.
+## Fabric Management
 
 - Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
@@ -68,70 +68,70 @@ In this lab, you will:
 
 ## Task 1: Set Up an Eventstream and Create Custom Endpoints
 
-1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane.
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane.
 
-1.  In the Workspaces pane, select **+ New item**. In the **Filter by  item type** search box, enter **Eventstream** and select the **Eventstream** item
+1. In the Workspaces pane, select **+ New item**. In the **Filter by  item type** search box, enter **Eventstream** and select the **Eventstream** item
 
     ![](./media/ke1.png)
 
-1.  Enter **clickstream_eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
+1. Enter **clickstream_eventstream<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
-1.  On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will create an event hub connected to the Eventstream.
+1. On the Screen **Design a flow to ingest, transform, and route streaming events** click on **Use custom Endpoint**. This will create an event hub connected to the Eventstream.
 
     ![](./media/ke2.png)
 
-1.  Insert **CustomEndpoint-clickstream** as the source name and click on **Add**.
+1. Insert **CustomEndpoint-clickstream** as the source name and click on **Add**.
 
     ![](./media/ke3.png)
 
-1.  Click on the **Publish** button.
+1. Click on the **Publish** button.
 
     ![](./media/ke4.png)
 
-1.  On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task
+1. On the **Eventstream** pane, select the **keys** under  the **Details**, select **SAS key Authentication ,** copy the **Event hub name**, **connection strings-primarykey** and paste  them on a notepad, as you need them in the upcoming task
 
     ![](./media/ke5.png)
 
-1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation  pane.
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation  pane.
 
     ![](./media/ke6.png)
 
 ## Task 2: Import Clickstream Simulator data Notebook
 
-1.  On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** (1) button, then select **Notebook** (2) and  select **From this computer** (3) as shown in the below image.
+1. On the **RealTimeWorkspace** page, from the menu bar, navigate and click on **-\>|Import** (1) button, then select **Notebook** (2) and  select **From this computer** (3) as shown in the below image.
 
     ![](./media/ke7.png)
 
-1.  Select **Upload** from the **Import status** pane that appears on  the right side of the screen.
+1. Select **Upload** from the **Import status** pane that appears on  the right side of the screen.
 
     ![](./media/1021.png)
 
-1.  Navigate and select **Clickstream Simulator** notebooks from **C:\LabFiles\Data\Files**and click on the **Open** button.
+1. Navigate and select **Clickstream Simulator** notebooks from **C:\LabFiles\Data\Files**and click on the **Open** button.
 
     ![](./media/1022.png)
 
-1.  Then, select the **Clickstream Simulator**  notebook.
+1. Then, select the **Clickstream Simulator**  notebook.
 
     ![](./media/ke9.png)
 
-1.  To start the notebook, run the first cell.
+1. To start the notebook, run the first cell.
 
     ![](./media/ke10.png)
 
-1.  Run the second cell.
+1. Run the second cell.
 
     ![](./media/ke11.png)
 
-1.  In the  third cell paste the **connection string of your custom  app source and EventHubName** (the value that you have saved in your notepad in Task 1 step number 7, select the **Run** icon that appears on the left
+1. In the  third cell paste the **connection string of your custom  app source and EventHubName** (the value that you have saved in your notepad in Task 1 step number 7, select the **Run** icon that appears on the left
     side of the cell
 
     ![](./media/ke12.png)
 
-1.  Run the fourth cell.
+1. Run the fourth cell.
 
     ![](./media/ke13.png)
 
-1.  Run the subsequent cells
+1. Run the subsequent cells
 
     ![](./media/ke14.png)
 
@@ -179,13 +179,13 @@ In this lab, you will:
 
 ## Task 3: Knowledge of Kusto Query Language (KQL) to analyze the data.
 
-1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane and select **L400_KQL_Queryset**
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation pane and select **L400_KQL_Queryset**
 
     ![](./media/kf1.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon.
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
-1.  In the query editor, paste the provided code to top 3 products by demand, then click **Run** to execute the query. After execution,the results will be displayed.
+1. In the query editor, paste the provided code to top 3 products by demand, then click **Run** to execute the query. After execution,the results will be displayed.
    
     ```
     //top 3 products by demand
@@ -199,9 +199,9 @@ In this lab, you will:
 
     ![](./media/kf3.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon
 
-1.  In the query editor, paste the provided code to see the cost of those top 3 products, then click **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to see the cost of those top 3 products, then click **Run** to execute the query. After execution, the results will be displayed.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
@@ -216,9 +216,9 @@ In this lab, you will:
 
     ![](./media/kf4.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-1.  In the query editor, paste the provided code to create a copy of the  table products_silver to test out the cost increase, then click  **Run** to execute the query. After execution, the results will be
+1. In the query editor, paste the provided code to create a copy of the  table products_silver to test out the cost increase, then click  **Run** to execute the query. After execution, the results will be
     displayed.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
@@ -230,9 +230,9 @@ In this lab, you will:
 
     ![](./media/kf5.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon.
+1. Create a new tab within the queryset by clicking on the **+** icon.
 
-1.  In the query editor, paste the provided code to recommended for one time load, now our table looks like the product table, then click  **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to recommended for one time load, now our table looks like the product table, then click  **Run** to execute the query. After execution, the results will be displayed.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
@@ -331,9 +331,9 @@ In this lab, you will:
 
 ## Task 4: Create a Growth Opportunity Report
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-1.  In the query editor, paste the provided code to get demand product, then click **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to get demand product, then click **Run** to execute the query. After execution, the results will be displayed.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
@@ -349,9 +349,9 @@ In this lab, you will:
 
     ![](./media/kf12.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon
 
-1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
@@ -365,9 +365,9 @@ In this lab, you will:
     ```
      ![](./media/kf13.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon
 
-1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
+1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
@@ -383,9 +383,9 @@ In this lab, you will:
 
     ![](./media/kf14.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**
 
-1.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
+1. In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
 
     > **Note:** If you are not able to see the out put please make it as 40 instaed of 3 in the query.
    
@@ -400,7 +400,7 @@ In this lab, you will:
 
     ![](./media/kf15.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+** icon
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
 
@@ -449,18 +449,18 @@ In this lab, you will:
 
 ## Task 5: Create Dataflow Gen2
 
-1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
-1.  In the Workspaces pane, select **+ New item** and select the **Dataflow Gen2**.
+1. In the Workspaces pane, select **+ New item** and select the **Dataflow Gen2**.
 
      ![](./media/kf18.png)
 
-1.  Enter **RTI_Dataflow** as the new Dataflow Gen2 name and select **Create**. 
+1. Enter **RTI_Dataflow** as the new Dataflow Gen2 name and select **Create**. 
 
     ![ ](./media/kf19.png)
 
-1.  From the **Home** tab, select **Get data** and then click on the **More...** option to upload the tables into Dataflow Gen2
+1. From the **Home** tab, select **Get data** and then click on the **More...** option to upload the tables into Dataflow Gen2
 
     ![](./media/kf20.png)
 
@@ -468,7 +468,7 @@ In this lab, you will:
 
     ![](./media/kf21.png)
 
-1.  Select clickstream table and click **Create**
+1. Select clickstream table and click **Create**
 
     ![](./media/kf22.png)
 
@@ -476,28 +476,28 @@ In this lab, you will:
 
     ![](./media/kf23.png)
 
-1.  On the Home window, select **Save & run** and click on **Save & run** button
+1. On the Home window, select **Save & run** and click on **Save & run** button
 
      ![](./media/kf24.png)
 
      ![](./media/kf25.png)
 
-1.  Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
+1. Now, click on **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** on the left-sided navigation
     pane.
 
-1.  Select the **New item** option on the workspace page. Select **Pipeline** from the new item flyout menu.
+1. Select the **New item** option on the workspace page. Select **Pipeline** from the new item flyout menu.
 
      ![](./media/kf26.png)
 
-1.  Provide a Pipeline Name as **datafactory_pipeline** and then select **Create**.
+1. Provide a Pipeline Name as **datafactory_pipeline** and then select **Create**.
 
      ![](./media/kf27.png)
 
-1.  Select Dataflow
+1. Select Dataflow
 
     ![](./media/kf28.png)
 
-1.  Select workspace and dataflow
+1. Select workspace and dataflow
 
     ![](./media/kf29.png)
 
@@ -529,7 +529,7 @@ In this lab, you will:
 
 ## Task 6: Create a “Growth Opportunity” Report
 
-1.  Open  PowerBI desktop from the desktop screen.
+1. Open  PowerBI desktop from the desktop screen.
 
      ![](./media/kg1.png)
 
@@ -559,21 +559,21 @@ In this lab, you will:
 
 1. Account added to this Device Dialog opens. Select **Done**.
 
-1.  In Power BI Desktop, select **OneLake catalog** to connect to data stored in Microsoft Fabric and start building your report.
+1. In Power BI Desktop, select **OneLake catalog** to connect to data stored in Microsoft Fabric and start building your report.
 
     ![](./media/kg3.png)
 
-1.  From the **OneLake catalog**, select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** and click **Connect** to load the real-time data source into Power BI Desktop.
+1. From the **OneLake catalog**, select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** and click **Connect** to load the real-time data source into Power BI Desktop.
 
     ![](./media/kg4.png)
 
-1.  In the **Sign in** window, click on the **<inject key="AzureAdUserEmail"></inject>** and click on the **Next** button.
+1. In the **Sign in** window, click on the **<inject key="AzureAdUserEmail"></inject>** and click on the **Next** button.
 
-1.  Select all the tables and click **Load** to import the data into Power BI Desktop.
+1. Select all the tables and click **Load** to import the data into Power BI Desktop.
 
     ![](./media/kg5.png)
 
-1.  In the **Connection settings** dialog, select **Import** as the connection mode and click **OK** to proceed.
+1. In the **Connection settings** dialog, select **Import** as the connection mode and click **OK** to proceed.
 
     ![](./media/kg6.png)
 
@@ -625,25 +625,25 @@ In this lab, you will:
 
 ## Task 7: Setup Data Agent with Real-Time Intelligence
 
-1.  Back in  the **Fabric** **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** page in the browser window, select **+New item.** **In the Filter by item type search box, enter +++data agent+++ and select the Data agent**
+1. Back in  the **Fabric** **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** page in the browser window, select **+New item.** **In the Filter by item type search box, enter +++data agent+++ and select the Data agent**
 
     ![](./media/kh1.png)
 
-1.  Enter **l400-agent** as the Data agent name and select **Create**.
+1. Enter **l400-agent** as the Data agent name and select **Create**.
 
     ![](./media/kh2.png)
 
-1.  In AI-agent page, select **Add a data source**
+1. In AI-agent page, select **Add a data source**
 
     ![](./media/kh3.png)
 
-1.  In the **OneLake catalog** tab, select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />** and select **Add**.
+1. In the **OneLake catalog** tab, select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />** and select **Add**.
 
     ![](./media/kh4.png)
 
     ![](./media/kh5.png)
 
-1.  Select the tables for which you want the AI skill to have available access
+1. Select the tables for which you want the AI skill to have available access
         
         - product_copy
         
@@ -653,7 +653,7 @@ In this lab, you will:
 
         - shipping_silver
 
-1.  Enter the following text and click on the **Submit icon** as shown  in the below image.
+1. Enter the following text and click on the **Submit icon** as shown  in the below image.
 
     ```
     What is the most popular product?
@@ -663,7 +663,7 @@ In this lab, you will:
     ![](./media/kh7.png)
 
 
-1.  Select **clickstream** and enter the following text and click on the **Submit icon** as shown in the below image.
+1. Select **clickstream** and enter the following text and click on the **Submit icon** as shown in the below image.
 
     ```
     Which website redirected the highest traffic?
@@ -672,8 +672,26 @@ In this lab, you will:
 
     ![](./media/kh9.png)
 
-**Summary**
->
+## Fabric Management
+
+- Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
+
+    ![](./media/1014.png)
+
+- In the **Resource groups** page, locate and select the resource group **labvm-rg**.
+
+    ![](./media/1015.png)
+
+- Inside the **labvm-rg** resource group, find and click on the **Fabric Capacity** resource named **fabric<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](./media/1016.png)
+
+- On the **Overview** page of the Fabric Capacity resource, click **Pause** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
+
+    ![](./media/1018.png)
+
+## Summary
+
 This lab builds upon Fabrikam’s real-time operational intelligence foundation by adding customer clickstream analytics to the solution. Using Microsoft Fabric, real-time user interactions from the e-commerce platform are streamed, analyzed, and correlated with product data to reveal demand patterns and revenue opportunities as they emerge.
 Participants implement end-to-end streaming ingestion, perform advanced KQL analytics, automate daily updates, and create interactive Power BI reports that highlight top products, traffic sources, and engagement trends. The lab concludes by enabling AI-powered data exploration, allowing business users to ask natural language questions against live data.
 Together, these capabilities help Fabrikam move from reactive reporting to real-time, customer-driven decision-making, ensuring faster responses to market demand and sustained competitive advantage.

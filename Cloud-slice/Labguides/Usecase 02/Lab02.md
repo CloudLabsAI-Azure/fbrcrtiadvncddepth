@@ -36,7 +36,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 - Test the dashboard under simulated real-time conditions to ensure responsiveness and accuracy.
 
-# Please follow these steps to Resume the Fabric.
+## Fabric Management
 
 - Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
@@ -58,21 +58,21 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 ## Task 1: Get Latest Shipping details
 
-1.  From the **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** view, select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database.
+1. From the **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** view, select the **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database.
 
     ![](./media/kb1.png)
 
-1.  Navigate to the Database tab and select **KQL Queryset** to begin creating your queries
+1. Navigate to the Database tab and select **KQL Queryset** to begin creating your queries.
 
     ![](./media/kb2.png)
 
-1.  In the **New KQL Queryset** dialog  box, enter **L400KQL_Queryset**, then click on the **Create** button.
+1. In the **New KQL Queryset** dialog  box, enter **L400KQL_Queryset**, then click on the **Create** button.
 
     ![](./media/kb3.png)
 
     ![](./media/kb4.png)
 
-1.  In the query editor, replace the existing code by pasting the code provided below to create the Shipping Silver table, then click **Run** to execute the query. Once completed, the results will be displayed.
+1. In the query editor, replace the existing code by pasting the code provided below to create the Shipping Silver table, then click **Run** to execute the query. Once completed, the results will be displayed.
    
     ```
     .create table shipping_silver (
@@ -97,15 +97,16 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
         ProductId: string
     )
     ```
+
     ![](./media/kb5.png)
     
     ![](./media/kb6.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
     ![](./media/kb7.png)
 
-1.  In the query editor, paste the provided code to expand the XML and  project only the required fields, then click **Run** to execute the query. After execution, the results will be displayed
+1. In the query editor, paste the provided code to expand the XML and project only the required fields, then click **Run** to execute the query. After execution, the results will be displayed.
    
       ```
       //Let`s expand the whole xml and project only the fields needed
@@ -155,13 +156,14 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
           ProductId
 
      ```
+
      ![](./media/kb8.png)
 
      ![](./media/kb9.png)
 
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
-1.  In the query editor, paste the provided code to copy data from the shipping table to the shipping_silver table, then click **Run** to  execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to copy data from the shipping table to the shipping_silver table, then click **Run** to  execute the query. After execution, the results will be displayed.
    
       ```
       .set-or-append shipping_silver <|
@@ -190,9 +192,10 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
               ProductQuantity = toint(Products.Quantity),
               ProductId = tostring(Products.ProductId)
     ```
+
       ![](./media/kb10.png)
    
-1.  Create a new tab within the queryset by clicking on the ***+* icon**.In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
+1. Create a new tab within the queryset by clicking on the ***+* icon**.In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
    
     ```
     shipping_silver
@@ -203,7 +206,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
   
      ![](./media/kb12.png)
  
-1.  Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is  executed, you will see the results.
    
@@ -237,13 +240,14 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
             ProductId = tostring(Products.ProductId)
     }
     ```
+
       ![](./media/kb13.png)
 
       ![](./media/kb14.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
-   ![](./media/kb15.png)
+    ![](./media/kb15.png)
 
 1. In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is executed, you will see the results.
    
@@ -254,7 +258,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kb16.png)
 
-13. Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
     ![](./media/kb17.png)
 
@@ -268,7 +272,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kb18.png)
 
-1. Create a new tab within the queryset by clicking on the ***+* icon**
+1. Create a new tab within the queryset by clicking on the ***+* icon**.
 
 1. In the query editor, paste the provided code to **verify policy  exists**, then click **Run** to execute the query. After execution, the results will be displayed.
    
@@ -276,20 +280,22 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
     //Verify policy exists
     .show table shipping_silver policy update
     ```
+    
      ![](./media/kb19.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1. In the query editor, paste the provided code to verify that data is available. If no data is found, rerun the notebook and redo the continuous ingestion for Blob. Then click **Run** to execute the query. After execution, the results will be displayed
+1. In the query editor, paste the provided code to verify that data is available. If no data is found, rerun the notebook and redo the continuous ingestion for Blob. Then click **Run** to execute the query. After execution, the results will be displayed.
    
     ```
     //Verify you have data, if not rerun the notebok, and redo the continous ingestion for Blob
     shipping_silver
     | take 10000
     ```
+
      ![](./media/kb20.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
 1. In the query editor, paste the provided code to **get latest shipping details**, then click **Run** to execute the query. After execution, the results will be displayed.
    
@@ -301,17 +307,18 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
         | summarize arg_max(EventTime, *) by OrderNumber
     }
     ```
+
      ![](./media/kb21.png)
 
 ## Task 2: Stop the shipping providers and production line that is carrying the highest defect probability product for every 1 hour
 
-1.  Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**
 
-1.  In the query editor, copy and paste the following code. Click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
+1. In the query editor, copy and paste the following code. Enter the table name you copied in Exercise 3 at the place of **//Replace with Table name** in the query, then click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
    
     ```
     //click on jPath instead of inline when on payload, click on ProdId * copy path
-    products
+    //Replace with Table name
     | extend Operator = payload.op
     | where  Operator == ("c") 
     | extend ProductId = ['payload']['after']['ProductId']
@@ -322,11 +329,13 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
     | extend UnitCost = payload.after.UnitCost
     ```
 
-    ![](./media/kc14.png)
+    ![](./media/TName-1.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon**
+     >**Note:** Table name will be either, Products or Products1.
 
-1.  In the query editor, paste the provided code to create **products silver** table, then click **Run** to execute the query. After execution, the results will be displayed
+1. Create a new tab within the queryset by clicking on the **+ icon**.
+
+1. In the query editor, paste the provided code to create **products silver** table, then click **Run** to execute the query. After execution, the results will be displayed
     
       ```
       .create table products_silver (
@@ -338,15 +347,16 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
           UnitCost: int
       )
       ```
+
       ![](./media/kc15.png)
 
-1.  Create a new tab within the queryset by clicking on the **+* icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1.  In the query editor, copy and paste the following code. Click on the **Run** button to execute the query. After the query is executed, you will see the results.
+1. In the query editor, copy and paste the following code. Enter the table name you copied in Exercise 3 at the place of **//Replace with Table name** in the query, then click on  the **Run** button to execute the query. After the query is  executed, you will see the results.
     
       ```
       .set-or-append products_silver <|
-      products
+      //Replace with Table name
       | extend Operator = payload.op
       | where  Operator == ("c") 
       | extend ProductId = tostring(['payload']['after']['ProductId'])
@@ -358,51 +368,53 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
       | project ProductId, ProductName, SKU, Brand, Category, UnitCost
       ```
 
-      ![](./media/kc16.png)
+      ![](./media/TName-2.png)
 
-1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**
+       >**Note:** Table name will be either, Products or Products1.
+
+1. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **Eventhouse<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](./media/kc1.png)
 
-1.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database
+1. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database.
 
     ![](./media/kc2.png)
 
-1.  Click on the button **Get data** in the menu bar at the top. Choose **Local file** from the dropdown menu.
+1. Click on the button **Get data** in the menu bar at the top. Choose **Local file** from the dropdown menu.
 
     ![](./media/kc3.png)
 
-1. Select the **+ New table**
+1. Select the **+ New table**.
 
     ![](./media/kc4.png)
 
-1. Enter the new table name as **shipping_provider** and click on the checkmark.Click on Browse for file
+1. Enter the new table name as **shipping_provider** and click on the checkmark.Click on **Browse** for file.
 
     ![](./media/kc5.png)
 
-1. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles\Data\Files**and click the **Open** button.
-
+1. Navigate and select **Shipping \_Provider_Details** notebooks from **C:\LabFiles\Data\Files** and click the **Open** button.
+ 
     ![](./media/kc6.png)
 
-1. Select **Next**
+1. Select **Next**.
 
     ![](./media/kc7.png)
 
-1. Click on **Finish** button
+1. Click on **Finish** button.
 
     ![](./media/kc8.png)
 
-1. Click on **Close** button
+1. Click on **Close** button.
 
     ![](./media/kc9.png)
 
     ![](./media/kc10.png)
 
-1. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **L400_KQL_Queryset**
+1. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar and select **L400_KQL_Queryset**.
 
     ![](./media/kc11.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
 1. In the query editor, paste the provided code to stop shipping from production when a defect is detected, then click **Run** to execute the query. After execution, the results will be displayed.
     
@@ -420,9 +432,9 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
      ![](./media/kc12.png)
 
-1. Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1. In the query editor, paste the provided code to stop operator from  production with a defect, then click **Run** to execute the query. After execution, the results will be displayed
+1. In the query editor, paste the provided code to stop operator from  production with a defect, then click **Run** to execute the query. After execution, the results will be displayed.
    
     ```
     //stop operator from production with a defect
@@ -442,9 +454,9 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 ## Task 3: Create an Alert to Stop the Production Line with Detailed Product and Operator Information
 
-1.  Create a new tab within the queryset by clicking on the **+** icon
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1.  In the query editor, paste the provided code to show all operators details, then click **Run** to execute the query. After execution,the results will be displayed.
+1. In the query editor, paste the provided code to show all operators details, then click **Run** to execute the query. After execution,the results will be displayed.
    
     ```
     //Show all operators details
@@ -454,9 +466,9 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
   
     ![](./media/kd1.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon.
+1. Create a new tab within the queryset by clicking on the **+** **icon**.
 
-1.  In the query editor, paste the provided code to Current Defective Item Detail, then click **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to Current Defective Item Detail, then click **Run** to execute the query. After execution, the results will be displayed.
    
     ```
     // Current Defective Item Detail
@@ -472,9 +484,9 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd2.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1.  In the query editor, paste the provided code to correlation between defective and non-defective products in 1 hour bins, then click **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to correlation between defective and non-defective products in 1 hour bins, then click **Run** to execute the query. After execution, the results will be displayed.
    
     ```
     // Correlation between defective and non-defective products in 1 hour bins
@@ -484,9 +496,9 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd3.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
-1.  In the query editor, paste the provided code to Current shipment status (count of orders by status), then click **Run** to execute the query. After execution, the results will be displayed.
+1. In the query editor, paste the provided code to Current shipment status (count of orders by status), then click **Run** to execute the query. After execution, the results will be displayed.
    
     ```
     // Current shipment status (count of orders by status).
@@ -498,7 +510,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
     
     ![](./media/kd4.png)
 
-1.  Create a new tab within the queryset by clicking on the **+** icon**
+1. Create a new tab within the queryset by clicking on the **+ icon**.
 
 1. In the query editor, paste the provided code to shipment count by destination, then click **Run** to execute the query. After execution, the results will be displayed.
 
@@ -513,15 +525,15 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
 ## Task 4: Create an operational dashboard for Fabrikam management
 
-1.  Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
+1. Click on the icon **RealTimeWorkspace<inject key="DeploymentID" enableCopy="false" />** in the left toolbar.
 
-1.  In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Real-Time Dashboard** and select the **Real-Time-Dashboard** item.
+1. In the Workspaces pane, select **+ New item**. In the **Filter by item type** search box, enter **Real-Time Dashboard** and select the **Real-Time-Dashboard** item.
 
     ![](./media/kd6.png)
 
-1.  Enter **RTDashboard<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
+1. Enter **RTDashboard<inject key="DeploymentID" enableCopy="false" />** as the eventstream name and select **Create**. 
 
-1.  Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database and click on **Add Tile**
+1. Select **Eventhouse<inject key="DeploymentID" enableCopy="false" />** KQL Database and click on **Add Tile**.
 
     ![](./media/kd8.png)
 
@@ -529,11 +541,11 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd10.png)
 
-1.  In the Query editor, select **Copilot** from the top menu and use it to generate KQL query
+1. In the Query editor, select **Copilot** from the top menu and use it to generate KQL query.
 
     ![](./media/kd11.png)
 
-1.  Enter the following text and click on the **Submit icon** as shown in the below image.
+1. Enter the following text and click on the **Submit icon** as shown in the below image.
     
     ```
     Create a real-time dashboard table that shows all operators handling shipments in the last 24 hour.
@@ -543,11 +555,11 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd12.png)
 
-1.  Select the **Replace** option to update the existing content as required.
+1. Select the **Replace** option to update the existing content as required.
 
     ![](./media/kd13.png)
 
-1.  Click **Run** to execute the query.
+1. Click **Run** to execute the query.
 
     ![](./media/kd14.png)
 
@@ -593,35 +605,35 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
      
        ```
 
-1.  Click on the **+Add visual**
+1. Click on the **+ Add visual**.
 
     ![](./media/kd15.png)
 
-1. In the **Visual formatting** tab, set Tile name to **shipments in the last 24 hour**(1), set Visual type to **Table.**(2) Click on **Apply changes**(3).
+1. In the **Visual formatting** tab, set Tile name to **shipments in the last 24 hour** **(1)**, set Visual type to **Table.** **(2)** Click on **Apply changes** **(3)**.
 
-   ![](./media/kd16.png)
+    ![](./media/kd16.png)
 
-   ![](./media/kd17.png)
+    ![](./media/kd17.png)
 
 1. While editing the dashboard, click on the tab **Manage** on the top left then click on the button **Parameters**.
 
-   ![](./media/kd18.png)
+    ![](./media/kd18.png)
 
 1. To edit the parameter **Time range** click on the pencil icon. This will enter the edit mode for this parameter.
 
-   ![](./media/kd19.png)
+    ![](./media/kd19.png)
 
 1. Select **Last 7 Days** in the combo box **Default value**. Then click on **Done**.
 
-   ![](./media/kd20.png)
+    ![](./media/kd20.png)
 
 1. In the parameter pane click on the button **Close**.
 
 1. Click on the tab **Home** and then click on the button **New tile** again to proceed with the next visuals.
 
-   ![](./media/kd21.png)
+    ![](./media/kd21.png)
 
-1. In the query editor, **paste** the following code.
+1. In the query editor, **paste (1)** the following code.
    
     ```
     shipping_silver
@@ -630,15 +642,15 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
     | summarize countByStatus=count() by Status
     ```
 
-1. Click on **Run** to execute the query.Select **+Add visual**
+1. Click on **Run (2)** to execute the query. Select **+ Add visual (3)**.
 
     ![](./media/kd22.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Last One Hour Shippment status**(1), set Visual type to **Multi stat**(2) Change the Display Orientation to **Vertical**(3) and Text size to **Small**(4)
+1. In the **Visual formatting** tab, set Tile name to **Last One Hour Shippment status** **(1)**, set Visual type to **Multi stat** **(2)** Change the Display Orientation to **Vertical** **(3)** and Text size to **Small** **(4)**.
 
     ![](./media/kd23.png)
 
-1. Change the Layout configuration to **1 column x 3 rows**.Click on the **Apply changes**
+1. Change the Layout configuration to **1 column x 3 rows**. Click on the **Apply changes**.
    
     ![](./media/kd24.png)
 
@@ -648,7 +660,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd26.png)
 
-1. In the query editor, **paste** the following code, then click  on **Run** to execute the query. Select **+Add visual**
+1. In the query editor, **paste (1)** the following code, then click  on **Run (2)** to execute the query. Select **+ Add visual (3)**.
    
     ```
     // manufacturing
@@ -678,7 +690,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
      ![](./media/kd27.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Current defective item details** (1), set Visual type to **Table** (2) Click on the **Apply changes**(3)
+1. In the **Visual formatting** tab, set Tile name to **Current defective item details** **(1)**, set Visual type to **Table** **(2)** Click on the **Apply changes** **(3)**.
 
      ![](./media/kd28.png)
 
@@ -686,7 +698,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
      ![](./media/kd29.png)
 
-1. In the query editor, **paste** the following code, then click  on **Run** to execute the query.Select **+Add visual**
+1. In the query editor, **paste (1)** the following code, then click  on **Run (2)** to execute the query.Select **+ Add visual (3).**
 
     ```
     shipping
@@ -703,7 +715,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd30.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Delivery Country by Destination**(1), set Visual type to **Map**(2) Under Data in the **Define location by** select **Latitude and longitude**(3). Finally, click on **Apply changes**(4).
+1. In the **Visual formatting** tab, set Tile name to **Delivery Country by Destination** **(1)**, set Visual type to **Map** **(2)** Under Data in the **Define location by** select **Latitude and longitude** **(3)**. Finally, click on **Apply changes** **(4)**.
 
    ![](./media/kd31.png)
 
@@ -713,7 +725,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
    ![](./media/kd33.png)
 
-1. In the query editor, **paste** the following code, then click on **Run** to execute the query. Select **+Add visual**
+1. In the query editor, **paste** the following code, then click on **Run** to execute the query. Select **+ Add visual.**
    
     ```
     // Correlation between defective and non-defective products in 1 hour bins
@@ -732,7 +744,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
       ![](./media/kd34.png)
 
-1. In the **Visual formatting** tab, set Tile name to **Defective and Proper production**(1), set Visual type to **Line chart**(2). Click on the **Apply changes**(3).
+1. In the **Visual formatting** tab, set Tile name to **Defective and Proper production** **(1)**, set Visual type to **Line chart** **(2)**. Click on the **Apply changes** **(3)**.
 
      ![](./media/kd35.png)
 
@@ -742,7 +754,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
     ![](./media/kd37.png)
 
-1. In the pane **Auto refresh** set it to **Enabled**(1) and set **Default refresh rate** to **Continous**(2). Then click on the button **Apply**(3)
+1. In the pane **Auto refresh** set it to **Enabled** **(1)** and set **Default refresh rate** to **Continous** **(2)**. Then click on the button **Apply** **(3)**.
 
     ![](./media/kd38.png)
 
@@ -750,7 +762,7 @@ Fabrikam now needs real-time operational dashboards that enable proactive monito
 
    ![](./media/kd39.1.png)
 
-Please follow these steps to pause the Fabric.
+## Fabric Management
 
 - Navigate to the **Azure Portal**. from the **Home** page, click on **Resource groups** under the **Navigate** section.
 
@@ -767,6 +779,8 @@ Please follow these steps to pause the Fabric.
 - On the **Overview** page of the Fabric Capacity resource, click **Pause** from the top menu. Click **Yes** to pause the Fabric Capacity resource.
 
     ![](./media/1018.png)
+
+
 
 
 
